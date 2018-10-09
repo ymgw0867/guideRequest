@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guideRequest", "guideRequest\guideRequest.csproj", "{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mailReceive", "mailReceive\mailReceive.csproj", "{181AF0C5-C144-493D-8214-CE4657C49346}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "guideSetup", "guideSetup\guideSetup.vdproj", "{159307BD-2957-4730-9318-AE5625CCD43D}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "receiveSetup", "receiveSetup\receiveSetup.vdproj", "{E07FD9AB-FD60-41F7-A31E-16DAF7FEACD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Debug|x86.ActiveCfg = Debug|x86
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Debug|x86.Build.0 = Debug|x86
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{E730A2D0-8DBA-4798-8C57-116BFE6A32AD}.Release|x86.Build.0 = Release|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Debug|x86.Build.0 = Debug|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Release|x86.ActiveCfg = Release|Any CPU
+		{181AF0C5-C144-493D-8214-CE4657C49346}.Release|x86.Build.0 = Release|Any CPU
+		{159307BD-2957-4730-9318-AE5625CCD43D}.Debug|Any CPU.ActiveCfg = Debug
+		{159307BD-2957-4730-9318-AE5625CCD43D}.Debug|x86.ActiveCfg = Debug
+		{159307BD-2957-4730-9318-AE5625CCD43D}.Release|Any CPU.ActiveCfg = Release
+		{159307BD-2957-4730-9318-AE5625CCD43D}.Release|x86.ActiveCfg = Release
+		{E07FD9AB-FD60-41F7-A31E-16DAF7FEACD0}.Debug|Any CPU.ActiveCfg = Debug
+		{E07FD9AB-FD60-41F7-A31E-16DAF7FEACD0}.Debug|x86.ActiveCfg = Debug
+		{E07FD9AB-FD60-41F7-A31E-16DAF7FEACD0}.Release|Any CPU.ActiveCfg = Release
+		{E07FD9AB-FD60-41F7-A31E-16DAF7FEACD0}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
