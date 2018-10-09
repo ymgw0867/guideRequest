@@ -18,6 +18,10 @@ namespace mailReceive.mail
 {
     public partial class frmMailReceive : Form
     {
+        ///----------------------------------------------------
+        /// <summary>
+        ///     GitHub Masterに追加 </summary>
+        ///----------------------------------------------------
         public frmMailReceive()
         {
             InitializeComponent();
