@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace mailReceive.mail
 {
@@ -85,11 +86,17 @@ namespace mailReceive.mail
 		{
 			string decodedtext = "";
 			while (encodedtext != "")
-			{
-				Regex r = new
+            {
+                // 改行を削除：2018/10/12
+                var reg = new Regex("\r\n");
+                string text = reg.Replace(encodedtext, string.Empty);
+
+                Regex r = new
 					Regex(@"^(?<preascii>.*?)(?:=\?(?<charset>.+?)\?(?<encoding>.+?)\?(?<encodedtext>.+?)\?=)+(?<postascii>.*?)$");
-				Match m = r.Match(encodedtext);
-				if (m.Groups["charset"].Value == "" || m.Groups["encoding"].Value == "" || m.Groups["encodedtext"].Value == "")
+				//Match m = r.Match(encodedtext); // 2018/10/12
+				Match m = r.Match(text);    // 2018/10/12
+
+                if (m.Groups["charset"].Value == "" || m.Groups["encoding"].Value == "" || m.Groups["encodedtext"].Value == "")
 				{
 					// エンコードされた文字列はない
 					decodedtext += encodedtext;
@@ -109,9 +116,12 @@ namespace mailReceive.mail
                     {
                         Encoding enc = new UTF8Encoding(true, true);
 
-                        byte[] bytes = enc.GetBytes(m.Groups["encodedtext"].Value.ToCharArray());
+                        // Quoted-Printableのデコード処理　2018/10/12
+                        decodedtext += qpDecode(m.Groups["encodedtext"].Value, enc);
 
-                        string value2 = enc.GetString(bytes);
+                        // 以下２行 2018/10/12 コメント化
+                        //byte[] bytes = enc.GetBytes(m.Groups["encodedtext"].Value.ToCharArray());
+                        //string value2 = enc.GetString(bytes);
 
                         //UTF8Encoding [] c = m.Groups["encodedtext"].Value.ToCharArray();
                         ////byte[] b = Convert.FromBase64CharArray(c, 0, c.Length);
@@ -131,7 +141,59 @@ namespace mailReceive.mail
 			}
 			return decodedtext;
 		}
-	}
+
+        ///-----------------------------------------------------------------
+        /// <summary>
+        ///     Quoted-Printableのデコード：2018/10/12 </summary>
+        /// <param name="text">
+        ///     デコード対象文字列</param>
+        /// <param name="encoding">
+        ///     文字コード</param>
+        /// <returns>
+        ///     デコード結果文字列</returns>
+        ///-----------------------------------------------------------------
+        public static string qpDecode(string text, Encoding encoding)
+        {
+            var bytes = new List<Byte>();
+
+            //// ソフト改行をすべて削除
+            //var reg = new Regex("=[ \t]*\r\n");
+            //text = reg.Replace(text, string.Empty);
+
+            // 次に読む文字位置
+            var index = 0;
+
+            while (index < text.Length)
+            {
+                var c = text[index];
+
+                if (c == '=')
+                {
+                    // = が出たら次の2文字を合わせて読む
+                    // 範囲外参照になる場合は不正なQP
+                    var octetStr = text.Substring(index + 1, 2);
+
+                    // 16進数文字列としてByte型に変換
+                    var octet = Convert.ToByte(octetStr, 16);
+                    bytes.Add(octet);
+
+                    // 詠み込んだ2文字すすめる
+                    index += 2;
+                }
+                else
+                {
+                    // = で始まらない文字はそのまま出力
+                    // Ascii文字なのでByte型にキャスト
+                    bytes.Add((byte)c);
+                }
+
+                index++;
+            }
+
+            var result = encoding.GetString(bytes.ToArray());
+            return result;
+        }
+    }
 
 	/// <summary>
 	/// メールボディ部を取得するためのクラスです。
