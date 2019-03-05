@@ -26,8 +26,8 @@ namespace guideRequest.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=YUDAI-PC\\sqlexpress,1433;Initial Catalog=JFG_MST;Persist Security Inf" +
-            "o=True;User ID=sa;Password=sqlpass")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=YMGW-PC\\MSSQLSERVER2;Initial Catalog=JFG_MST;Persist Security Info=Tr" +
+            "ue;User ID=sa;Password=sqlpass")]
         public string JFG_MSTConnectionString {
             get {
                 return ((string)(this["JFG_MSTConnectionString"]));

@@ -38,15 +38,15 @@ namespace mailReceive.mail
         reMeilTo[] _rm = null;
 
         // テーブルアダプター生成
-        guideDataSetTableAdapters.ガイド依頼名TableAdapter adp = new guideDataSetTableAdapters.ガイド依頼名TableAdapter();
-        guideDataSetTableAdapters.ガイド依頼対象者TableAdapter gAdp = new guideDataSetTableAdapters.ガイド依頼対象者TableAdapter();
-        guideDataSetTableAdapters.会員情報TableAdapter sAdp = new guideDataSetTableAdapters.会員情報TableAdapter();
-        guideDataSetTableAdapters.メール設定TableAdapter mAdp = new guideDataSetTableAdapters.メール設定TableAdapter();
-        guideDataSetTableAdapters.メール定型文TableAdapter cAdp = new guideDataSetTableAdapters.メール定型文TableAdapter();
-        guideDataSetTableAdapters.メール送受信記録TableAdapter lAdp = new guideDataSetTableAdapters.メール送受信記録TableAdapter();
+        mailDataSetTableAdapters.ガイド依頼名TableAdapter adp = new mailDataSetTableAdapters.ガイド依頼名TableAdapter();
+        mailDataSetTableAdapters.ガイド依頼対象者TableAdapter gAdp = new mailDataSetTableAdapters.ガイド依頼対象者TableAdapter();
+        mailDataSetTableAdapters.会員情報TableAdapter sAdp = new mailDataSetTableAdapters.会員情報TableAdapter();
+        mailDataSetTableAdapters.メール設定TableAdapter mAdp = new mailDataSetTableAdapters.メール設定TableAdapter();
+        mailDataSetTableAdapters.メール定型文TableAdapter cAdp = new mailDataSetTableAdapters.メール定型文TableAdapter();
+        mailDataSetTableAdapters.メール送受信記録TableAdapter lAdp = new mailDataSetTableAdapters.メール送受信記録TableAdapter();
 
         // データテーブル生成
-        guideDataSet dts = new guideDataSet();
+        mailDataSet dts = new mailDataSet();
 
         const string TAGOK = "0"; 
         const string TAGCANCEL = "1";
@@ -223,7 +223,7 @@ namespace mailReceive.mail
         ///---------------------------------------------------------------
         private void showIrai()
         {
-            guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == _rm[0].iCode);
+            mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == _rm[0].iCode);
 
             txtIraiNum.Text = r.ID.ToString();
             txtIrai.Text = r.依頼元;
@@ -334,7 +334,7 @@ namespace mailReceive.mail
         ///------------------------------------------------------------------------------------
         private void guideDataUpdate(double sNum, string sMail, long sID)
         {
-            guideDataSet.ガイド依頼対象者Row r = dts.ガイド依頼対象者.Newガイド依頼対象者Row();
+            mailDataSet.ガイド依頼対象者Row r = dts.ガイド依頼対象者.Newガイド依頼対象者Row();
             r.会員番号 = sNum;
             r.メールアドレス = sMail;
             r.依頼番号 = sID;
@@ -351,7 +351,7 @@ namespace mailReceive.mail
         ///-------------------------------------------------------------------------------------
         private void guideNameUpdate(long sID)
         {
-            //guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Newガイド依頼名Row();
+            //mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Newガイド依頼名Row();
             //r.ID = sID;
             //r.依頼元 = cmbIrai.Text;
             //r.依頼内容 = txtName.Text;
@@ -383,7 +383,7 @@ namespace mailReceive.mail
             txtText.Enabled = true;
 
             //
-            guideDataSet.メール設定Row r = dts.メール設定.Single(a => a.ID == global.mailKey);
+            mailDataSet.メール設定Row r = dts.メール設定.Single(a => a.ID == global.mailKey);
 
             if (!r.HasErrors)
             {
@@ -409,7 +409,7 @@ namespace mailReceive.mail
 
                 if (mailComID != 0)
                 {
-                    guideDataSet.メール定型文Row cr = dts.メール定型文.Single(a => a.ID == mailComID);
+                    mailDataSet.メール定型文Row cr = dts.メール定型文.Single(a => a.ID == mailComID);
 
                     if (!cr.HasErrors)
                     {
@@ -461,7 +461,7 @@ namespace mailReceive.mail
             string msg = string.Empty;
             bool rtn = false;
 
-            guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == sID);
+            mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == sID);
             
             if (!r.Is選考メール送信日時Null() == !r.Is断りメール送信日時Null())
             {
@@ -492,7 +492,7 @@ namespace mailReceive.mail
         ///------------------------------------------------------------------------
         private void requestCloseUpdate(long sID)
         {
-            guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == sID);
+            mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == sID);
             r.依頼終了 = global.FLGON;
 
             // データベース更新
@@ -574,7 +574,7 @@ namespace mailReceive.mail
         private void sendRequestMail(string toAddress, string sSubject, string sMailText, string SubjectOp, bool toStatus, int reStatus, int testFlg)
         {
             // メール設定情報
-            guideDataSet.メール設定Row r = dts.メール設定.Single(a => a.ID == global.mailKey);
+            mailDataSet.メール設定Row r = dts.メール設定.Single(a => a.ID == global.mailKey);
             
             // smtpサーバーを指定する
             SmtpClient client = new SmtpClient();
@@ -758,7 +758,7 @@ namespace mailReceive.mail
         ///-------------------------------------------------------------------------
         private void guideSendUpdate(int sID, int reStatus, DateTime nDt)
         {
-            guideDataSet.ガイド依頼対象者Row r = dts.ガイド依頼対象者.Single(a => a.ID == sID);
+            mailDataSet.ガイド依頼対象者Row r = dts.ガイド依頼対象者.Single(a => a.ID == sID);
 
             if (!r.HasErrors)
             {
@@ -773,7 +773,7 @@ namespace mailReceive.mail
         ///--------------------------------------------------------------------------
         private void iraiMLSendDateUpdate(DateTime nDt, int reStatus)
         {
-            guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == _rm[0].iCode);
+            mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == _rm[0].iCode);
 
             if (reStatus == global.FLGON)
             {
@@ -806,7 +806,7 @@ namespace mailReceive.mail
         private void mllogUpdate(string sTo, string sToAddress, string sFrom, string sFromAddress, string sSubject, string sMailBody, DateTime nDt)
         {
             // 送信ログ書き込み
-            guideDataSet.メール送受信記録Row lr = dts.メール送受信記録.Newメール送受信記録Row();
+            mailDataSet.メール送受信記録Row lr = dts.メール送受信記録.Newメール送受信記録Row();
             lr.日時 = nDt;
             lr.送受信区分 = global.MLLOG_SEND;
             lr.受信者 = sTo;

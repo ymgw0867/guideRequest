@@ -72,10 +72,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="guideDataSet.Designer.cs">
+    <Compile Include="mailDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>guideDataSet.xsd</DependentUpon>
+      <DependentUpon>mailDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="mail\frmMailBody.cs">
       <SubType>Form</SubType>
@@ -139,16 +139,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="guideDataSet.xsc">
-      <DependentUpon>guideDataSet.xsd</DependentUpon>
+    <None Include="mailDataSet.xsc">
+      <DependentUpon>mailDataSet.xsd</DependentUpon>
     </None>
-    <None Include="guideDataSet.xsd">
+    <None Include="mailDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>guideDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>mailDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="guideDataSet.xss">
-      <DependentUpon>guideDataSet.xsd</DependentUpon>
+    <None Include="mailDataSet.xss">
+      <DependentUpon>mailDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

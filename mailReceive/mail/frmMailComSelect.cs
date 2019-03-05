@@ -19,10 +19,10 @@ namespace mailReceive.mail
         utility.formMode fMode = new utility.formMode();
 
         // ガイド依頼名テーブルアダプター生成
-        guideDataSetTableAdapters.メール定型文TableAdapter adp = new guideDataSetTableAdapters.メール定型文TableAdapter();
+        mailDataSetTableAdapters.メール定型文TableAdapter adp = new mailDataSetTableAdapters.メール定型文TableAdapter();
 
         // データテーブル生成
-        guideDataSet dts = new guideDataSet();
+        mailDataSet dts = new mailDataSet();
 
         // 選択された定型文のID
         public int mID { get; set; }
@@ -212,7 +212,7 @@ namespace mailReceive.mail
             int rID = utility.StrtoZero(dg[colID, rx].Value.ToString());
 
             // 対象となるデータテーブルROWを取得します
-            guideDataSet.メール定型文Row sQuery = dts.メール定型文.Single(a => a.ID == rID);
+            mailDataSet.メール定型文Row sQuery = dts.メール定型文.Single(a => a.ID == rID);
             
             if (!sQuery.HasErrors)
             {

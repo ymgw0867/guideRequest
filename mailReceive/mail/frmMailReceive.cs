@@ -35,15 +35,15 @@ namespace mailReceive.mail
             PopTest();
         }
 
-        guideDataSetTableAdapters.メール設定TableAdapter msAdp = new guideDataSetTableAdapters.メール設定TableAdapter();
-        guideDataSetTableAdapters.messageIDTableAdapter idAdp = new guideDataSetTableAdapters.messageIDTableAdapter();
-        guideDataSetTableAdapters.メール送受信記録TableAdapter lAdp = new guideDataSetTableAdapters.メール送受信記録TableAdapter();
-        guideDataSetTableAdapters.ガイド依頼名TableAdapter gAdp = new guideDataSetTableAdapters.ガイド依頼名TableAdapter();
-        guideDataSetTableAdapters.ガイド依頼対象者TableAdapter rAdp = new guideDataSetTableAdapters.ガイド依頼対象者TableAdapter();
-        guideDataSetTableAdapters.アサインTableAdapter asAdp = new guideDataSetTableAdapters.アサインTableAdapter();
-        guideDataSetTableAdapters.会員情報TableAdapter kAdp = new guideDataSetTableAdapters.会員情報TableAdapter();
+        mailDataSetTableAdapters.メール設定TableAdapter msAdp = new mailDataSetTableAdapters.メール設定TableAdapter();
+        mailDataSetTableAdapters.messageIDTableAdapter idAdp = new mailDataSetTableAdapters.messageIDTableAdapter();
+        mailDataSetTableAdapters.メール送受信記録TableAdapter lAdp = new mailDataSetTableAdapters.メール送受信記録TableAdapter();
+        mailDataSetTableAdapters.ガイド依頼名TableAdapter gAdp = new mailDataSetTableAdapters.ガイド依頼名TableAdapter();
+        mailDataSetTableAdapters.ガイド依頼対象者TableAdapter rAdp = new mailDataSetTableAdapters.ガイド依頼対象者TableAdapter();
+        mailDataSetTableAdapters.アサインTableAdapter asAdp = new mailDataSetTableAdapters.アサインTableAdapter();
+        mailDataSetTableAdapters.会員情報TableAdapter kAdp = new mailDataSetTableAdapters.会員情報TableAdapter();
 
-        guideDataSet dts = new guideDataSet();
+        mailDataSet dts = new mailDataSet();
 
         // カラム定義
         string cDate = "col1";
@@ -445,7 +445,7 @@ namespace mailReceive.mail
         /// ------------------------------------------------------------
         private void getMailData()
         {
-            guideDataSet.メール設定Row r = dts.メール設定.Single(a => a.ID == global.mailKey);
+            mailDataSet.メール設定Row r = dts.メール設定.Single(a => a.ID == global.mailKey);
 
             sSmtpServer = r.SMTPサーバー;
             sSmtpPort = r.SMTPポート番号.ToString();
@@ -1076,7 +1076,7 @@ namespace mailReceive.mail
         /// ----------------------------------------------------------------------
         private void mailLogUpDate(mailData md)
         {
-            guideDataSet.メール送受信記録Row r = dts.メール送受信記録.Newメール送受信記録Row();
+            mailDataSet.メール送受信記録Row r = dts.メール送受信記録.Newメール送受信記録Row();
 
             try
             {
@@ -1242,7 +1242,7 @@ namespace mailReceive.mail
             idAdp.Fill(dts.messageID);
 
             // messageIDテーブル更新
-            guideDataSet.messageIDRow r = dts.messageID.NewmessageIDRow();
+            mailDataSet.messageIDRow r = dts.messageID.NewmessageIDRow();
             r.受信日時 = DateTime.Now;
             r.message = tempid;
 
@@ -1353,7 +1353,7 @@ namespace mailReceive.mail
             cellValStatus = false;
 
             // 依頼案件情報
-            guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == long.Parse(iNum));
+            mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == long.Parse(iNum));
 
             txtIraiNum.Text = iNum;
             txtIrai.Text = r.依頼元;
@@ -1492,7 +1492,7 @@ namespace mailReceive.mail
             cellValStatus = false;
 
             // 依頼案件情報
-            guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == long.Parse(iNum));
+            mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == long.Parse(iNum));
 
             txtIraiNum.Text = iNum;
             txtIrai.Text = r.依頼元;
@@ -1762,7 +1762,7 @@ namespace mailReceive.mail
             string sDate = string.Empty;
             string kDate = string.Empty;
 
-            guideDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == sID);
+            mailDataSet.ガイド依頼名Row r = dts.ガイド依頼名.Single(a => a.ID == sID);
 
             msg = r.ID.ToString() + " " + r.依頼元 + Environment.NewLine;
             msg += "受付日：" + r.受付日時.ToShortDateString();

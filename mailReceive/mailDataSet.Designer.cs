@@ -20,9 +20,9 @@ namespace mailReceive {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("guideDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("mailDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class guideDataSet : global::System.Data.DataSet {
+    public partial class mailDataSet : global::System.Data.DataSet {
         
         private メール送受信記録DataTable tableメール送受信記録;
         
@@ -32,13 +32,13 @@ namespace mailReceive {
         
         private ガイド依頼名DataTable tableガイド依頼名;
         
-        private ガイド依頼対象者DataTable tableガイド依頼対象者;
-        
-        private messageIDDataTable tablemessageID;
-        
         private 会員情報DataTable table会員情報;
         
         private アサインDataTable tableアサイン;
+        
+        private ガイド依頼対象者DataTable tableガイド依頼対象者;
+        
+        private messageIDDataTable tablemessageID;
         
         private global::System.Data.DataRelation relationアサイン_会員情報;
         
@@ -48,7 +48,7 @@ namespace mailReceive {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public guideDataSet() {
+        public mailDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -59,7 +59,7 @@ namespace mailReceive {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected guideDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected mailDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -84,17 +84,17 @@ namespace mailReceive {
                 if ((ds.Tables["ガイド依頼名"] != null)) {
                     base.Tables.Add(new ガイド依頼名DataTable(ds.Tables["ガイド依頼名"]));
                 }
-                if ((ds.Tables["ガイド依頼対象者"] != null)) {
-                    base.Tables.Add(new ガイド依頼対象者DataTable(ds.Tables["ガイド依頼対象者"]));
-                }
-                if ((ds.Tables["messageID"] != null)) {
-                    base.Tables.Add(new messageIDDataTable(ds.Tables["messageID"]));
-                }
                 if ((ds.Tables["会員情報"] != null)) {
                     base.Tables.Add(new 会員情報DataTable(ds.Tables["会員情報"]));
                 }
                 if ((ds.Tables["アサイン"] != null)) {
                     base.Tables.Add(new アサインDataTable(ds.Tables["アサイン"]));
+                }
+                if ((ds.Tables["ガイド依頼対象者"] != null)) {
+                    base.Tables.Add(new ガイド依頼対象者DataTable(ds.Tables["ガイド依頼対象者"]));
+                }
+                if ((ds.Tables["messageID"] != null)) {
+                    base.Tables.Add(new messageIDDataTable(ds.Tables["messageID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -158,26 +158,6 @@ namespace mailReceive {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ガイド依頼対象者DataTable ガイド依頼対象者 {
-            get {
-                return this.tableガイド依頼対象者;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public messageIDDataTable messageID {
-            get {
-                return this.tablemessageID;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public 会員情報DataTable 会員情報 {
             get {
                 return this.table会員情報;
@@ -191,6 +171,26 @@ namespace mailReceive {
         public アサインDataTable アサイン {
             get {
                 return this.tableアサイン;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ガイド依頼対象者DataTable ガイド依頼対象者 {
+            get {
+                return this.tableガイド依頼対象者;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public messageIDDataTable messageID {
+            get {
+                return this.tablemessageID;
             }
         }
         
@@ -236,7 +236,7 @@ namespace mailReceive {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            guideDataSet cln = ((guideDataSet)(base.Clone()));
+            mailDataSet cln = ((mailDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -273,17 +273,17 @@ namespace mailReceive {
                 if ((ds.Tables["ガイド依頼名"] != null)) {
                     base.Tables.Add(new ガイド依頼名DataTable(ds.Tables["ガイド依頼名"]));
                 }
-                if ((ds.Tables["ガイド依頼対象者"] != null)) {
-                    base.Tables.Add(new ガイド依頼対象者DataTable(ds.Tables["ガイド依頼対象者"]));
-                }
-                if ((ds.Tables["messageID"] != null)) {
-                    base.Tables.Add(new messageIDDataTable(ds.Tables["messageID"]));
-                }
                 if ((ds.Tables["会員情報"] != null)) {
                     base.Tables.Add(new 会員情報DataTable(ds.Tables["会員情報"]));
                 }
                 if ((ds.Tables["アサイン"] != null)) {
                     base.Tables.Add(new アサインDataTable(ds.Tables["アサイン"]));
+                }
+                if ((ds.Tables["ガイド依頼対象者"] != null)) {
+                    base.Tables.Add(new ガイド依頼対象者DataTable(ds.Tables["ガイド依頼対象者"]));
+                }
+                if ((ds.Tables["messageID"] != null)) {
+                    base.Tables.Add(new messageIDDataTable(ds.Tables["messageID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -342,18 +342,6 @@ namespace mailReceive {
                     this.tableガイド依頼名.InitVars();
                 }
             }
-            this.tableガイド依頼対象者 = ((ガイド依頼対象者DataTable)(base.Tables["ガイド依頼対象者"]));
-            if ((initTable == true)) {
-                if ((this.tableガイド依頼対象者 != null)) {
-                    this.tableガイド依頼対象者.InitVars();
-                }
-            }
-            this.tablemessageID = ((messageIDDataTable)(base.Tables["messageID"]));
-            if ((initTable == true)) {
-                if ((this.tablemessageID != null)) {
-                    this.tablemessageID.InitVars();
-                }
-            }
             this.table会員情報 = ((会員情報DataTable)(base.Tables["会員情報"]));
             if ((initTable == true)) {
                 if ((this.table会員情報 != null)) {
@@ -366,6 +354,18 @@ namespace mailReceive {
                     this.tableアサイン.InitVars();
                 }
             }
+            this.tableガイド依頼対象者 = ((ガイド依頼対象者DataTable)(base.Tables["ガイド依頼対象者"]));
+            if ((initTable == true)) {
+                if ((this.tableガイド依頼対象者 != null)) {
+                    this.tableガイド依頼対象者.InitVars();
+                }
+            }
+            this.tablemessageID = ((messageIDDataTable)(base.Tables["messageID"]));
+            if ((initTable == true)) {
+                if ((this.tablemessageID != null)) {
+                    this.tablemessageID.InitVars();
+                }
+            }
             this.relationアサイン_会員情報 = this.Relations["アサイン_会員情報"];
             this.relation会員情報_ガイド依頼対象者 = this.Relations["会員情報_ガイド依頼対象者"];
         }
@@ -373,9 +373,9 @@ namespace mailReceive {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "guideDataSet";
+            this.DataSetName = "mailDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/guideDataSet.xsd";
+            this.Namespace = "http://tempuri.org/mailDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableメール送受信記録 = new メール送受信記録DataTable();
@@ -386,14 +386,14 @@ namespace mailReceive {
             base.Tables.Add(this.tableメール設定);
             this.tableガイド依頼名 = new ガイド依頼名DataTable();
             base.Tables.Add(this.tableガイド依頼名);
-            this.tableガイド依頼対象者 = new ガイド依頼対象者DataTable();
-            base.Tables.Add(this.tableガイド依頼対象者);
-            this.tablemessageID = new messageIDDataTable();
-            base.Tables.Add(this.tablemessageID);
             this.table会員情報 = new 会員情報DataTable();
             base.Tables.Add(this.table会員情報);
             this.tableアサイン = new アサインDataTable();
             base.Tables.Add(this.tableアサイン);
+            this.tableガイド依頼対象者 = new ガイド依頼対象者DataTable();
+            base.Tables.Add(this.tableガイド依頼対象者);
+            this.tablemessageID = new messageIDDataTable();
+            base.Tables.Add(this.tablemessageID);
             this.relationアサイン_会員情報 = new global::System.Data.DataRelation("アサイン_会員情報", new global::System.Data.DataColumn[] {
                         this.tableアサイン.カード番号Column}, new global::System.Data.DataColumn[] {
                         this.table会員情報.カード番号Column}, false);
@@ -430,18 +430,6 @@ namespace mailReceive {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeガイド依頼対象者() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializemessageID() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerialize会員情報() {
             return false;
         }
@@ -449,6 +437,18 @@ namespace mailReceive {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeアサイン() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeガイド依頼対象者() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializemessageID() {
             return false;
         }
         
@@ -463,7 +463,7 @@ namespace mailReceive {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            guideDataSet ds = new guideDataSet();
+            mailDataSet ds = new mailDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -520,16 +520,16 @@ namespace mailReceive {
         public delegate void ガイド依頼名RowChangeEventHandler(object sender, ガイド依頼名RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ガイド依頼対象者RowChangeEventHandler(object sender, ガイド依頼対象者RowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void messageIDRowChangeEventHandler(object sender, messageIDRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void 会員情報RowChangeEventHandler(object sender, 会員情報RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void アサインRowChangeEventHandler(object sender, アサインRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ガイド依頼対象者RowChangeEventHandler(object sender, ガイド依頼対象者RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void messageIDRowChangeEventHandler(object sender, messageIDRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -875,7 +875,7 @@ namespace mailReceive {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
+                mailDataSet ds = new mailDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1243,7 +1243,7 @@ namespace mailReceive {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
+                mailDataSet ds = new mailDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1334,6 +1334,8 @@ namespace mailReceive {
             private global::System.Data.DataColumn column登録年月日;
             
             private global::System.Data.DataColumn column更新年月日;
+            
+            private global::System.Data.DataColumn columnデータ保存月数;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1474,6 +1476,14 @@ namespace mailReceive {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn データ保存月数Column {
+                get {
+                    return this.columnデータ保存月数;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1509,7 +1519,7 @@ namespace mailReceive {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public メール設定Row Addメール設定Row(int ID, string SMTPサーバー, int SMTPポート番号, string POPサーバー, int POPポート番号, string ログイン名, string パスワード, string メールアドレス, string メール名称, int 受信間隔, string 署名, System.DateTime 登録年月日, System.DateTime 更新年月日) {
+            public メール設定Row Addメール設定Row(int ID, string SMTPサーバー, int SMTPポート番号, string POPサーバー, int POPポート番号, string ログイン名, string パスワード, string メールアドレス, string メール名称, int 受信間隔, string 署名, System.DateTime 登録年月日, System.DateTime 更新年月日, int データ保存月数) {
                 メール設定Row rowメール設定Row = ((メール設定Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -1524,7 +1534,8 @@ namespace mailReceive {
                         受信間隔,
                         署名,
                         登録年月日,
-                        更新年月日};
+                        更新年月日,
+                        データ保存月数};
                 rowメール設定Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowメール設定Row);
                 return rowメール設定Row;
@@ -1567,6 +1578,7 @@ namespace mailReceive {
                 this.column署名 = base.Columns["署名"];
                 this.column登録年月日 = base.Columns["登録年月日"];
                 this.column更新年月日 = base.Columns["更新年月日"];
+                this.columnデータ保存月数 = base.Columns["データ保存月数"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1598,6 +1610,8 @@ namespace mailReceive {
                 base.Columns.Add(this.column登録年月日);
                 this.column更新年月日 = new global::System.Data.DataColumn("更新年月日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column更新年月日);
+                this.columnデータ保存月数 = new global::System.Data.DataColumn("データ保存月数", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnデータ保存月数);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -1619,6 +1633,7 @@ namespace mailReceive {
                 this.column受信間隔.AllowDBNull = false;
                 this.column署名.AllowDBNull = false;
                 this.column署名.MaxLength = 2147483647;
+                this.columnデータ保存月数.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1686,7 +1701,7 @@ namespace mailReceive {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
+                mailDataSet ds = new mailDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2120,7 +2135,7 @@ namespace mailReceive {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
+                mailDataSet ds = new mailDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2139,680 +2154,6 @@ namespace mailReceive {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ガイド依頼名DataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ガイド依頼対象者DataTable : global::System.Data.TypedTableBase<ガイド依頼対象者Row> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn column会員番号;
-            
-            private global::System.Data.DataColumn columnメールアドレス;
-            
-            private global::System.Data.DataColumn column依頼番号;
-            
-            private global::System.Data.DataColumn column依頼メール送信日時;
-            
-            private global::System.Data.DataColumn column返信受信日時;
-            
-            private global::System.Data.DataColumn column結果;
-            
-            private global::System.Data.DataColumn column結果送信日時;
-            
-            private global::System.Data.DataColumn column登録年月日;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ガイド依頼対象者DataTable() {
-                this.TableName = "ガイド依頼対象者";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ガイド依頼対象者DataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ガイド依頼対象者DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 会員番号Column {
-                get {
-                    return this.column会員番号;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn メールアドレスColumn {
-                get {
-                    return this.columnメールアドレス;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 依頼番号Column {
-                get {
-                    return this.column依頼番号;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 依頼メール送信日時Column {
-                get {
-                    return this.column依頼メール送信日時;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 返信受信日時Column {
-                get {
-                    return this.column返信受信日時;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 結果Column {
-                get {
-                    return this.column結果;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 結果送信日時Column {
-                get {
-                    return this.column結果送信日時;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 登録年月日Column {
-                get {
-                    return this.column登録年月日;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ガイド依頼対象者Row this[int index] {
-                get {
-                    return ((ガイド依頼対象者Row)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addガイド依頼対象者Row(ガイド依頼対象者Row row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ガイド依頼対象者Row Addガイド依頼対象者Row(会員情報Row parent会員情報RowBy会員情報_ガイド依頼対象者, string メールアドレス, long 依頼番号, System.DateTime 依頼メール送信日時, System.DateTime 返信受信日時, int 結果, System.DateTime 結果送信日時, System.DateTime 登録年月日) {
-                ガイド依頼対象者Row rowガイド依頼対象者Row = ((ガイド依頼対象者Row)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        メールアドレス,
-                        依頼番号,
-                        依頼メール送信日時,
-                        返信受信日時,
-                        結果,
-                        結果送信日時,
-                        登録年月日};
-                if ((parent会員情報RowBy会員情報_ガイド依頼対象者 != null)) {
-                    columnValuesArray[1] = parent会員情報RowBy会員情報_ガイド依頼対象者[0];
-                }
-                rowガイド依頼対象者Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowガイド依頼対象者Row);
-                return rowガイド依頼対象者Row;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ガイド依頼対象者Row FindByID(int ID) {
-                return ((ガイド依頼対象者Row)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ガイド依頼対象者DataTable cln = ((ガイド依頼対象者DataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ガイド依頼対象者DataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.column会員番号 = base.Columns["会員番号"];
-                this.columnメールアドレス = base.Columns["メールアドレス"];
-                this.column依頼番号 = base.Columns["依頼番号"];
-                this.column依頼メール送信日時 = base.Columns["依頼メール送信日時"];
-                this.column返信受信日時 = base.Columns["返信受信日時"];
-                this.column結果 = base.Columns["結果"];
-                this.column結果送信日時 = base.Columns["結果送信日時"];
-                this.column登録年月日 = base.Columns["登録年月日"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.column会員番号 = new global::System.Data.DataColumn("会員番号", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column会員番号);
-                this.columnメールアドレス = new global::System.Data.DataColumn("メールアドレス", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnメールアドレス);
-                this.column依頼番号 = new global::System.Data.DataColumn("依頼番号", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column依頼番号);
-                this.column依頼メール送信日時 = new global::System.Data.DataColumn("依頼メール送信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column依頼メール送信日時);
-                this.column返信受信日時 = new global::System.Data.DataColumn("返信受信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column返信受信日時);
-                this.column結果 = new global::System.Data.DataColumn("結果", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column結果);
-                this.column結果送信日時 = new global::System.Data.DataColumn("結果送信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column結果送信日時);
-                this.column登録年月日 = new global::System.Data.DataColumn("登録年月日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column登録年月日);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
-                this.column会員番号.AllowDBNull = false;
-                this.columnメールアドレス.AllowDBNull = false;
-                this.columnメールアドレス.MaxLength = 2147483647;
-                this.column依頼番号.AllowDBNull = false;
-                this.column結果.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ガイド依頼対象者Row Newガイド依頼対象者Row() {
-                return ((ガイド依頼対象者Row)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ガイド依頼対象者Row(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ガイド依頼対象者Row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ガイド依頼対象者RowChanged != null)) {
-                    this.ガイド依頼対象者RowChanged(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ガイド依頼対象者RowChanging != null)) {
-                    this.ガイド依頼対象者RowChanging(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ガイド依頼対象者RowDeleted != null)) {
-                    this.ガイド依頼対象者RowDeleted(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ガイド依頼対象者RowDeleting != null)) {
-                    this.ガイド依頼対象者RowDeleting(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removeガイド依頼対象者Row(ガイド依頼対象者Row row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ガイド依頼対象者DataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class messageIDDataTable : global::System.Data.TypedTableBase<messageIDRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn column受信日時;
-            
-            private global::System.Data.DataColumn columnmessage;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public messageIDDataTable() {
-                this.TableName = "messageID";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal messageIDDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected messageIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn 受信日時Column {
-                get {
-                    return this.column受信日時;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn messageColumn {
-                get {
-                    return this.columnmessage;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public messageIDRow this[int index] {
-                get {
-                    return ((messageIDRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event messageIDRowChangeEventHandler messageIDRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event messageIDRowChangeEventHandler messageIDRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event messageIDRowChangeEventHandler messageIDRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event messageIDRowChangeEventHandler messageIDRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddmessageIDRow(messageIDRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public messageIDRow AddmessageIDRow(System.DateTime 受信日時, string message) {
-                messageIDRow rowmessageIDRow = ((messageIDRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        受信日時,
-                        message};
-                rowmessageIDRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowmessageIDRow);
-                return rowmessageIDRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public messageIDRow FindByID(int ID) {
-                return ((messageIDRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                messageIDDataTable cln = ((messageIDDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new messageIDDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.column受信日時 = base.Columns["受信日時"];
-                this.columnmessage = base.Columns["message"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.column受信日時 = new global::System.Data.DataColumn("受信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column受信日時);
-                this.columnmessage = new global::System.Data.DataColumn("message", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmessage);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
-                this.columnmessage.AllowDBNull = false;
-                this.columnmessage.MaxLength = 2147483647;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public messageIDRow NewmessageIDRow() {
-                return ((messageIDRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new messageIDRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(messageIDRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.messageIDRowChanged != null)) {
-                    this.messageIDRowChanged(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.messageIDRowChanging != null)) {
-                    this.messageIDRowChanging(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.messageIDRowDeleted != null)) {
-                    this.messageIDRowDeleted(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.messageIDRowDeleting != null)) {
-                    this.messageIDRowDeleting(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovemessageIDRow(messageIDRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "messageIDDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3221,6 +2562,28 @@ namespace mailReceive {
             private global::System.Data.DataColumn column登録年月日;
             
             private global::System.Data.DataColumn column変更年月日;
+            
+            private global::System.Data.DataColumn columnFIT;
+            
+            private global::System.Data.DataColumn columnFIT日数;
+            
+            private global::System.Data.DataColumn column団体;
+            
+            private global::System.Data.DataColumn column団体日数;
+            
+            private global::System.Data.DataColumn columnインセンティブ;
+            
+            private global::System.Data.DataColumn columnインセンティブ日数;
+            
+            private global::System.Data.DataColumn column最寄駅4;
+            
+            private global::System.Data.DataColumn column最寄駅5;
+            
+            private global::System.Data.DataColumn column法定研修;
+            
+            private global::System.Data.DataColumn column定期研修受講機関;
+            
+            private global::System.Data.DataColumn column定期研修受講時期;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -4705,6 +4068,94 @@ namespace mailReceive {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FITColumn {
+                get {
+                    return this.columnFIT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FIT日数Column {
+                get {
+                    return this.columnFIT日数;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 団体Column {
+                get {
+                    return this.column団体;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 団体日数Column {
+                get {
+                    return this.column団体日数;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn インセンティブColumn {
+                get {
+                    return this.columnインセンティブ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn インセンティブ日数Column {
+                get {
+                    return this.columnインセンティブ日数;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 最寄駅4Column {
+                get {
+                    return this.column最寄駅4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 最寄駅5Column {
+                get {
+                    return this.column最寄駅5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 法定研修Column {
+                get {
+                    return this.column法定研修;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 定期研修受講機関Column {
+                get {
+                    return this.column定期研修受講機関;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 定期研修受講時期Column {
+                get {
+                    return this.column定期研修受講時期;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4921,7 +4372,18 @@ namespace mailReceive {
                         string ガイド関係団体, 
                         string 都道府県, 
                         System.DateTime 登録年月日, 
-                        System.DateTime 変更年月日) {
+                        System.DateTime 変更年月日, 
+                        int FIT, 
+                        int FIT日数, 
+                        int 団体, 
+                        int 団体日数, 
+                        int インセンティブ, 
+                        int インセンティブ日数, 
+                        string 最寄駅4, 
+                        string 最寄駅5, 
+                        string 法定研修, 
+                        string 定期研修受講機関, 
+                        string 定期研修受講時期) {
                 会員情報Row row会員情報Row = ((会員情報Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5104,7 +4566,18 @@ namespace mailReceive {
                         ガイド関係団体,
                         都道府県,
                         登録年月日,
-                        変更年月日};
+                        変更年月日,
+                        FIT,
+                        FIT日数,
+                        団体,
+                        団体日数,
+                        インセンティブ,
+                        インセンティブ日数,
+                        最寄駅4,
+                        最寄駅5,
+                        法定研修,
+                        定期研修受講機関,
+                        定期研修受講時期};
                 if ((parentアサインRowByアサイン_会員情報 != null)) {
                     columnValuesArray[0] = parentアサインRowByアサイン_会員情報[1];
                 }
@@ -5318,6 +4791,17 @@ namespace mailReceive {
                 this.column都道府県 = base.Columns["都道府県"];
                 this.column登録年月日 = base.Columns["登録年月日"];
                 this.column変更年月日 = base.Columns["変更年月日"];
+                this.columnFIT = base.Columns["FIT"];
+                this.columnFIT日数 = base.Columns["FIT日数"];
+                this.column団体 = base.Columns["団体"];
+                this.column団体日数 = base.Columns["団体日数"];
+                this.columnインセンティブ = base.Columns["インセンティブ"];
+                this.columnインセンティブ日数 = base.Columns["インセンティブ日数"];
+                this.column最寄駅4 = base.Columns["最寄駅4"];
+                this.column最寄駅5 = base.Columns["最寄駅5"];
+                this.column法定研修 = base.Columns["法定研修"];
+                this.column定期研修受講機関 = base.Columns["定期研修受講機関"];
+                this.column定期研修受講時期 = base.Columns["定期研修受講時期"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5685,6 +5169,28 @@ namespace mailReceive {
                 base.Columns.Add(this.column登録年月日);
                 this.column変更年月日 = new global::System.Data.DataColumn("変更年月日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column変更年月日);
+                this.columnFIT = new global::System.Data.DataColumn("FIT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIT);
+                this.columnFIT日数 = new global::System.Data.DataColumn("FIT日数", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIT日数);
+                this.column団体 = new global::System.Data.DataColumn("団体", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column団体);
+                this.column団体日数 = new global::System.Data.DataColumn("団体日数", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column団体日数);
+                this.columnインセンティブ = new global::System.Data.DataColumn("インセンティブ", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnインセンティブ);
+                this.columnインセンティブ日数 = new global::System.Data.DataColumn("インセンティブ日数", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnインセンティブ日数);
+                this.column最寄駅4 = new global::System.Data.DataColumn("最寄駅4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column最寄駅4);
+                this.column最寄駅5 = new global::System.Data.DataColumn("最寄駅5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column最寄駅5);
+                this.column法定研修 = new global::System.Data.DataColumn("法定研修", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column法定研修);
+                this.column定期研修受講機関 = new global::System.Data.DataColumn("定期研修受講機関", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column定期研修受講機関);
+                this.column定期研修受講時期 = new global::System.Data.DataColumn("定期研修受講時期", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column定期研修受講時期);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnカード番号}, true));
                 this.columnカード番号.AllowDBNull = false;
@@ -5727,7 +5233,7 @@ namespace mailReceive {
                 this.column宿泊可否.MaxLength = 16;
                 this.columnガイド就業意思名.MaxLength = 5;
                 this.columnガイド経験年数.MaxLength = 5;
-                this.columnガイド経験地域1.MaxLength = 25;
+                this.columnガイド経験地域1.MaxLength = 200;
                 this.columnガイド経験地域2.MaxLength = 25;
                 this.columnガイド経験地域3.MaxLength = 25;
                 this.columnガイド経験地域4.MaxLength = 25;
@@ -5747,7 +5253,7 @@ namespace mailReceive {
                 this.columnIHCSA研修.MaxLength = 4;
                 this.column通訳就業意思名.MaxLength = 5;
                 this.column通訳経験年数.MaxLength = 5;
-                this.column通訳経験分野1.MaxLength = 25;
+                this.column通訳経験分野1.MaxLength = 110;
                 this.column通訳経験分野2.MaxLength = 25;
                 this.column通訳経験分野3.MaxLength = 25;
                 this.column通訳経験分野4.MaxLength = 25;
@@ -5760,7 +5266,7 @@ namespace mailReceive {
                 this.column通訳訓練機関名.MaxLength = 64;
                 this.column翻訳就業意思名.MaxLength = 5;
                 this.column翻訳経験年数.MaxLength = 5;
-                this.column翻訳分野1.MaxLength = 25;
+                this.column翻訳分野1.MaxLength = 110;
                 this.column翻訳分野2.MaxLength = 25;
                 this.column翻訳分野3.MaxLength = 25;
                 this.column翻訳分野4.MaxLength = 25;
@@ -5800,6 +5306,22 @@ namespace mailReceive {
                 this.columnJFG2日間机上.MaxLength = 4;
                 this.columnガイド関係団体.MaxLength = 2147483647;
                 this.column都道府県.MaxLength = 10;
+                this.columnFIT.AllowDBNull = false;
+                this.columnFIT日数.AllowDBNull = false;
+                this.column団体.AllowDBNull = false;
+                this.column団体日数.AllowDBNull = false;
+                this.columnインセンティブ.AllowDBNull = false;
+                this.columnインセンティブ日数.AllowDBNull = false;
+                this.column最寄駅4.AllowDBNull = false;
+                this.column最寄駅4.MaxLength = 20;
+                this.column最寄駅5.AllowDBNull = false;
+                this.column最寄駅5.MaxLength = 20;
+                this.column法定研修.AllowDBNull = false;
+                this.column法定研修.MaxLength = 5;
+                this.column定期研修受講機関.AllowDBNull = false;
+                this.column定期研修受講機関.MaxLength = 20;
+                this.column定期研修受講時期.AllowDBNull = false;
+                this.column定期研修受講時期.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5867,7 +5389,7 @@ namespace mailReceive {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
+                mailDataSet ds = new mailDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7694,7 +7216,7 @@ namespace mailReceive {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                guideDataSet ds = new guideDataSet();
+                mailDataSet ds = new mailDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7713,6 +7235,680 @@ namespace mailReceive {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "アサインDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ガイド依頼対象者DataTable : global::System.Data.TypedTableBase<ガイド依頼対象者Row> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn column会員番号;
+            
+            private global::System.Data.DataColumn columnメールアドレス;
+            
+            private global::System.Data.DataColumn column依頼番号;
+            
+            private global::System.Data.DataColumn column依頼メール送信日時;
+            
+            private global::System.Data.DataColumn column返信受信日時;
+            
+            private global::System.Data.DataColumn column結果;
+            
+            private global::System.Data.DataColumn column結果送信日時;
+            
+            private global::System.Data.DataColumn column登録年月日;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ガイド依頼対象者DataTable() {
+                this.TableName = "ガイド依頼対象者";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ガイド依頼対象者DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ガイド依頼対象者DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 会員番号Column {
+                get {
+                    return this.column会員番号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn メールアドレスColumn {
+                get {
+                    return this.columnメールアドレス;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 依頼番号Column {
+                get {
+                    return this.column依頼番号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 依頼メール送信日時Column {
+                get {
+                    return this.column依頼メール送信日時;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 返信受信日時Column {
+                get {
+                    return this.column返信受信日時;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 結果Column {
+                get {
+                    return this.column結果;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 結果送信日時Column {
+                get {
+                    return this.column結果送信日時;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 登録年月日Column {
+                get {
+                    return this.column登録年月日;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ガイド依頼対象者Row this[int index] {
+                get {
+                    return ((ガイド依頼対象者Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ガイド依頼対象者RowChangeEventHandler ガイド依頼対象者RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addガイド依頼対象者Row(ガイド依頼対象者Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ガイド依頼対象者Row Addガイド依頼対象者Row(会員情報Row parent会員情報RowBy会員情報_ガイド依頼対象者, string メールアドレス, long 依頼番号, System.DateTime 依頼メール送信日時, System.DateTime 返信受信日時, int 結果, System.DateTime 結果送信日時, System.DateTime 登録年月日) {
+                ガイド依頼対象者Row rowガイド依頼対象者Row = ((ガイド依頼対象者Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        メールアドレス,
+                        依頼番号,
+                        依頼メール送信日時,
+                        返信受信日時,
+                        結果,
+                        結果送信日時,
+                        登録年月日};
+                if ((parent会員情報RowBy会員情報_ガイド依頼対象者 != null)) {
+                    columnValuesArray[1] = parent会員情報RowBy会員情報_ガイド依頼対象者[0];
+                }
+                rowガイド依頼対象者Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowガイド依頼対象者Row);
+                return rowガイド依頼対象者Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ガイド依頼対象者Row FindByID(int ID) {
+                return ((ガイド依頼対象者Row)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ガイド依頼対象者DataTable cln = ((ガイド依頼対象者DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ガイド依頼対象者DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.column会員番号 = base.Columns["会員番号"];
+                this.columnメールアドレス = base.Columns["メールアドレス"];
+                this.column依頼番号 = base.Columns["依頼番号"];
+                this.column依頼メール送信日時 = base.Columns["依頼メール送信日時"];
+                this.column返信受信日時 = base.Columns["返信受信日時"];
+                this.column結果 = base.Columns["結果"];
+                this.column結果送信日時 = base.Columns["結果送信日時"];
+                this.column登録年月日 = base.Columns["登録年月日"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.column会員番号 = new global::System.Data.DataColumn("会員番号", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column会員番号);
+                this.columnメールアドレス = new global::System.Data.DataColumn("メールアドレス", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnメールアドレス);
+                this.column依頼番号 = new global::System.Data.DataColumn("依頼番号", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column依頼番号);
+                this.column依頼メール送信日時 = new global::System.Data.DataColumn("依頼メール送信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column依頼メール送信日時);
+                this.column返信受信日時 = new global::System.Data.DataColumn("返信受信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column返信受信日時);
+                this.column結果 = new global::System.Data.DataColumn("結果", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column結果);
+                this.column結果送信日時 = new global::System.Data.DataColumn("結果送信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column結果送信日時);
+                this.column登録年月日 = new global::System.Data.DataColumn("登録年月日", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column登録年月日);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.column会員番号.AllowDBNull = false;
+                this.columnメールアドレス.AllowDBNull = false;
+                this.columnメールアドレス.MaxLength = 2147483647;
+                this.column依頼番号.AllowDBNull = false;
+                this.column結果.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ガイド依頼対象者Row Newガイド依頼対象者Row() {
+                return ((ガイド依頼対象者Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ガイド依頼対象者Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ガイド依頼対象者Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ガイド依頼対象者RowChanged != null)) {
+                    this.ガイド依頼対象者RowChanged(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ガイド依頼対象者RowChanging != null)) {
+                    this.ガイド依頼対象者RowChanging(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ガイド依頼対象者RowDeleted != null)) {
+                    this.ガイド依頼対象者RowDeleted(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ガイド依頼対象者RowDeleting != null)) {
+                    this.ガイド依頼対象者RowDeleting(this, new ガイド依頼対象者RowChangeEvent(((ガイド依頼対象者Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removeガイド依頼対象者Row(ガイド依頼対象者Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                mailDataSet ds = new mailDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ガイド依頼対象者DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class messageIDDataTable : global::System.Data.TypedTableBase<messageIDRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn column受信日時;
+            
+            private global::System.Data.DataColumn columnmessage;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public messageIDDataTable() {
+                this.TableName = "messageID";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal messageIDDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected messageIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 受信日時Column {
+                get {
+                    return this.column受信日時;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn messageColumn {
+                get {
+                    return this.columnmessage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public messageIDRow this[int index] {
+                get {
+                    return ((messageIDRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event messageIDRowChangeEventHandler messageIDRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event messageIDRowChangeEventHandler messageIDRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event messageIDRowChangeEventHandler messageIDRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event messageIDRowChangeEventHandler messageIDRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddmessageIDRow(messageIDRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public messageIDRow AddmessageIDRow(System.DateTime 受信日時, string message) {
+                messageIDRow rowmessageIDRow = ((messageIDRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        受信日時,
+                        message};
+                rowmessageIDRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowmessageIDRow);
+                return rowmessageIDRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public messageIDRow FindByID(int ID) {
+                return ((messageIDRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                messageIDDataTable cln = ((messageIDDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new messageIDDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.column受信日時 = base.Columns["受信日時"];
+                this.columnmessage = base.Columns["message"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.column受信日時 = new global::System.Data.DataColumn("受信日時", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column受信日時);
+                this.columnmessage = new global::System.Data.DataColumn("message", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmessage);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.columnmessage.AllowDBNull = false;
+                this.columnmessage.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public messageIDRow NewmessageIDRow() {
+                return ((messageIDRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new messageIDRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(messageIDRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.messageIDRowChanged != null)) {
+                    this.messageIDRowChanged(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.messageIDRowChanging != null)) {
+                    this.messageIDRowChanging(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.messageIDRowDeleted != null)) {
+                    this.messageIDRowDeleted(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.messageIDRowDeleting != null)) {
+                    this.messageIDRowDeleting(this, new messageIDRowChangeEvent(((messageIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovemessageIDRow(messageIDRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                mailDataSet ds = new mailDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "messageIDDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -8201,6 +8397,17 @@ namespace mailReceive {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int データ保存月数 {
+                get {
+                    return ((int)(this[this.tableメール設定.データ保存月数Column]));
+                }
+                set {
+                    this[this.tableメール設定.データ保存月数Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is登録年月日Null() {
                 return this.IsNull(this.tableメール設定.登録年月日Column);
             }
@@ -8498,264 +8705,6 @@ namespace mailReceive {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set断りメール送信日時Null() {
                 this[this.tableガイド依頼名.断りメール送信日時Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ガイド依頼対象者Row : global::System.Data.DataRow {
-            
-            private ガイド依頼対象者DataTable tableガイド依頼対象者;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ガイド依頼対象者Row(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableガイド依頼対象者 = ((ガイド依頼対象者DataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableガイド依頼対象者.IDColumn]));
-                }
-                set {
-                    this[this.tableガイド依頼対象者.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double 会員番号 {
-                get {
-                    return ((double)(this[this.tableガイド依頼対象者.会員番号Column]));
-                }
-                set {
-                    this[this.tableガイド依頼対象者.会員番号Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string メールアドレス {
-                get {
-                    return ((string)(this[this.tableガイド依頼対象者.メールアドレスColumn]));
-                }
-                set {
-                    this[this.tableガイド依頼対象者.メールアドレスColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long 依頼番号 {
-                get {
-                    return ((long)(this[this.tableガイド依頼対象者.依頼番号Column]));
-                }
-                set {
-                    this[this.tableガイド依頼対象者.依頼番号Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime 依頼メール送信日時 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.依頼メール送信日時Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'依頼メール送信日時\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableガイド依頼対象者.依頼メール送信日時Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime 返信受信日時 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.返信受信日時Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'返信受信日時\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableガイド依頼対象者.返信受信日時Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int 結果 {
-                get {
-                    return ((int)(this[this.tableガイド依頼対象者.結果Column]));
-                }
-                set {
-                    this[this.tableガイド依頼対象者.結果Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime 結果送信日時 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.結果送信日時Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'結果送信日時\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableガイド依頼対象者.結果送信日時Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime 登録年月日 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.登録年月日Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'登録年月日\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableガイド依頼対象者.登録年月日Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public 会員情報Row 会員情報Row {
-                get {
-                    return ((会員情報Row)(this.GetParentRow(this.Table.ParentRelations["会員情報_ガイド依頼対象者"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["会員情報_ガイド依頼対象者"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is依頼メール送信日時Null() {
-                return this.IsNull(this.tableガイド依頼対象者.依頼メール送信日時Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set依頼メール送信日時Null() {
-                this[this.tableガイド依頼対象者.依頼メール送信日時Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is返信受信日時Null() {
-                return this.IsNull(this.tableガイド依頼対象者.返信受信日時Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set返信受信日時Null() {
-                this[this.tableガイド依頼対象者.返信受信日時Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is結果送信日時Null() {
-                return this.IsNull(this.tableガイド依頼対象者.結果送信日時Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set結果送信日時Null() {
-                this[this.tableガイド依頼対象者.結果送信日時Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is登録年月日Null() {
-                return this.IsNull(this.tableガイド依頼対象者.登録年月日Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set登録年月日Null() {
-                this[this.tableガイド依頼対象者.登録年月日Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class messageIDRow : global::System.Data.DataRow {
-            
-            private messageIDDataTable tablemessageID;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal messageIDRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablemessageID = ((messageIDDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablemessageID.IDColumn]));
-                }
-                set {
-                    this[this.tablemessageID.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime 受信日時 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablemessageID.受信日時Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'messageID\' にある列 \'受信日時\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tablemessageID.受信日時Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string message {
-                get {
-                    return ((string)(this[this.tablemessageID.messageColumn]));
-                }
-                set {
-                    this[this.tablemessageID.messageColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is受信日時Null() {
-                return this.IsNull(this.tablemessageID.受信日時Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set受信日時Null() {
-                this[this.tablemessageID.受信日時Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -11661,6 +11610,127 @@ namespace mailReceive {
                 }
                 set {
                     this[this.table会員情報.変更年月日Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int FIT {
+                get {
+                    return ((int)(this[this.table会員情報.FITColumn]));
+                }
+                set {
+                    this[this.table会員情報.FITColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int FIT日数 {
+                get {
+                    return ((int)(this[this.table会員情報.FIT日数Column]));
+                }
+                set {
+                    this[this.table会員情報.FIT日数Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 団体 {
+                get {
+                    return ((int)(this[this.table会員情報.団体Column]));
+                }
+                set {
+                    this[this.table会員情報.団体Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 団体日数 {
+                get {
+                    return ((int)(this[this.table会員情報.団体日数Column]));
+                }
+                set {
+                    this[this.table会員情報.団体日数Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int インセンティブ {
+                get {
+                    return ((int)(this[this.table会員情報.インセンティブColumn]));
+                }
+                set {
+                    this[this.table会員情報.インセンティブColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int インセンティブ日数 {
+                get {
+                    return ((int)(this[this.table会員情報.インセンティブ日数Column]));
+                }
+                set {
+                    this[this.table会員情報.インセンティブ日数Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 最寄駅4 {
+                get {
+                    return ((string)(this[this.table会員情報.最寄駅4Column]));
+                }
+                set {
+                    this[this.table会員情報.最寄駅4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 最寄駅5 {
+                get {
+                    return ((string)(this[this.table会員情報.最寄駅5Column]));
+                }
+                set {
+                    this[this.table会員情報.最寄駅5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 法定研修 {
+                get {
+                    return ((string)(this[this.table会員情報.法定研修Column]));
+                }
+                set {
+                    this[this.table会員情報.法定研修Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 定期研修受講機関 {
+                get {
+                    return ((string)(this[this.table会員情報.定期研修受講機関Column]));
+                }
+                set {
+                    this[this.table会員情報.定期研修受講機関Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 定期研修受講時期 {
+                get {
+                    return ((string)(this[this.table会員情報.定期研修受講時期Column]));
+                }
+                set {
+                    this[this.table会員情報.定期研修受講時期Column] = value;
                 }
             }
             
@@ -16741,6 +16811,264 @@ namespace mailReceive {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ガイド依頼対象者Row : global::System.Data.DataRow {
+            
+            private ガイド依頼対象者DataTable tableガイド依頼対象者;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ガイド依頼対象者Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableガイド依頼対象者 = ((ガイド依頼対象者DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableガイド依頼対象者.IDColumn]));
+                }
+                set {
+                    this[this.tableガイド依頼対象者.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double 会員番号 {
+                get {
+                    return ((double)(this[this.tableガイド依頼対象者.会員番号Column]));
+                }
+                set {
+                    this[this.tableガイド依頼対象者.会員番号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string メールアドレス {
+                get {
+                    return ((string)(this[this.tableガイド依頼対象者.メールアドレスColumn]));
+                }
+                set {
+                    this[this.tableガイド依頼対象者.メールアドレスColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long 依頼番号 {
+                get {
+                    return ((long)(this[this.tableガイド依頼対象者.依頼番号Column]));
+                }
+                set {
+                    this[this.tableガイド依頼対象者.依頼番号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 依頼メール送信日時 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.依頼メール送信日時Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'依頼メール送信日時\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableガイド依頼対象者.依頼メール送信日時Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 返信受信日時 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.返信受信日時Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'返信受信日時\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableガイド依頼対象者.返信受信日時Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 結果 {
+                get {
+                    return ((int)(this[this.tableガイド依頼対象者.結果Column]));
+                }
+                set {
+                    this[this.tableガイド依頼対象者.結果Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 結果送信日時 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.結果送信日時Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'結果送信日時\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableガイド依頼対象者.結果送信日時Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 登録年月日 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableガイド依頼対象者.登録年月日Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'ガイド依頼対象者\' にある列 \'登録年月日\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableガイド依頼対象者.登録年月日Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public 会員情報Row 会員情報Row {
+                get {
+                    return ((会員情報Row)(this.GetParentRow(this.Table.ParentRelations["会員情報_ガイド依頼対象者"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["会員情報_ガイド依頼対象者"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is依頼メール送信日時Null() {
+                return this.IsNull(this.tableガイド依頼対象者.依頼メール送信日時Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set依頼メール送信日時Null() {
+                this[this.tableガイド依頼対象者.依頼メール送信日時Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is返信受信日時Null() {
+                return this.IsNull(this.tableガイド依頼対象者.返信受信日時Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set返信受信日時Null() {
+                this[this.tableガイド依頼対象者.返信受信日時Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is結果送信日時Null() {
+                return this.IsNull(this.tableガイド依頼対象者.結果送信日時Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set結果送信日時Null() {
+                this[this.tableガイド依頼対象者.結果送信日時Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is登録年月日Null() {
+                return this.IsNull(this.tableガイド依頼対象者.登録年月日Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set登録年月日Null() {
+                this[this.tableガイド依頼対象者.登録年月日Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class messageIDRow : global::System.Data.DataRow {
+            
+            private messageIDDataTable tablemessageID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal messageIDRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablemessageID = ((messageIDDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tablemessageID.IDColumn]));
+                }
+                set {
+                    this[this.tablemessageID.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 受信日時 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablemessageID.受信日時Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'messageID\' にある列 \'受信日時\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tablemessageID.受信日時Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string message {
+                get {
+                    return ((string)(this[this.tablemessageID.messageColumn]));
+                }
+                set {
+                    this[this.tablemessageID.messageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is受信日時Null() {
+                return this.IsNull(this.tablemessageID.受信日時Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set受信日時Null() {
+                this[this.tablemessageID.受信日時Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -16880,74 +17208,6 @@ namespace mailReceive {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ガイド依頼対象者RowChangeEvent : global::System.EventArgs {
-            
-            private ガイド依頼対象者Row eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ガイド依頼対象者RowChangeEvent(ガイド依頼対象者Row row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ガイド依頼対象者Row Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class messageIDRowChangeEvent : global::System.EventArgs {
-            
-            private messageIDRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public messageIDRowChangeEvent(messageIDRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public messageIDRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class 会員情報RowChangeEvent : global::System.EventArgs {
             
             private 会員情報Row eventRow;
@@ -17011,9 +17271,77 @@ namespace mailReceive {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ガイド依頼対象者RowChangeEvent : global::System.EventArgs {
+            
+            private ガイド依頼対象者Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ガイド依頼対象者RowChangeEvent(ガイド依頼対象者Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ガイド依頼対象者Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class messageIDRowChangeEvent : global::System.EventArgs {
+            
+            private messageIDRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public messageIDRowChangeEvent(messageIDRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public messageIDRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
-namespace mailReceive.guideDataSetTableAdapters {
+namespace mailReceive.mailDataSetTableAdapters {
     
     
     /// <summary>
@@ -17204,7 +17532,7 @@ SELECT ID, 日時, 送受信区分, 受信者, 受信アドレス, 送信者, �
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17221,7 +17549,7 @@ SELECT ID, 日時, 送受信区分, 受信者, 受信アドレス, 送信者, �
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.メール送受信記録DataTable dataTable) {
+        public virtual int Fill(mailDataSet.メール送受信記録DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -17234,9 +17562,9 @@ SELECT ID, 日時, 送受信区分, 受信者, 受信アドレス, 送信者, �
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.メール送受信記録DataTable GetData() {
+        public virtual mailDataSet.メール送受信記録DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.メール送受信記録DataTable dataTable = new guideDataSet.メール送受信記録DataTable();
+            mailDataSet.メール送受信記録DataTable dataTable = new mailDataSet.メール送受信記録DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17244,14 +17572,14 @@ SELECT ID, 日時, 送受信区分, 受信者, 受信アドレス, 送信者, �
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.メール送受信記録DataTable dataTable) {
+        public virtual int Update(mailDataSet.メール送受信記録DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
+        public virtual int Update(mailDataSet dataSet) {
             return this.Adapter.Update(dataSet, "メール送受信記録");
         }
         
@@ -17695,7 +18023,7 @@ SELECT ID, 件名, 前文, 後文, 標準使用, 種別, 登録年月日, 更新
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17712,7 +18040,7 @@ SELECT ID, 件名, 前文, 後文, 標準使用, 種別, 登録年月日, 更新
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.メール定型文DataTable dataTable) {
+        public virtual int Fill(mailDataSet.メール定型文DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -17725,9 +18053,9 @@ SELECT ID, 件名, 前文, 後文, 標準使用, 種別, 登録年月日, 更新
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.メール定型文DataTable GetData() {
+        public virtual mailDataSet.メール定型文DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.メール定型文DataTable dataTable = new guideDataSet.メール定型文DataTable();
+            mailDataSet.メール定型文DataTable dataTable = new mailDataSet.メール定型文DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17735,14 +18063,14 @@ SELECT ID, 件名, 前文, 後文, 標準使用, 種別, 登録年月日, 更新
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.メール定型文DataTable dataTable) {
+        public virtual int Update(mailDataSet.メール定型文DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
+        public virtual int Update(mailDataSet dataSet) {
             return this.Adapter.Update(dataSet, "メール定型文");
         }
         
@@ -18082,10 +18410,11 @@ SELECT ID, 件名, 前文, 後文, 標準使用, 種別, 登録年月日, 更新
             tableMapping.ColumnMappings.Add("署名", "署名");
             tableMapping.ColumnMappings.Add("登録年月日", "登録年月日");
             tableMapping.ColumnMappings.Add("更新年月日", "更新年月日");
+            tableMapping.ColumnMappings.Add("データ保存月数", "データ保存月数");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[メール設定] WHERE (([ID] = @Original_ID) AND ([SMTPサーバー] = @Original_SMTPサーバー) AND ([SMTPポート番号] = @Original_SMTPポート番号) AND ([POPサーバー] = @Original_POPサーバー) AND ([POPポート番号] = @Original_POPポート番号) AND ([ログイン名] = @Original_ログイン名) AND ([パスワード] = @Original_パスワード) AND ([メールアドレス] = @Original_メールアドレス) AND ([メール名称] = @Original_メール名称) AND ([受信間隔] = @Original_受信間隔) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNull_更新年月日 = 1 AND [更新年月日] IS NULL) OR ([更新年月日] = @Original_更新年月日)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[メール設定] WHERE (([ID] = @Original_ID) AND ([SMTPサーバー] = @Original_SMTPサーバー) AND ([SMTPポート番号] = @Original_SMTPポート番号) AND ([POPサーバー] = @Original_POPサーバー) AND ([POPポート番号] = @Original_POPポート番号) AND ([ログイン名] = @Original_ログイン名) AND ([パスワード] = @Original_パスワード) AND ([メールアドレス] = @Original_メールアドレス) AND ([メール名称] = @Original_メール名称) AND ([受信間隔] = @Original_受信間隔) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNull_更新年月日 = 1 AND [更新年月日] IS NULL) OR ([更新年月日] = @Original_更新年月日)) AND ([データ保存月数] = @Original_データ保存月数))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SMTPサーバー", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SMTPサーバー", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -18101,10 +18430,11 @@ SELECT ID, 件名, 前文, 後文, 標準使用, 種別, 登録年月日, 更新
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_更新年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "更新年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_更新年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "更新年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_データ保存月数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "データ保存月数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[メール設定] ([ID], [SMTPサーバー], [SMTPポート番号], [POPサーバー], [POPポート番号], [ログイン名], [パスワード], [メールアドレス], [メール名称], [受信間隔], [署名], [登録年月日], [更新年月日]) VALUES (@ID, @SMTPサーバー, @SMTPポート番号, @POPサーバー, @POPポート番号, @ログイン名, @パスワード, @メールアドレス, @メール名称, @受信間隔, @署名, @登録年月日, @更新年月日);
-SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート番号, ログイン名, パスワード, メールアドレス, メール名称, 受信間隔, 署名, 登録年月日, 更新年月日 FROM メール設定 WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[メール設定] ([ID], [SMTPサーバー], [SMTPポート番号], [POPサーバー], [POPポート番号], [ログイン名], [パスワード], [メールアドレス], [メール名称], [受信間隔], [署名], [登録年月日], [更新年月日], [データ保存月数]) VALUES (@ID, @SMTPサーバー, @SMTPポート番号, @POPサーバー, @POPポート番号, @ログイン名, @パスワード, @メールアドレス, @メール名称, @受信間隔, @署名, @登録年月日, @更新年月日, @データ保存月数);
+SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート番号, ログイン名, パスワード, メールアドレス, メール名称, 受信間隔, 署名, 登録年月日, 更新年月日, データ保存月数 FROM メール設定 WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SMTPサーバー", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SMTPサーバー", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18119,10 +18449,11 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@署名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "署名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@更新年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "更新年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@データ保存月数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "データ保存月数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[メール設定] SET [ID] = @ID, [SMTPサーバー] = @SMTPサーバー, [SMTPポート番号] = @SMTPポート番号, [POPサーバー] = @POPサーバー, [POPポート番号] = @POPポート番号, [ログイン名] = @ログイン名, [パスワード] = @パスワード, [メールアドレス] = @メールアドレス, [メール名称] = @メール名称, [受信間隔] = @受信間隔, [署名] = @署名, [登録年月日] = @登録年月日, [更新年月日] = @更新年月日 WHERE (([ID] = @Original_ID) AND ([SMTPサーバー] = @Original_SMTPサーバー) AND ([SMTPポート番号] = @Original_SMTPポート番号) AND ([POPサーバー] = @Original_POPサーバー) AND ([POPポート番号] = @Original_POPポート番号) AND ([ログイン名] = @Original_ログイン名) AND ([パスワード] = @Original_パスワード) AND ([メールアドレス] = @Original_メールアドレス) AND ([メール名称] = @Original_メール名称) AND ([受信間隔] = @Original_受信間隔) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNull_更新年月日 = 1 AND [更新年月日] IS NULL) OR ([更新年月日] = @Original_更新年月日)));
-SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート番号, ログイン名, パスワード, メールアドレス, メール名称, 受信間隔, 署名, 登録年月日, 更新年月日 FROM メール設定 WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[メール設定] SET [ID] = @ID, [SMTPサーバー] = @SMTPサーバー, [SMTPポート番号] = @SMTPポート番号, [POPサーバー] = @POPサーバー, [POPポート番号] = @POPポート番号, [ログイン名] = @ログイン名, [パスワード] = @パスワード, [メールアドレス] = @メールアドレス, [メール名称] = @メール名称, [受信間隔] = @受信間隔, [署名] = @署名, [登録年月日] = @登録年月日, [更新年月日] = @更新年月日, [データ保存月数] = @データ保存月数 WHERE (([ID] = @Original_ID) AND ([SMTPサーバー] = @Original_SMTPサーバー) AND ([SMTPポート番号] = @Original_SMTPポート番号) AND ([POPサーバー] = @Original_POPサーバー) AND ([POPポート番号] = @Original_POPポート番号) AND ([ログイン名] = @Original_ログイン名) AND ([パスワード] = @Original_パスワード) AND ([メールアドレス] = @Original_メールアドレス) AND ([メール名称] = @Original_メール名称) AND ([受信間隔] = @Original_受信間隔) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNull_更新年月日 = 1 AND [更新年月日] IS NULL) OR ([更新年月日] = @Original_更新年月日)) AND ([データ保存月数] = @Original_データ保存月数));
+SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート番号, ログイン名, パスワード, メールアドレス, メール名称, 受信間隔, 署名, 登録年月日, 更新年月日, データ保存月数 FROM メール設定 WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SMTPサーバー", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SMTPサーバー", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18137,6 +18468,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@署名", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "署名", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@更新年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "更新年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@データ保存月数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "データ保存月数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SMTPサーバー", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SMTPサーバー", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SMTPポート番号", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SMTPポート番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -18151,13 +18483,14 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_更新年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "更新年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_更新年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "更新年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_データ保存月数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "データ保存月数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18167,7 +18500,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート番号, ログイン名, パスワード, メールアドレス, メール名称, " +
-                "受信間隔, 署名, 登録年月日, 更新年月日 FROM dbo.メール設定";
+                "受信間隔, 署名, 登録年月日, 更新年月日, データ保存月数 FROM dbo.メール設定";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18175,7 +18508,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.メール設定DataTable dataTable) {
+        public virtual int Fill(mailDataSet.メール設定DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18188,9 +18521,9 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.メール設定DataTable GetData() {
+        public virtual mailDataSet.メール設定DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.メール設定DataTable dataTable = new guideDataSet.メール設定DataTable();
+            mailDataSet.メール設定DataTable dataTable = new mailDataSet.メール設定DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18198,14 +18531,14 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.メール設定DataTable dataTable) {
+        public virtual int Update(mailDataSet.メール設定DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
+        public virtual int Update(mailDataSet dataSet) {
             return this.Adapter.Update(dataSet, "メール設定");
         }
         
@@ -18228,7 +18561,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_SMTPサーバー, int Original_SMTPポート番号, string Original_POPサーバー, int Original_POPポート番号, string Original_ログイン名, string Original_パスワード, string Original_メールアドレス, string Original_メール名称, int Original_受信間隔, global::System.Nullable<global::System.DateTime> Original_登録年月日, global::System.Nullable<global::System.DateTime> Original_更新年月日) {
+        public virtual int Delete(int Original_ID, string Original_SMTPサーバー, int Original_SMTPポート番号, string Original_POPサーバー, int Original_POPポート番号, string Original_ログイン名, string Original_パスワード, string Original_メールアドレス, string Original_メール名称, int Original_受信間隔, global::System.Nullable<global::System.DateTime> Original_登録年月日, global::System.Nullable<global::System.DateTime> Original_更新年月日, int Original_データ保存月数) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_SMTPサーバー == null)) {
                 throw new global::System.ArgumentNullException("Original_SMTPサーバー");
@@ -18285,6 +18618,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
+            this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_データ保存月数));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18305,7 +18639,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string SMTPサーバー, int SMTPポート番号, string POPサーバー, int POPポート番号, string ログイン名, string パスワード, string メールアドレス, string メール名称, int 受信間隔, string 署名, global::System.Nullable<global::System.DateTime> 登録年月日, global::System.Nullable<global::System.DateTime> 更新年月日) {
+        public virtual int Insert(int ID, string SMTPサーバー, int SMTPポート番号, string POPサーバー, int POPポート番号, string ログイン名, string パスワード, string メールアドレス, string メール名称, int 受信間隔, string 署名, global::System.Nullable<global::System.DateTime> 登録年月日, global::System.Nullable<global::System.DateTime> 更新年月日, int データ保存月数) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             if ((SMTPサーバー == null)) {
                 throw new global::System.ArgumentNullException("SMTPサーバー");
@@ -18364,6 +18698,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(データ保存月数));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18398,6 +18733,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
                     string 署名, 
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
                     global::System.Nullable<global::System.DateTime> 更新年月日, 
+                    int データ保存月数, 
                     int Original_ID, 
                     string Original_SMTPサーバー, 
                     int Original_SMTPポート番号, 
@@ -18409,7 +18745,8 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
                     string Original_メール名称, 
                     int Original_受信間隔, 
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
-                    global::System.Nullable<global::System.DateTime> Original_更新年月日) {
+                    global::System.Nullable<global::System.DateTime> Original_更新年月日, 
+                    int Original_データ保存月数) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
             if ((SMTPサーバー == null)) {
                 throw new global::System.ArgumentNullException("SMTPサーバー");
@@ -18468,62 +18805,64 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(データ保存月数));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ID));
             if ((Original_SMTPサーバー == null)) {
                 throw new global::System.ArgumentNullException("Original_SMTPサーバー");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_SMTPサーバー));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_SMTPサーバー));
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_SMTPポート番号));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_SMTPポート番号));
             if ((Original_POPサーバー == null)) {
                 throw new global::System.ArgumentNullException("Original_POPサーバー");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_POPサーバー));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_POPサーバー));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_POPポート番号));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_POPポート番号));
             if ((Original_ログイン名 == null)) {
                 throw new global::System.ArgumentNullException("Original_ログイン名");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ログイン名));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ログイン名));
             }
             if ((Original_パスワード == null)) {
                 throw new global::System.ArgumentNullException("Original_パスワード");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_パスワード));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_パスワード));
             }
             if ((Original_メールアドレス == null)) {
                 throw new global::System.ArgumentNullException("Original_メールアドレス");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_メールアドレス));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_メールアドレス));
             }
             if ((Original_メール名称 == null)) {
                 throw new global::System.ArgumentNullException("Original_メール名称");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_メール名称));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_メール名称));
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_受信間隔));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_受信間隔));
             if ((Original_登録年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_登録年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_登録年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_更新年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_更新年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_更新年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_データ保存月数));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18557,6 +18896,7 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
                     string 署名, 
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
                     global::System.Nullable<global::System.DateTime> 更新年月日, 
+                    int データ保存月数, 
                     int Original_ID, 
                     string Original_SMTPサーバー, 
                     int Original_SMTPポート番号, 
@@ -18568,8 +18908,9 @@ SELECT ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート�
                     string Original_メール名称, 
                     int Original_受信間隔, 
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
-                    global::System.Nullable<global::System.DateTime> Original_更新年月日) {
-            return this.Update(Original_ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート番号, ログイン名, パスワード, メールアドレス, メール名称, 受信間隔, 署名, 登録年月日, 更新年月日, Original_ID, Original_SMTPサーバー, Original_SMTPポート番号, Original_POPサーバー, Original_POPポート番号, Original_ログイン名, Original_パスワード, Original_メールアドレス, Original_メール名称, Original_受信間隔, Original_登録年月日, Original_更新年月日);
+                    global::System.Nullable<global::System.DateTime> Original_更新年月日, 
+                    int Original_データ保存月数) {
+            return this.Update(Original_ID, SMTPサーバー, SMTPポート番号, POPサーバー, POPポート番号, ログイン名, パスワード, メールアドレス, メール名称, 受信間隔, 署名, 登録年月日, 更新年月日, データ保存月数, Original_ID, Original_SMTPサーバー, Original_SMTPポート番号, Original_POPサーバー, Original_POPポート番号, Original_ログイン名, Original_パスワード, Original_メールアドレス, Original_メール名称, Original_受信間隔, Original_登録年月日, Original_更新年月日, Original_データ保存月数);
         }
     }
     
@@ -18790,7 +19131,7 @@ SELECT ID, 依頼内容, 備考, 依頼区分, 依頼元, 依頼日, 受付日�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18808,7 +19149,7 @@ SELECT ID, 依頼内容, 備考, 依頼区分, 依頼元, 依頼日, 受付日�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.ガイド依頼名DataTable dataTable) {
+        public virtual int Fill(mailDataSet.ガイド依頼名DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18821,9 +19162,9 @@ SELECT ID, 依頼内容, 備考, 依頼区分, 依頼元, 依頼日, 受付日�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.ガイド依頼名DataTable GetData() {
+        public virtual mailDataSet.ガイド依頼名DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.ガイド依頼名DataTable dataTable = new guideDataSet.ガイド依頼名DataTable();
+            mailDataSet.ガイド依頼名DataTable dataTable = new mailDataSet.ガイド依頼名DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18831,14 +19172,14 @@ SELECT ID, 依頼内容, 備考, 依頼区分, 依頼元, 依頼日, 受付日�
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.ガイド依頼名DataTable dataTable) {
+        public virtual int Update(mailDataSet.ガイド依頼名DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
+        public virtual int Update(mailDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ガイド依頼名");
         }
         
@@ -19241,848 +19582,6 @@ SELECT ID, 依頼内容, 備考, 依頼区分, 依頼元, 依頼日, 受付日�
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ガイド依頼対象者TableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ガイド依頼対象者TableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ガイド依頼対象者";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("会員番号", "会員番号");
-            tableMapping.ColumnMappings.Add("メールアドレス", "メールアドレス");
-            tableMapping.ColumnMappings.Add("依頼番号", "依頼番号");
-            tableMapping.ColumnMappings.Add("依頼メール送信日時", "依頼メール送信日時");
-            tableMapping.ColumnMappings.Add("返信受信日時", "返信受信日時");
-            tableMapping.ColumnMappings.Add("結果", "結果");
-            tableMapping.ColumnMappings.Add("結果送信日時", "結果送信日時");
-            tableMapping.ColumnMappings.Add("登録年月日", "登録年月日");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ガイド依頼対象者] WHERE (([ID] = @Original_ID) AND ([会員番号] = @Original_会員番号) AND ([依頼番号] = @Original_依頼番号) AND ((@IsNull_依頼メール送信日時 = 1 AND [依頼メール送信日時] IS NULL) OR ([依頼メール送信日時] = @Original_依頼メール送信日時)) AND ((@IsNull_返信受信日時 = 1 AND [返信受信日時] IS NULL) OR ([返信受信日時] = @Original_返信受信日時)) AND ([結果] = @Original_結果) AND ((@IsNull_結果送信日時 = 1 AND [結果送信日時] IS NULL) OR ([結果送信日時] = @Original_結果送信日時)) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_依頼メール送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_返信受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_結果送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_登録年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ガイド依頼対象者] ([会員番号], [メールアドレス], [依頼番号], [依頼メール送信日時], [返信受信日時], [結果], [結果送信日時], [登録年月日]) VALUES (@会員番号, @メールアドレス, @依頼番号, @依頼メール送信日時, @返信受信日時, @結果, @結果送信日時, @登録年月日);
-SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日 FROM ガイド依頼対象者 WHERE (ID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@メールアドレス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "メールアドレス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ガイド依頼対象者] SET [会員番号] = @会員番号, [メールアドレス] = @メールアドレス, [依頼番号] = @依頼番号, [依頼メール送信日時] = @依頼メール送信日時, [返信受信日時] = @返信受信日時, [結果] = @結果, [結果送信日時] = @結果送信日時, [登録年月日] = @登録年月日 WHERE (([ID] = @Original_ID) AND ([会員番号] = @Original_会員番号) AND ([依頼番号] = @Original_依頼番号) AND ((@IsNull_依頼メール送信日時 = 1 AND [依頼メール送信日時] IS NULL) OR ([依頼メール送信日時] = @Original_依頼メール送信日時)) AND ((@IsNull_返信受信日時 = 1 AND [返信受信日時] IS NULL) OR ([返信受信日時] = @Original_返信受信日時)) AND ([結果] = @Original_結果) AND ((@IsNull_結果送信日時 = 1 AND [結果送信日時] IS NULL) OR ([結果送信日時] = @Original_結果送信日時)) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)));
-SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日 FROM ガイド依頼対象者 WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@メールアドレス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "メールアドレス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_依頼メール送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_返信受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_結果送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_登録年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日 FROM dbo.ガイド" +
-                "依頼対象者";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.ガイド依頼対象者DataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.ガイド依頼対象者DataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.ガイド依頼対象者DataTable dataTable = new guideDataSet.ガイド依頼対象者DataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.ガイド依頼対象者DataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "ガイド依頼対象者");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, double Original_会員番号, long Original_依頼番号, global::System.Nullable<global::System.DateTime> Original_依頼メール送信日時, global::System.Nullable<global::System.DateTime> Original_返信受信日時, int Original_結果, global::System.Nullable<global::System.DateTime> Original_結果送信日時, global::System.Nullable<global::System.DateTime> Original_登録年月日) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((double)(Original_会員番号));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((long)(Original_依頼番号));
-            if ((Original_依頼メール送信日時.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_依頼メール送信日時.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_返信受信日時.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_返信受信日時.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_結果));
-            if ((Original_結果送信日時.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_結果送信日時.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_登録年月日.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_登録年月日.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(double 会員番号, string メールアドレス, long 依頼番号, global::System.Nullable<global::System.DateTime> 依頼メール送信日時, global::System.Nullable<global::System.DateTime> 返信受信日時, int 結果, global::System.Nullable<global::System.DateTime> 結果送信日時, global::System.Nullable<global::System.DateTime> 登録年月日) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((double)(会員番号));
-            if ((メールアドレス == null)) {
-                throw new global::System.ArgumentNullException("メールアドレス");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(メールアドレス));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((long)(依頼番号));
-            if ((依頼メール送信日時.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(依頼メール送信日時.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((返信受信日時.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(返信受信日時.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(結果));
-            if ((結果送信日時.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(結果送信日時.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((登録年月日.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(登録年月日.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    double 会員番号, 
-                    string メールアドレス, 
-                    long 依頼番号, 
-                    global::System.Nullable<global::System.DateTime> 依頼メール送信日時, 
-                    global::System.Nullable<global::System.DateTime> 返信受信日時, 
-                    int 結果, 
-                    global::System.Nullable<global::System.DateTime> 結果送信日時, 
-                    global::System.Nullable<global::System.DateTime> 登録年月日, 
-                    int Original_ID, 
-                    double Original_会員番号, 
-                    long Original_依頼番号, 
-                    global::System.Nullable<global::System.DateTime> Original_依頼メール送信日時, 
-                    global::System.Nullable<global::System.DateTime> Original_返信受信日時, 
-                    int Original_結果, 
-                    global::System.Nullable<global::System.DateTime> Original_結果送信日時, 
-                    global::System.Nullable<global::System.DateTime> Original_登録年月日, 
-                    int ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(会員番号));
-            if ((メールアドレス == null)) {
-                throw new global::System.ArgumentNullException("メールアドレス");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(メールアドレス));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(依頼番号));
-            if ((依頼メール送信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(依頼メール送信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((返信受信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(返信受信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(結果));
-            if ((結果送信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(結果送信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((登録年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(登録年月日.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Original_会員番号));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Original_依頼番号));
-            if ((Original_依頼メール送信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_依頼メール送信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_返信受信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_返信受信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_結果));
-            if ((Original_結果送信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_結果送信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_登録年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_登録年月日.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    double 会員番号, 
-                    string メールアドレス, 
-                    long 依頼番号, 
-                    global::System.Nullable<global::System.DateTime> 依頼メール送信日時, 
-                    global::System.Nullable<global::System.DateTime> 返信受信日時, 
-                    int 結果, 
-                    global::System.Nullable<global::System.DateTime> 結果送信日時, 
-                    global::System.Nullable<global::System.DateTime> 登録年月日, 
-                    int Original_ID, 
-                    double Original_会員番号, 
-                    long Original_依頼番号, 
-                    global::System.Nullable<global::System.DateTime> Original_依頼メール送信日時, 
-                    global::System.Nullable<global::System.DateTime> Original_返信受信日時, 
-                    int Original_結果, 
-                    global::System.Nullable<global::System.DateTime> Original_結果送信日時, 
-                    global::System.Nullable<global::System.DateTime> Original_登録年月日) {
-            return this.Update(会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日, Original_ID, Original_会員番号, Original_依頼番号, Original_依頼メール送信日時, Original_返信受信日時, Original_結果, Original_結果送信日時, Original_登録年月日, Original_ID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class messageIDTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public messageIDTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "messageID";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("受信日時", "受信日時");
-            tableMapping.ColumnMappings.Add("message", "message");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[messageID] WHERE (([ID] = @Original_ID) AND ((@IsNull_受信日時 = 1" +
-                " AND [受信日時] IS NULL) OR ([受信日時] = @Original_受信日時)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[messageID] ([受信日時], [message]) VALUES (@受信日時, @message);\r\nSELE" +
-                "CT ID, 受信日時, message FROM messageID WHERE (ID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[messageID] SET [受信日時] = @受信日時, [message] = @message WHERE (([ID] = " +
-                "@Original_ID) AND ((@IsNull_受信日時 = 1 AND [受信日時] IS NULL) OR ([受信日時] = @Original_" +
-                "受信日時)));\r\nSELECT ID, 受信日時, message FROM messageID WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, 受信日時, message FROM dbo.messageID";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.messageIDDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.messageIDDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.messageIDDataTable dataTable = new guideDataSet.messageIDDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.messageIDDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "messageID");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, global::System.Nullable<global::System.DateTime> Original_受信日時) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_受信日時.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_受信日時.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> 受信日時, string message) {
-            if ((受信日時.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(受信日時.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((message == null)) {
-                throw new global::System.ArgumentNullException("message");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(message));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> 受信日時, string message, int Original_ID, global::System.Nullable<global::System.DateTime> Original_受信日時, int ID) {
-            if ((受信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(受信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((message == null)) {
-                throw new global::System.ArgumentNullException("message");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(message));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID));
-            if ((Original_受信日時.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_受信日時.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> 受信日時, string message, int Original_ID, global::System.Nullable<global::System.DateTime> Original_受信日時) {
-            return this.Update(受信日時, message, Original_ID, Original_受信日時, Original_ID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class 会員情報TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -20376,6 +19875,17 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             tableMapping.ColumnMappings.Add("都道府県", "都道府県");
             tableMapping.ColumnMappings.Add("登録年月日", "登録年月日");
             tableMapping.ColumnMappings.Add("変更年月日", "変更年月日");
+            tableMapping.ColumnMappings.Add("FIT", "FIT");
+            tableMapping.ColumnMappings.Add("FIT日数", "FIT日数");
+            tableMapping.ColumnMappings.Add("団体", "団体");
+            tableMapping.ColumnMappings.Add("団体日数", "団体日数");
+            tableMapping.ColumnMappings.Add("インセンティブ", "インセンティブ");
+            tableMapping.ColumnMappings.Add("インセンティブ日数", "インセンティブ日数");
+            tableMapping.ColumnMappings.Add("最寄駅4", "最寄駅4");
+            tableMapping.ColumnMappings.Add("最寄駅5", "最寄駅5");
+            tableMapping.ColumnMappings.Add("法定研修", "法定研修");
+            tableMapping.ColumnMappings.Add("定期研修受講機関", "定期研修受講機関");
+            tableMapping.ColumnMappings.Add("定期研修受講時期", "定期研修受講時期");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -20558,7 +20068,12 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                 "D ((@IsNull_IJCEE会員歴 = 1 AND [IJCEE会員歴] IS NULL) OR ([IJCEE会員歴] = @Original_IJCE" +
                 "E会員歴)) AND ((@IsNull_都道府県 = 1 AND [都道府県] IS NULL) OR ([都道府県] = @Original_都道府県)) " +
                 "AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND" +
-                " ((@IsNull_変更年月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)))";
+                " ((@IsNull_変更年月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)) AND ([" +
+                "FIT] = @Original_FIT) AND ([FIT日数] = @Original_FIT日数) AND ([団体] = @Original_団体) " +
+                "AND ([団体日数] = @Original_団体日数) AND ([インセンティブ] = @Original_インセンティブ) AND ([インセンティブ日" +
+                "数] = @Original_インセンティブ日数) AND ([最寄駅4] = @Original_最寄駅4) AND ([最寄駅5] = @Original_" +
+                "最寄駅5) AND ([法定研修] = @Original_法定研修) AND ([定期研修受講機関] = @Original_定期研修受講機関) AND ([" +
+                "定期研修受講時期] = @Original_定期研修受講時期))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_カード番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "カード番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_本人最終記入日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "本人最終記入日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -20919,6 +20434,17 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_変更年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIT日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT日数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_団体", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_団体日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体日数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_インセンティブ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_インセンティブ日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ日数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_最寄駅4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_最寄駅5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_法定研修", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "法定研修", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_定期研修受講機関", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講機関", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_定期研修受講時期", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講時期", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[会員情報] ([カード番号], [本人最終記入日], [更新年月日], [氏名], [フリガナ], [生年月日], [年令]" +
@@ -20943,45 +20469,48 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                 "], [JFG退会月], [出資証券番号], [旧姓], [HP顔写真], [HP氏名], [HP言語], [HP合格], [HP居住地], [HPJFG], " +
                 "[母国語1], [母国語名1], [母国語2], [母国語名2], [母国語3], [母国語名3], [メーリングリスト], [HP掲載可否], [国籍], [" +
                 "昨年稼働日数], [GICSS研修], [GICSS会員歴], [KIGA会員歴], [COG会員歴], [JFG2日間机上], [IJCEE会員歴], [ガイ" +
-                "ド関係団体], [都道府県], [登録年月日], [変更年月日]) VALUES (@カード番号, @本人最終記入日, @更新年月日, @氏名, @フリガナ, " +
-                "@生年月日, @年令, @性別, @言語1, @言語名1, @言語2, @言語名2, @言語3, @言語名3, @言語4, @言語名4, @言語5, @言語名5" +
-                ", @合格年1, @合格年2, @合格年3, @合格年4, @合格年5, @免取県1, @免取県2, @免取県3, @免取県4, @免取県5, @免許番号1, " +
-                "@免許番号2, @免許番号3, @免許番号4, @免許番号5, @郵便番号, @住所1, @住所2, @住所3, @地域コード, @地域名, @東西, @自宅電" +
-                "話番号, @自宅FAX番号, @携帯電話番号, @連絡可能時間, @他連絡先, @緊急連絡先, @メールアドレス1, @メールアドレス2, @個人HP, @最寄" +
-                "駅1, @最寄駅2, @最寄駅3, @就業可能条件, @宿泊可否, @ガイド就業意思, @ガイド就業意思名, @ガイド経験年数, @ガイド経験地域1, @ガイド" +
-                "経験地域2, @ガイド経験地域3, @ガイド経験地域4, @ガイド経験分野1, @ガイド経験分野2, @ガイド経験分野3, @ガイド経験分野4, @新人研修, " +
-                "@JFG関東45, @JFG関東23, @JFG関西45, @JFG関西23, @JGA関東, @JGA関西, @ハロー研修, @JICA区分, @JICA研修" +
-                ", @IHCSA区分, @IHCSA研修, @通訳就業意思, @通訳就業意思名, @通訳経験年数, @通訳経験分野1, @通訳経験分野2, @通訳経験分野3, " +
-                "@通訳経験分野4, @英語以外語学検定, @英語通訳検定, @英検, @国連英検, @TOEIC, @TOEFL, @同時通訳可否区分, @同時通訳可否, @通" +
-                "訳訓練機関名, @翻訳就業意思, @翻訳就業意思名, @翻訳経験年数, @翻訳分野1, @翻訳分野2, @翻訳分野3, @翻訳分野4, @翻訳訓練機関, @ネイ" +
-                "ティブ可区分, @ネイティブ可, @パソコン機種, @ソフト種類, @パソコンOS, @海外添乗就業意思, @海外添乗就業意思名, @海外添乗経験年数, @海外" +
-                "添乗地域1, @海外添乗地域2, @海外添乗地域3, @海外添乗地域4, @旅行主任取扱資格, @旅程管理資格, @他資格, @職歴, @学歴, @趣味特技, " +
-                "@自己PR, @業務研修案内関東, @業務研修案内関西, @所属委員会1, @所属委員会名1, @所属委員会2, @所属委員会名2, @所属委員会3, @所属委" +
-                "員会名3, @賦課金支払2001, @賦課金支払2002, @賦課金支払2003, @賦課金支払2004, @賦課金支払2005, @総会出欠状況2001, @" +
-                "総会出欠状況2002, @総会出欠状況2003, @総会出欠状況2004, @総会出欠状況2005, @手数料合計2001, @手数料合計2002, @手数料合" +
-                "計2003, @手数料合計2004, @手数料合計2005, @JFG加入年, @JFG加入月, @NP初回, @NP最終, @JFG会員歴, @JGA会員歴," +
-                " @JFG休会年, @JFG休会月, @JFG退会年, @JFG退会月, @出資証券番号, @旧姓, @HP顔写真, @HP氏名, @HP言語, @HP合格, " +
-                "@HP居住地, @HPJFG, @母国語1, @母国語名1, @母国語2, @母国語名2, @母国語3, @母国語名3, @メーリングリスト, @HP掲載可否," +
-                " @国籍, @昨年稼働日数, @GICSS研修, @GICSS会員歴, @KIGA会員歴, @COG会員歴, @JFG2日間机上, @IJCEE会員歴, @ガイ" +
-                "ド関係団体, @都道府県, @登録年月日, @変更年月日);\r\nSELECT カード番号, 本人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令" +
-                ", 性別, 言語1, 言語名1, 言語2, 言語名2, 言語3, 言語名3, 言語4, 言語名4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合" +
-                "格年4, 合格年5, 免取県1, 免取県2, 免取県3, 免取県4, 免取県5, 免許番号1, 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号" +
-                ", 住所1, 住所2, 住所3, 地域コード, 地域名, 東西, 自宅電話番号, 自宅FAX番号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メ" +
-                "ールアドレス1, メールアドレス2, 個人HP, 最寄駅1, 最寄駅2, 最寄駅3, 就業可能条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経" +
-                "験年数, ガイド経験地域1, ガイド経験地域2, ガイド経験地域3, ガイド経験地域4, ガイド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験" +
-                "分野4, 新人研修, JFG関東45, JFG関東23, JFG関西45, JFG関西23, JGA関東, JGA関西, ハロー研修, JICA区分, JICA" +
-                "研修, IHCSA区分, IHCSA研修, 通訳就業意思, 通訳就業意思名, 通訳経験年数, 通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野" +
-                "4, 英語以外語学検定, 英語通訳検定, 英検, 国連英検, TOEIC, TOEFL, 同時通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, " +
-                "翻訳就業意思名, 翻訳経験年数, 翻訳分野1, 翻訳分野2, 翻訳分野3, 翻訳分野4, 翻訳訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソ" +
-                "フト種類, パソコンOS, 海外添乗就業意思, 海外添乗就業意思名, 海外添乗経験年数, 海外添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4," +
-                " 旅行主任取扱資格, 旅程管理資格, 他資格, 職歴, 学歴, 趣味特技, 自己PR, 業務研修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1," +
-                " 所属委員会2, 所属委員会名2, 所属委員会3, 所属委員会名3, 賦課金支払2001, 賦課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦" +
-                "課金支払2005, 総会出欠状況2001, 総会出欠状況2002, 総会出欠状況2003, 総会出欠状況2004, 総会出欠状況2005, 手数料合計2001," +
-                " 手数料合計2002, 手数料合計2003, 手数料合計2004, 手数料合計2005, JFG加入年, JFG加入月, NP初回, NP最終, JFG会員歴," +
-                " JGA会員歴, JFG休会年, JFG休会月, JFG退会年, JFG退会月, 出資証券番号, 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP" +
-                "居住地, HPJFG, 母国語1, 母国語名1, 母国語2, 母国語名2, 母国語3, 母国語名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数," +
-                " GICSS研修, GICSS会員歴, KIGA会員歴, COG会員歴, JFG2日間机上, IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変" +
-                "更年月日 FROM 会員情報 WHERE (カード番号 = @カード番号)";
+                "ド関係団体], [都道府県], [登録年月日], [変更年月日], [FIT], [FIT日数], [団体], [団体日数], [インセンティブ], [インセン" +
+                "ティブ日数], [最寄駅4], [最寄駅5], [法定研修], [定期研修受講機関], [定期研修受講時期]) VALUES (@カード番号, @本人最終記入日" +
+                ", @更新年月日, @氏名, @フリガナ, @生年月日, @年令, @性別, @言語1, @言語名1, @言語2, @言語名2, @言語3, @言語名3, @言" +
+                "語4, @言語名4, @言語5, @言語名5, @合格年1, @合格年2, @合格年3, @合格年4, @合格年5, @免取県1, @免取県2, @免取県3, " +
+                "@免取県4, @免取県5, @免許番号1, @免許番号2, @免許番号3, @免許番号4, @免許番号5, @郵便番号, @住所1, @住所2, @住所3, @" +
+                "地域コード, @地域名, @東西, @自宅電話番号, @自宅FAX番号, @携帯電話番号, @連絡可能時間, @他連絡先, @緊急連絡先, @メールアドレス1," +
+                " @メールアドレス2, @個人HP, @最寄駅1, @最寄駅2, @最寄駅3, @就業可能条件, @宿泊可否, @ガイド就業意思, @ガイド就業意思名, @ガイ" +
+                "ド経験年数, @ガイド経験地域1, @ガイド経験地域2, @ガイド経験地域3, @ガイド経験地域4, @ガイド経験分野1, @ガイド経験分野2, @ガイド経験分" +
+                "野3, @ガイド経験分野4, @新人研修, @JFG関東45, @JFG関東23, @JFG関西45, @JFG関西23, @JGA関東, @JGA関西, @ハ" +
+                "ロー研修, @JICA区分, @JICA研修, @IHCSA区分, @IHCSA研修, @通訳就業意思, @通訳就業意思名, @通訳経験年数, @通訳経験分野1" +
+                ", @通訳経験分野2, @通訳経験分野3, @通訳経験分野4, @英語以外語学検定, @英語通訳検定, @英検, @国連英検, @TOEIC, @TOEFL, " +
+                "@同時通訳可否区分, @同時通訳可否, @通訳訓練機関名, @翻訳就業意思, @翻訳就業意思名, @翻訳経験年数, @翻訳分野1, @翻訳分野2, @翻訳分野3" +
+                ", @翻訳分野4, @翻訳訓練機関, @ネイティブ可区分, @ネイティブ可, @パソコン機種, @ソフト種類, @パソコンOS, @海外添乗就業意思, @海外添" +
+                "乗就業意思名, @海外添乗経験年数, @海外添乗地域1, @海外添乗地域2, @海外添乗地域3, @海外添乗地域4, @旅行主任取扱資格, @旅程管理資格, @" +
+                "他資格, @職歴, @学歴, @趣味特技, @自己PR, @業務研修案内関東, @業務研修案内関西, @所属委員会1, @所属委員会名1, @所属委員会2, @" +
+                "所属委員会名2, @所属委員会3, @所属委員会名3, @賦課金支払2001, @賦課金支払2002, @賦課金支払2003, @賦課金支払2004, @賦課金" +
+                "支払2005, @総会出欠状況2001, @総会出欠状況2002, @総会出欠状況2003, @総会出欠状況2004, @総会出欠状況2005, @手数料合計2" +
+                "001, @手数料合計2002, @手数料合計2003, @手数料合計2004, @手数料合計2005, @JFG加入年, @JFG加入月, @NP初回, @N" +
+                "P最終, @JFG会員歴, @JGA会員歴, @JFG休会年, @JFG休会月, @JFG退会年, @JFG退会月, @出資証券番号, @旧姓, @HP顔写真," +
+                " @HP氏名, @HP言語, @HP合格, @HP居住地, @HPJFG, @母国語1, @母国語名1, @母国語2, @母国語名2, @母国語3, @母国語名" +
+                "3, @メーリングリスト, @HP掲載可否, @国籍, @昨年稼働日数, @GICSS研修, @GICSS会員歴, @KIGA会員歴, @COG会員歴, @JF" +
+                "G2日間机上, @IJCEE会員歴, @ガイド関係団体, @都道府県, @登録年月日, @変更年月日, @FIT, @FIT日数, @団体, @団体日数, @イ" +
+                "ンセンティブ, @インセンティブ日数, @最寄駅4, @最寄駅5, @法定研修, @定期研修受講機関, @定期研修受講時期);\r\nSELECT カード番号, 本" +
+                "人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令, 性別, 言語1, 言語名1, 言語2, 言語名2, 言語3, 言語名3, 言語4, 言語名" +
+                "4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合格年4, 合格年5, 免取県1, 免取県2, 免取県3, 免取県4, 免取県5, 免許番号1," +
+                " 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号, 住所1, 住所2, 住所3, 地域コード, 地域名, 東西, 自宅電話番号, 自宅FAX番" +
+                "号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メールアドレス1, メールアドレス2, 個人HP, 最寄駅1, 最寄駅2, 最寄駅3, 就業可能" +
+                "条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経験年数, ガイド経験地域1, ガイド経験地域2, ガイド経験地域3, ガイド経験地域4, ガイ" +
+                "ド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験分野4, 新人研修, JFG関東45, JFG関東23, JFG関西45, JFG関西23, " +
+                "JGA関東, JGA関西, ハロー研修, JICA区分, JICA研修, IHCSA区分, IHCSA研修, 通訳就業意思, 通訳就業意思名, 通訳経験年数, " +
+                "通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野4, 英語以外語学検定, 英語通訳検定, 英検, 国連英検, TOEIC, TOEFL, 同時" +
+                "通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, 翻訳就業意思名, 翻訳経験年数, 翻訳分野1, 翻訳分野2, 翻訳分野3, 翻訳分野4, 翻訳" +
+                "訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソフト種類, パソコンOS, 海外添乗就業意思, 海外添乗就業意思名, 海外添乗経験年数, 海外" +
+                "添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4, 旅行主任取扱資格, 旅程管理資格, 他資格, 職歴, 学歴, 趣味特技, 自己PR, 業務研" +
+                "修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1, 所属委員会2, 所属委員会名2, 所属委員会3, 所属委員会名3, 賦課金支払2001, 賦" +
+                "課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦課金支払2005, 総会出欠状況2001, 総会出欠状況2002, 総会出欠状況2003, 総" +
+                "会出欠状況2004, 総会出欠状況2005, 手数料合計2001, 手数料合計2002, 手数料合計2003, 手数料合計2004, 手数料合計2005, JF" +
+                "G加入年, JFG加入月, NP初回, NP最終, JFG会員歴, JGA会員歴, JFG休会年, JFG休会月, JFG退会年, JFG退会月, 出資証券番号" +
+                ", 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP居住地, HPJFG, 母国語1, 母国語名1, 母国語2, 母国語名2, 母国語3, 母国語" +
+                "名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数, GICSS研修, GICSS会員歴, KIGA会員歴, COG会員歴, JFG2日間机上, " +
+                "IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変更年月日, FIT, FIT日数, 団体, 団体日数, インセンティブ, インセンティブ日数," +
+                " 最寄駅4, 最寄駅5, 法定研修, 定期研修受講機関, 定期研修受講時期 FROM 会員情報 WHERE (カード番号 = @カード番号)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@カード番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "カード番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@本人最終記入日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "本人最終記入日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21164,6 +20693,17 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@都道府県", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "都道府県", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIT日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT日数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@団体", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@団体日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体日数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@インセンティブ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@インセンティブ日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ日数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@最寄駅4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@最寄駅5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@法定研修", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "法定研修", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@定期研修受講機関", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講機関", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@定期研修受講時期", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講時期", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[会員情報] SET [カード番号] = @カード番号, [本人最終記入日] = @本人最終記入日, [更新年月日] = @更新年月日," +
@@ -21210,205 +20750,213 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                 "グリスト] = @メーリングリスト, [HP掲載可否] = @HP掲載可否, [国籍] = @国籍, [昨年稼働日数] = @昨年稼働日数, [GICSS研修]" +
                 " = @GICSS研修, [GICSS会員歴] = @GICSS会員歴, [KIGA会員歴] = @KIGA会員歴, [COG会員歴] = @COG会員歴, [" +
                 "JFG2日間机上] = @JFG2日間机上, [IJCEE会員歴] = @IJCEE会員歴, [ガイド関係団体] = @ガイド関係団体, [都道府県] = @都" +
-                "道府県, [登録年月日] = @登録年月日, [変更年月日] = @変更年月日 WHERE (([カード番号] = @Original_カード番号) AND (" +
-                "(@IsNull_本人最終記入日 = 1 AND [本人最終記入日] IS NULL) OR ([本人最終記入日] = @Original_本人最終記入日)) " +
-                "AND ((@IsNull_更新年月日 = 1 AND [更新年月日] IS NULL) OR ([更新年月日] = @Original_更新年月日)) AND" +
-                " ((@IsNull_氏名 = 1 AND [氏名] IS NULL) OR ([氏名] = @Original_氏名)) AND ((@IsNull_フリガナ" +
-                " = 1 AND [フリガナ] IS NULL) OR ([フリガナ] = @Original_フリガナ)) AND ((@IsNull_生年月日 = 1 AN" +
-                "D [生年月日] IS NULL) OR ([生年月日] = @Original_生年月日)) AND ((@IsNull_年令 = 1 AND [年令] IS" +
-                " NULL) OR ([年令] = @Original_年令)) AND ((@IsNull_性別 = 1 AND [性別] IS NULL) OR ([性別]" +
-                " = @Original_性別)) AND ((@IsNull_言語1 = 1 AND [言語1] IS NULL) OR ([言語1] = @Original" +
-                "_言語1)) AND ((@IsNull_言語名1 = 1 AND [言語名1] IS NULL) OR ([言語名1] = @Original_言語名1)) " +
-                "AND ((@IsNull_言語2 = 1 AND [言語2] IS NULL) OR ([言語2] = @Original_言語2)) AND ((@IsNu" +
-                "ll_言語名2 = 1 AND [言語名2] IS NULL) OR ([言語名2] = @Original_言語名2)) AND ((@IsNull_言語3 " +
-                "= 1 AND [言語3] IS NULL) OR ([言語3] = @Original_言語3)) AND ((@IsNull_言語名3 = 1 AND [言" +
-                "語名3] IS NULL) OR ([言語名3] = @Original_言語名3)) AND ((@IsNull_言語4 = 1 AND [言語4] IS N" +
-                "ULL) OR ([言語4] = @Original_言語4)) AND ((@IsNull_言語名4 = 1 AND [言語名4] IS NULL) OR (" +
-                "[言語名4] = @Original_言語名4)) AND ((@IsNull_言語5 = 1 AND [言語5] IS NULL) OR ([言語5] = @" +
-                "Original_言語5)) AND ((@IsNull_言語名5 = 1 AND [言語名5] IS NULL) OR ([言語名5] = @Original" +
-                "_言語名5)) AND ((@IsNull_合格年1 = 1 AND [合格年1] IS NULL) OR ([合格年1] = @Original_合格年1))" +
-                " AND ((@IsNull_合格年2 = 1 AND [合格年2] IS NULL) OR ([合格年2] = @Original_合格年2)) AND ((" +
-                "@IsNull_合格年3 = 1 AND [合格年3] IS NULL) OR ([合格年3] = @Original_合格年3)) AND ((@IsNull" +
-                "_合格年4 = 1 AND [合格年4] IS NULL) OR ([合格年4] = @Original_合格年4)) AND ((@IsNull_合格年5 =" +
-                " 1 AND [合格年5] IS NULL) OR ([合格年5] = @Original_合格年5)) AND ((@IsNull_免取県1 = 1 AND " +
-                "[免取県1] IS NULL) OR ([免取県1] = @Original_免取県1)) AND ((@IsNull_免取県2 = 1 AND [免取県2] " +
-                "IS NULL) OR ([免取県2] = @Original_免取県2)) AND ((@IsNull_免取県3 = 1 AND [免取県3] IS NULL" +
-                ") OR ([免取県3] = @Original_免取県3)) AND ((@IsNull_免取県4 = 1 AND [免取県4] IS NULL) OR ([" +
-                "免取県4] = @Original_免取県4)) AND ((@IsNull_免取県5 = 1 AND [免取県5] IS NULL) OR ([免取県5] =" +
-                " @Original_免取県5)) AND ((@IsNull_免許番号1 = 1 AND [免許番号1] IS NULL) OR ([免許番号1] = @Or" +
-                "iginal_免許番号1)) AND ((@IsNull_免許番号2 = 1 AND [免許番号2] IS NULL) OR ([免許番号2] = @Origi" +
-                "nal_免許番号2)) AND ((@IsNull_免許番号3 = 1 AND [免許番号3] IS NULL) OR ([免許番号3] = @Original" +
-                "_免許番号3)) AND ((@IsNull_免許番号4 = 1 AND [免許番号4] IS NULL) OR ([免許番号4] = @Original_免許" +
-                "番号4)) AND ((@IsNull_免許番号5 = 1 AND [免許番号5] IS NULL) OR ([免許番号5] = @Original_免許番号5" +
-                ")) AND ((@IsNull_郵便番号 = 1 AND [郵便番号] IS NULL) OR ([郵便番号] = @Original_郵便番号)) AND " +
-                "((@IsNull_住所1 = 1 AND [住所1] IS NULL) OR ([住所1] = @Original_住所1)) AND ((@IsNull_住" +
-                "所2 = 1 AND [住所2] IS NULL) OR ([住所2] = @Original_住所2)) AND ((@IsNull_住所3 = 1 AND " +
-                "[住所3] IS NULL) OR ([住所3] = @Original_住所3)) AND ((@IsNull_地域コード = 1 AND [地域コード] I" +
-                "S NULL) OR ([地域コード] = @Original_地域コード)) AND ((@IsNull_地域名 = 1 AND [地域名] IS NULL)" +
-                " OR ([地域名] = @Original_地域名)) AND ((@IsNull_東西 = 1 AND [東西] IS NULL) OR ([東西] = @" +
-                "Original_東西)) AND ((@IsNull_自宅電話番号 = 1 AND [自宅電話番号] IS NULL) OR ([自宅電話番号] = @Ori" +
-                "ginal_自宅電話番号)) AND ((@IsNull_自宅FAX番号 = 1 AND [自宅FAX番号] IS NULL) OR ([自宅FAX番号] = " +
-                "@Original_自宅FAX番号)) AND ((@IsNull_携帯電話番号 = 1 AND [携帯電話番号] IS NULL) OR ([携帯電話番号] " +
-                "= @Original_携帯電話番号)) AND ((@IsNull_連絡可能時間 = 1 AND [連絡可能時間] IS NULL) OR ([連絡可能時間]" +
-                " = @Original_連絡可能時間)) AND ((@IsNull_他連絡先 = 1 AND [他連絡先] IS NULL) OR ([他連絡先] = @O" +
-                "riginal_他連絡先)) AND ((@IsNull_緊急連絡先 = 1 AND [緊急連絡先] IS NULL) OR ([緊急連絡先] = @Origi" +
-                "nal_緊急連絡先)) AND ((@IsNull_メールアドレス1 = 1 AND [メールアドレス1] IS NULL) OR ([メールアドレス1] = " +
-                "@Original_メールアドレス1)) AND ((@IsNull_メールアドレス2 = 1 AND [メールアドレス2] IS NULL) OR ([メール" +
-                "アドレス2] = @Original_メールアドレス2)) AND ((@IsNull_個人HP = 1 AND [個人HP] IS NULL) OR ([個人" +
-                "HP] = @Original_個人HP)) AND ((@IsNull_最寄駅1 = 1 AND [最寄駅1] IS NULL) OR ([最寄駅1] = @" +
-                "Original_最寄駅1)) AND ((@IsNull_最寄駅2 = 1 AND [最寄駅2] IS NULL) OR ([最寄駅2] = @Origina" +
-                "l_最寄駅2)) AND ((@IsNull_最寄駅3 = 1 AND [最寄駅3] IS NULL) OR ([最寄駅3] = @Original_最寄駅3)" +
-                ") AND ((@IsNull_就業可能条件 = 1 AND [就業可能条件] IS NULL) OR ([就業可能条件] = @Original_就業可能条件" +
-                ")) AND ((@IsNull_宿泊可否 = 1 AND [宿泊可否] IS NULL) OR ([宿泊可否] = @Original_宿泊可否)) AND " +
-                "((@IsNull_ガイド就業意思 = 1 AND [ガイド就業意思] IS NULL) OR ([ガイド就業意思] = @Original_ガイド就業意思))" +
-                " AND ((@IsNull_ガイド就業意思名 = 1 AND [ガイド就業意思名] IS NULL) OR ([ガイド就業意思名] = @Original_ガ" +
-                "イド就業意思名)) AND ((@IsNull_ガイド経験年数 = 1 AND [ガイド経験年数] IS NULL) OR ([ガイド経験年数] = @Orig" +
-                "inal_ガイド経験年数)) AND ((@IsNull_ガイド経験地域1 = 1 AND [ガイド経験地域1] IS NULL) OR ([ガイド経験地域1]" +
-                " = @Original_ガイド経験地域1)) AND ((@IsNull_ガイド経験地域2 = 1 AND [ガイド経験地域2] IS NULL) OR ([" +
-                "ガイド経験地域2] = @Original_ガイド経験地域2)) AND ((@IsNull_ガイド経験地域3 = 1 AND [ガイド経験地域3] IS NU" +
-                "LL) OR ([ガイド経験地域3] = @Original_ガイド経験地域3)) AND ((@IsNull_ガイド経験地域4 = 1 AND [ガイド経験地" +
-                "域4] IS NULL) OR ([ガイド経験地域4] = @Original_ガイド経験地域4)) AND ((@IsNull_ガイド経験分野1 = 1 AN" +
-                "D [ガイド経験分野1] IS NULL) OR ([ガイド経験分野1] = @Original_ガイド経験分野1)) AND ((@IsNull_ガイド経験分" +
-                "野2 = 1 AND [ガイド経験分野2] IS NULL) OR ([ガイド経験分野2] = @Original_ガイド経験分野2)) AND ((@IsNu" +
-                "ll_ガイド経験分野3 = 1 AND [ガイド経験分野3] IS NULL) OR ([ガイド経験分野3] = @Original_ガイド経験分野3)) AN" +
-                "D ((@IsNull_ガイド経験分野4 = 1 AND [ガイド経験分野4] IS NULL) OR ([ガイド経験分野4] = @Original_ガイド経" +
-                "験分野4)) AND ((@IsNull_新人研修 = 1 AND [新人研修] IS NULL) OR ([新人研修] = @Original_新人研修)) " +
-                "AND ((@IsNull_JFG関東45 = 1 AND [JFG関東45] IS NULL) OR ([JFG関東45] = @Original_JFG関東" +
-                "45)) AND ((@IsNull_JFG関東23 = 1 AND [JFG関東23] IS NULL) OR ([JFG関東23] = @Original_" +
-                "JFG関東23)) AND ((@IsNull_JFG関西45 = 1 AND [JFG関西45] IS NULL) OR ([JFG関西45] = @Orig" +
-                "inal_JFG関西45)) AND ((@IsNull_JFG関西23 = 1 AND [JFG関西23] IS NULL) OR ([JFG関西23] = " +
-                "@Original_JFG関西23)) AND ((@IsNull_JGA関東 = 1 AND [JGA関東] IS NULL) OR ([JGA関東] = @" +
-                "Original_JGA関東)) AND ((@IsNull_JGA関西 = 1 AND [JGA関西] IS NULL) OR ([JGA関西] = @Ori" +
-                "ginal_JGA関西)) AND ((@IsNull_ハロー研修 = 1 AND [ハロー研修] IS NULL) OR ([ハロー研修] = @Origin" +
-                "al_ハロー研修)) AND ((@IsNull_JICA区分 = 1 AND [JICA区分] IS NULL) OR ([JICA区分] = @Origin" +
-                "al_JICA区分)) AND ((@IsNull_JICA研修 = 1 AND [JICA研修] IS NULL) OR ([JICA研修] = @Origi" +
-                "nal_JICA研修)) AND ((@IsNull_IHCSA区分 = 1 AND [IHCSA区分] IS NULL) OR ([IHCSA区分] = @O" +
-                "riginal_IHCSA区分)) AND ((@IsNull_IHCSA研修 = 1 AND [IHCSA研修] IS NULL) OR ([IHCSA研修]" +
-                " = @Original_IHCSA研修)) AND ((@IsNull_通訳就業意思 = 1 AND [通訳就業意思] IS NULL) OR ([通訳就業意" +
-                "思] = @Original_通訳就業意思)) AND ((@IsNull_通訳就業意思名 = 1 AND [通訳就業意思名] IS NULL) OR ([通訳" +
-                "就業意思名] = @Original_通訳就業意思名)) AND ((@IsNull_通訳経験年数 = 1 AND [通訳経験年数] IS NULL) OR (" +
-                "[通訳経験年数] = @Original_通訳経験年数)) AND ((@IsNull_通訳経験分野1 = 1 AND [通訳経験分野1] IS NULL) O" +
-                "R ([通訳経験分野1] = @Original_通訳経験分野1)) AND ((@IsNull_通訳経験分野2 = 1 AND [通訳経験分野2] IS NU" +
-                "LL) OR ([通訳経験分野2] = @Original_通訳経験分野2)) AND ((@IsNull_通訳経験分野3 = 1 AND [通訳経験分野3] " +
-                "IS NULL) OR ([通訳経験分野3] = @Original_通訳経験分野3)) AND ((@IsNull_通訳経験分野4 = 1 AND [通訳経験" +
-                "分野4] IS NULL) OR ([通訳経験分野4] = @Original_通訳経験分野4)) AND ((@IsNull_英語以外語学検定 = 1 AND" +
-                " [英語以外語学検定] IS NULL) OR ([英語以外語学検定] = @Original_英語以外語学検定)) AND ((@IsNull_英語通訳検定 " +
-                "= 1 AND [英語通訳検定] IS NULL) OR ([英語通訳検定] = @Original_英語通訳検定)) AND ((@IsNull_英検 = 1" +
-                " AND [英検] IS NULL) OR ([英検] = @Original_英検)) AND ((@IsNull_国連英検 = 1 AND [国連英検] I" +
-                "S NULL) OR ([国連英検] = @Original_国連英検)) AND ((@IsNull_TOEIC = 1 AND [TOEIC] IS NUL" +
-                "L) OR ([TOEIC] = @Original_TOEIC)) AND ((@IsNull_TOEFL = 1 AND [TOEFL] IS NULL) " +
-                "OR ([TOEFL] = @Original_TOEFL)) AND ((@IsNull_同時通訳可否区分 = 1 AND [同時通訳可否区分] IS NUL" +
-                "L) OR ([同時通訳可否区分] = @Original_同時通訳可否区分)) AND ((@IsNull_同時通訳可否 = 1 AND [同時通訳可否] I" +
-                "S NULL) OR ([同時通訳可否] = @Original_同時通訳可否)) AND ((@IsNull_通訳訓練機関名 = 1 AND [通訳訓練機関名" +
-                "] IS NULL) OR ([通訳訓練機関名] = @Original_通訳訓練機関名)) AND ((@IsNull_翻訳就業意思 = 1 AND [翻訳就" +
-                "業意思] IS NULL) OR ([翻訳就業意思] = @Original_翻訳就業意思)) AND ((@IsNull_翻訳就業意思名 = 1 AND [翻" +
-                "訳就業意思名] IS NULL) OR ([翻訳就業意思名] = @Original_翻訳就業意思名)) AND ((@IsNull_翻訳経験年数 = 1 AN" +
-                "D [翻訳経験年数] IS NULL) OR ([翻訳経験年数] = @Original_翻訳経験年数)) AND ((@IsNull_翻訳分野1 = 1 AN" +
-                "D [翻訳分野1] IS NULL) OR ([翻訳分野1] = @Original_翻訳分野1)) AND ((@IsNull_翻訳分野2 = 1 AND [" +
-                "翻訳分野2] IS NULL) OR ([翻訳分野2] = @Original_翻訳分野2)) AND ((@IsNull_翻訳分野3 = 1 AND [翻訳分" +
-                "野3] IS NULL) OR ([翻訳分野3] = @Original_翻訳分野3)) AND ((@IsNull_翻訳分野4 = 1 AND [翻訳分野4]" +
-                " IS NULL) OR ([翻訳分野4] = @Original_翻訳分野4)) AND ((@IsNull_翻訳訓練機関 = 1 AND [翻訳訓練機関] " +
-                "IS NULL) OR ([翻訳訓練機関] = @Original_翻訳訓練機関)) AND ((@IsNull_ネイティブ可区分 = 1 AND [ネイティブ" +
-                "可区分] IS NULL) OR ([ネイティブ可区分] = @Original_ネイティブ可区分)) AND ((@IsNull_ネイティブ可 = 1 AND" +
-                " [ネイティブ可] IS NULL) OR ([ネイティブ可] = @Original_ネイティブ可)) AND ((@IsNull_パソコン機種 = 1 AN" +
-                "D [パソコン機種] IS NULL) OR ([パソコン機種] = @Original_パソコン機種)) AND ((@IsNull_ソフト種類 = 1 AN" +
-                "D [ソフト種類] IS NULL) OR ([ソフト種類] = @Original_ソフト種類)) AND ((@IsNull_パソコンOS = 1 AND " +
-                "[パソコンOS] IS NULL) OR ([パソコンOS] = @Original_パソコンOS)) AND ((@IsNull_海外添乗就業意思 = 1 A" +
-                "ND [海外添乗就業意思] IS NULL) OR ([海外添乗就業意思] = @Original_海外添乗就業意思)) AND ((@IsNull_海外添乗就" +
-                "業意思名 = 1 AND [海外添乗就業意思名] IS NULL) OR ([海外添乗就業意思名] = @Original_海外添乗就業意思名)) AND ((" +
-                "@IsNull_海外添乗経験年数 = 1 AND [海外添乗経験年数] IS NULL) OR ([海外添乗経験年数] = @Original_海外添乗経験年数" +
-                ")) AND ((@IsNull_海外添乗地域1 = 1 AND [海外添乗地域1] IS NULL) OR ([海外添乗地域1] = @Original_海外" +
-                "添乗地域1)) AND ((@IsNull_海外添乗地域2 = 1 AND [海外添乗地域2] IS NULL) OR ([海外添乗地域2] = @Origin" +
-                "al_海外添乗地域2)) AND ((@IsNull_海外添乗地域3 = 1 AND [海外添乗地域3] IS NULL) OR ([海外添乗地域3] = @O" +
-                "riginal_海外添乗地域3)) AND ((@IsNull_海外添乗地域4 = 1 AND [海外添乗地域4] IS NULL) OR ([海外添乗地域4]" +
-                " = @Original_海外添乗地域4)) AND ((@IsNull_旅行主任取扱資格 = 1 AND [旅行主任取扱資格] IS NULL) OR ([旅" +
-                "行主任取扱資格] = @Original_旅行主任取扱資格)) AND ((@IsNull_旅程管理資格 = 1 AND [旅程管理資格] IS NULL) O" +
-                "R ([旅程管理資格] = @Original_旅程管理資格)) AND ((@IsNull_他資格 = 1 AND [他資格] IS NULL) OR ([他" +
-                "資格] = @Original_他資格)) AND ((@IsNull_職歴 = 1 AND [職歴] IS NULL) OR ([職歴] = @Origina" +
-                "l_職歴)) AND ((@IsNull_学歴 = 1 AND [学歴] IS NULL) OR ([学歴] = @Original_学歴)) AND ((@I" +
-                "sNull_趣味特技 = 1 AND [趣味特技] IS NULL) OR ([趣味特技] = @Original_趣味特技)) AND ((@IsNull_自" +
-                "己PR = 1 AND [自己PR] IS NULL) OR ([自己PR] = @Original_自己PR)) AND ((@IsNull_業務研修案内関東" +
-                " = 1 AND [業務研修案内関東] IS NULL) OR ([業務研修案内関東] = @Original_業務研修案内関東)) AND ((@IsNull" +
-                "_業務研修案内関西 = 1 AND [業務研修案内関西] IS NULL) OR ([業務研修案内関西] = @Original_業務研修案内関西)) AND " +
-                "((@IsNull_所属委員会1 = 1 AND [所属委員会1] IS NULL) OR ([所属委員会1] = @Original_所属委員会1)) AND" +
-                " ((@IsNull_所属委員会名1 = 1 AND [所属委員会名1] IS NULL) OR ([所属委員会名1] = @Original_所属委員会名1)" +
-                ") AND ((@IsNull_所属委員会2 = 1 AND [所属委員会2] IS NULL) OR ([所属委員会2] = @Original_所属委員会2" +
-                ")) AND ((@IsNull_所属委員会名2 = 1 AND [所属委員会名2] IS NULL) OR ([所属委員会名2] = @Original_所属" +
-                "委員会名2)) AND ((@IsNull_所属委員会3 = 1 AND [所属委員会3] IS NULL) OR ([所属委員会3] = @Original_" +
-                "所属委員会3)) AND ((@IsNull_所属委員会名3 = 1 AND [所属委員会名3] IS NULL) OR ([所属委員会名3] = @Origi" +
-                "nal_所属委員会名3)) AND ((@IsNull_賦課金支払2001 = 1 AND [賦課金支払2001] IS NULL) OR ([賦課金支払200" +
-                "1] = @Original_賦課金支払2001)) AND ((@IsNull_賦課金支払2002 = 1 AND [賦課金支払2002] IS NULL) " +
-                "OR ([賦課金支払2002] = @Original_賦課金支払2002)) AND ((@IsNull_賦課金支払2003 = 1 AND [賦課金支払20" +
-                "03] IS NULL) OR ([賦課金支払2003] = @Original_賦課金支払2003)) AND ((@IsNull_賦課金支払2004 = 1" +
-                " AND [賦課金支払2004] IS NULL) OR ([賦課金支払2004] = @Original_賦課金支払2004)) AND ((@IsNull_" +
-                "賦課金支払2005 = 1 AND [賦課金支払2005] IS NULL) OR ([賦課金支払2005] = @Original_賦課金支払2005)) A" +
-                "ND ((@IsNull_総会出欠状況2001 = 1 AND [総会出欠状況2001] IS NULL) OR ([総会出欠状況2001] = @Origin" +
-                "al_総会出欠状況2001)) AND ((@IsNull_総会出欠状況2002 = 1 AND [総会出欠状況2002] IS NULL) OR ([総会出欠" +
-                "状況2002] = @Original_総会出欠状況2002)) AND ((@IsNull_総会出欠状況2003 = 1 AND [総会出欠状況2003] I" +
-                "S NULL) OR ([総会出欠状況2003] = @Original_総会出欠状況2003)) AND ((@IsNull_総会出欠状況2004 = 1 A" +
-                "ND [総会出欠状況2004] IS NULL) OR ([総会出欠状況2004] = @Original_総会出欠状況2004)) AND ((@IsNull" +
-                "_総会出欠状況2005 = 1 AND [総会出欠状況2005] IS NULL) OR ([総会出欠状況2005] = @Original_総会出欠状況200" +
-                "5)) AND ((@IsNull_手数料合計2001 = 1 AND [手数料合計2001] IS NULL) OR ([手数料合計2001] = @Orig" +
-                "inal_手数料合計2001)) AND ((@IsNull_手数料合計2002 = 1 AND [手数料合計2002] IS NULL) OR ([手数料合計" +
-                "2002] = @Original_手数料合計2002)) AND ((@IsNull_手数料合計2003 = 1 AND [手数料合計2003] IS NUL" +
-                "L) OR ([手数料合計2003] = @Original_手数料合計2003)) AND ((@IsNull_手数料合計2004 = 1 AND [手数料合" +
-                "計2004] IS NULL) OR ([手数料合計2004] = @Original_手数料合計2004)) AND ((@IsNull_手数料合計2005 " +
-                "= 1 AND [手数料合計2005] IS NULL) OR ([手数料合計2005] = @Original_手数料合計2005)) AND ((@IsNu" +
-                "ll_JFG加入年 = 1 AND [JFG加入年] IS NULL) OR ([JFG加入年] = @Original_JFG加入年)) AND ((@IsN" +
-                "ull_JFG加入月 = 1 AND [JFG加入月] IS NULL) OR ([JFG加入月] = @Original_JFG加入月)) AND ((@Is" +
-                "Null_NP初回 = 1 AND [NP初回] IS NULL) OR ([NP初回] = @Original_NP初回)) AND ((@IsNull_NP" +
-                "最終 = 1 AND [NP最終] IS NULL) OR ([NP最終] = @Original_NP最終)) AND ((@IsNull_JFG会員歴 = " +
-                "1 AND [JFG会員歴] IS NULL) OR ([JFG会員歴] = @Original_JFG会員歴)) AND ((@IsNull_JGA会員歴 =" +
-                " 1 AND [JGA会員歴] IS NULL) OR ([JGA会員歴] = @Original_JGA会員歴)) AND ((@IsNull_JFG休会年 " +
-                "= 1 AND [JFG休会年] IS NULL) OR ([JFG休会年] = @Original_JFG休会年)) AND ((@IsNull_JFG休会月" +
-                " = 1 AND [JFG休会月] IS NULL) OR ([JFG休会月] = @Original_JFG休会月)) AND ((@IsNull_JFG退会" +
-                "年 = 1 AND [JFG退会年] IS NULL) OR ([JFG退会年] = @Original_JFG退会年)) AND ((@IsNull_JFG退" +
-                "会月 = 1 AND [JFG退会月] IS NULL) OR ([JFG退会月] = @Original_JFG退会月)) AND ((@IsNull_出資証" +
-                "券番号 = 1 AND [出資証券番号] IS NULL) OR ([出資証券番号] = @Original_出資証券番号)) AND ((@IsNull_旧姓" +
-                " = 1 AND [旧姓] IS NULL) OR ([旧姓] = @Original_旧姓)) AND ((@IsNull_HP顔写真 = 1 AND [HP" +
-                "顔写真] IS NULL) OR ([HP顔写真] = @Original_HP顔写真)) AND ((@IsNull_HP氏名 = 1 AND [HP氏名] " +
-                "IS NULL) OR ([HP氏名] = @Original_HP氏名)) AND ((@IsNull_HP言語 = 1 AND [HP言語] IS NULL" +
-                ") OR ([HP言語] = @Original_HP言語)) AND ((@IsNull_HP合格 = 1 AND [HP合格] IS NULL) OR ([" +
-                "HP合格] = @Original_HP合格)) AND ((@IsNull_HP居住地 = 1 AND [HP居住地] IS NULL) OR ([HP居住地" +
-                "] = @Original_HP居住地)) AND ((@IsNull_HPJFG = 1 AND [HPJFG] IS NULL) OR ([HPJFG] =" +
-                " @Original_HPJFG)) AND ((@IsNull_母国語1 = 1 AND [母国語1] IS NULL) OR ([母国語1] = @Orig" +
-                "inal_母国語1)) AND ((@IsNull_母国語名1 = 1 AND [母国語名1] IS NULL) OR ([母国語名1] = @Original" +
-                "_母国語名1)) AND ((@IsNull_母国語2 = 1 AND [母国語2] IS NULL) OR ([母国語2] = @Original_母国語2)" +
-                ") AND ((@IsNull_母国語名2 = 1 AND [母国語名2] IS NULL) OR ([母国語名2] = @Original_母国語名2)) A" +
-                "ND ((@IsNull_母国語3 = 1 AND [母国語3] IS NULL) OR ([母国語3] = @Original_母国語3)) AND ((@I" +
-                "sNull_母国語名3 = 1 AND [母国語名3] IS NULL) OR ([母国語名3] = @Original_母国語名3)) AND ((@IsNu" +
-                "ll_メーリングリスト = 1 AND [メーリングリスト] IS NULL) OR ([メーリングリスト] = @Original_メーリングリスト)) AN" +
-                "D ((@IsNull_HP掲載可否 = 1 AND [HP掲載可否] IS NULL) OR ([HP掲載可否] = @Original_HP掲載可否)) A" +
-                "ND ((@IsNull_国籍 = 1 AND [国籍] IS NULL) OR ([国籍] = @Original_国籍)) AND ((@IsNull_昨年" +
-                "稼働日数 = 1 AND [昨年稼働日数] IS NULL) OR ([昨年稼働日数] = @Original_昨年稼働日数)) AND ((@IsNull_G" +
-                "ICSS研修 = 1 AND [GICSS研修] IS NULL) OR ([GICSS研修] = @Original_GICSS研修)) AND ((@IsN" +
-                "ull_GICSS会員歴 = 1 AND [GICSS会員歴] IS NULL) OR ([GICSS会員歴] = @Original_GICSS会員歴)) A" +
-                "ND ((@IsNull_KIGA会員歴 = 1 AND [KIGA会員歴] IS NULL) OR ([KIGA会員歴] = @Original_KIGA会員" +
-                "歴)) AND ((@IsNull_COG会員歴 = 1 AND [COG会員歴] IS NULL) OR ([COG会員歴] = @Original_COG会" +
-                "員歴)) AND ((@IsNull_JFG2日間机上 = 1 AND [JFG2日間机上] IS NULL) OR ([JFG2日間机上] = @Origin" +
-                "al_JFG2日間机上)) AND ((@IsNull_IJCEE会員歴 = 1 AND [IJCEE会員歴] IS NULL) OR ([IJCEE会員歴] " +
-                "= @Original_IJCEE会員歴)) AND ((@IsNull_都道府県 = 1 AND [都道府県] IS NULL) OR ([都道府県] = @" +
-                "Original_都道府県)) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Orig" +
-                "inal_登録年月日)) AND ((@IsNull_変更年月日 = 1 AND [変更年月日] IS NULL) OR ([変更年月日] = @Origina" +
-                "l_変更年月日)));\r\nSELECT カード番号, 本人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令, 性別, 言語1, 言語名1, 言語" +
-                "2, 言語名2, 言語3, 言語名3, 言語4, 言語名4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合格年4, 合格年5, 免取県1, 免取" +
-                "県2, 免取県3, 免取県4, 免取県5, 免許番号1, 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号, 住所1, 住所2, 住所3, 地域" +
-                "コード, 地域名, 東西, 自宅電話番号, 自宅FAX番号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メールアドレス1, メールアドレス2, " +
-                "個人HP, 最寄駅1, 最寄駅2, 最寄駅3, 就業可能条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経験年数, ガイド経験地域1, ガイド経" +
-                "験地域2, ガイド経験地域3, ガイド経験地域4, ガイド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験分野4, 新人研修, JFG関東45," +
-                " JFG関東23, JFG関西45, JFG関西23, JGA関東, JGA関西, ハロー研修, JICA区分, JICA研修, IHCSA区分, IHCSA研" +
-                "修, 通訳就業意思, 通訳就業意思名, 通訳経験年数, 通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野4, 英語以外語学検定, 英語通訳検定" +
-                ", 英検, 国連英検, TOEIC, TOEFL, 同時通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, 翻訳就業意思名, 翻訳経験年数, 翻訳" +
-                "分野1, 翻訳分野2, 翻訳分野3, 翻訳分野4, 翻訳訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソフト種類, パソコンOS, 海外添乗就" +
-                "業意思, 海外添乗就業意思名, 海外添乗経験年数, 海外添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4, 旅行主任取扱資格, 旅程管理資格, " +
-                "他資格, 職歴, 学歴, 趣味特技, 自己PR, 業務研修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1, 所属委員会2, 所属委員会名2, 所" +
-                "属委員会3, 所属委員会名3, 賦課金支払2001, 賦課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦課金支払2005, 総会出欠状況200" +
-                "1, 総会出欠状況2002, 総会出欠状況2003, 総会出欠状況2004, 総会出欠状況2005, 手数料合計2001, 手数料合計2002, 手数料合計20" +
-                "03, 手数料合計2004, 手数料合計2005, JFG加入年, JFG加入月, NP初回, NP最終, JFG会員歴, JGA会員歴, JFG休会年, JF" +
-                "G休会月, JFG退会年, JFG退会月, 出資証券番号, 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP居住地, HPJFG, 母国語1, 母" +
-                "国語名1, 母国語2, 母国語名2, 母国語3, 母国語名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数, GICSS研修, GICSS会員歴," +
-                " KIGA会員歴, COG会員歴, JFG2日間机上, IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変更年月日 FROM 会員情報 WHER" +
-                "E (カード番号 = @カード番号)";
+                "道府県, [登録年月日] = @登録年月日, [変更年月日] = @変更年月日, [FIT] = @FIT, [FIT日数] = @FIT日数, [団体] = " +
+                "@団体, [団体日数] = @団体日数, [インセンティブ] = @インセンティブ, [インセンティブ日数] = @インセンティブ日数, [最寄駅4] = @最" +
+                "寄駅4, [最寄駅5] = @最寄駅5, [法定研修] = @法定研修, [定期研修受講機関] = @定期研修受講機関, [定期研修受講時期] = @定期研修受" +
+                "講時期 WHERE (([カード番号] = @Original_カード番号) AND ((@IsNull_本人最終記入日 = 1 AND [本人最終記入日] I" +
+                "S NULL) OR ([本人最終記入日] = @Original_本人最終記入日)) AND ((@IsNull_更新年月日 = 1 AND [更新年月日] " +
+                "IS NULL) OR ([更新年月日] = @Original_更新年月日)) AND ((@IsNull_氏名 = 1 AND [氏名] IS NULL) " +
+                "OR ([氏名] = @Original_氏名)) AND ((@IsNull_フリガナ = 1 AND [フリガナ] IS NULL) OR ([フリガナ] " +
+                "= @Original_フリガナ)) AND ((@IsNull_生年月日 = 1 AND [生年月日] IS NULL) OR ([生年月日] = @Orig" +
+                "inal_生年月日)) AND ((@IsNull_年令 = 1 AND [年令] IS NULL) OR ([年令] = @Original_年令)) AND" +
+                " ((@IsNull_性別 = 1 AND [性別] IS NULL) OR ([性別] = @Original_性別)) AND ((@IsNull_言語1 " +
+                "= 1 AND [言語1] IS NULL) OR ([言語1] = @Original_言語1)) AND ((@IsNull_言語名1 = 1 AND [言" +
+                "語名1] IS NULL) OR ([言語名1] = @Original_言語名1)) AND ((@IsNull_言語2 = 1 AND [言語2] IS N" +
+                "ULL) OR ([言語2] = @Original_言語2)) AND ((@IsNull_言語名2 = 1 AND [言語名2] IS NULL) OR (" +
+                "[言語名2] = @Original_言語名2)) AND ((@IsNull_言語3 = 1 AND [言語3] IS NULL) OR ([言語3] = @" +
+                "Original_言語3)) AND ((@IsNull_言語名3 = 1 AND [言語名3] IS NULL) OR ([言語名3] = @Original" +
+                "_言語名3)) AND ((@IsNull_言語4 = 1 AND [言語4] IS NULL) OR ([言語4] = @Original_言語4)) AND" +
+                " ((@IsNull_言語名4 = 1 AND [言語名4] IS NULL) OR ([言語名4] = @Original_言語名4)) AND ((@IsN" +
+                "ull_言語5 = 1 AND [言語5] IS NULL) OR ([言語5] = @Original_言語5)) AND ((@IsNull_言語名5 = " +
+                "1 AND [言語名5] IS NULL) OR ([言語名5] = @Original_言語名5)) AND ((@IsNull_合格年1 = 1 AND [" +
+                "合格年1] IS NULL) OR ([合格年1] = @Original_合格年1)) AND ((@IsNull_合格年2 = 1 AND [合格年2] I" +
+                "S NULL) OR ([合格年2] = @Original_合格年2)) AND ((@IsNull_合格年3 = 1 AND [合格年3] IS NULL)" +
+                " OR ([合格年3] = @Original_合格年3)) AND ((@IsNull_合格年4 = 1 AND [合格年4] IS NULL) OR ([合" +
+                "格年4] = @Original_合格年4)) AND ((@IsNull_合格年5 = 1 AND [合格年5] IS NULL) OR ([合格年5] = " +
+                "@Original_合格年5)) AND ((@IsNull_免取県1 = 1 AND [免取県1] IS NULL) OR ([免取県1] = @Origin" +
+                "al_免取県1)) AND ((@IsNull_免取県2 = 1 AND [免取県2] IS NULL) OR ([免取県2] = @Original_免取県2" +
+                ")) AND ((@IsNull_免取県3 = 1 AND [免取県3] IS NULL) OR ([免取県3] = @Original_免取県3)) AND " +
+                "((@IsNull_免取県4 = 1 AND [免取県4] IS NULL) OR ([免取県4] = @Original_免取県4)) AND ((@IsNu" +
+                "ll_免取県5 = 1 AND [免取県5] IS NULL) OR ([免取県5] = @Original_免取県5)) AND ((@IsNull_免許番号" +
+                "1 = 1 AND [免許番号1] IS NULL) OR ([免許番号1] = @Original_免許番号1)) AND ((@IsNull_免許番号2 =" +
+                " 1 AND [免許番号2] IS NULL) OR ([免許番号2] = @Original_免許番号2)) AND ((@IsNull_免許番号3 = 1 " +
+                "AND [免許番号3] IS NULL) OR ([免許番号3] = @Original_免許番号3)) AND ((@IsNull_免許番号4 = 1 AND" +
+                " [免許番号4] IS NULL) OR ([免許番号4] = @Original_免許番号4)) AND ((@IsNull_免許番号5 = 1 AND [免" +
+                "許番号5] IS NULL) OR ([免許番号5] = @Original_免許番号5)) AND ((@IsNull_郵便番号 = 1 AND [郵便番号]" +
+                " IS NULL) OR ([郵便番号] = @Original_郵便番号)) AND ((@IsNull_住所1 = 1 AND [住所1] IS NULL)" +
+                " OR ([住所1] = @Original_住所1)) AND ((@IsNull_住所2 = 1 AND [住所2] IS NULL) OR ([住所2] " +
+                "= @Original_住所2)) AND ((@IsNull_住所3 = 1 AND [住所3] IS NULL) OR ([住所3] = @Original" +
+                "_住所3)) AND ((@IsNull_地域コード = 1 AND [地域コード] IS NULL) OR ([地域コード] = @Original_地域コー" +
+                "ド)) AND ((@IsNull_地域名 = 1 AND [地域名] IS NULL) OR ([地域名] = @Original_地域名)) AND ((@" +
+                "IsNull_東西 = 1 AND [東西] IS NULL) OR ([東西] = @Original_東西)) AND ((@IsNull_自宅電話番号 =" +
+                " 1 AND [自宅電話番号] IS NULL) OR ([自宅電話番号] = @Original_自宅電話番号)) AND ((@IsNull_自宅FAX番号" +
+                " = 1 AND [自宅FAX番号] IS NULL) OR ([自宅FAX番号] = @Original_自宅FAX番号)) AND ((@IsNull_携帯" +
+                "電話番号 = 1 AND [携帯電話番号] IS NULL) OR ([携帯電話番号] = @Original_携帯電話番号)) AND ((@IsNull_連" +
+                "絡可能時間 = 1 AND [連絡可能時間] IS NULL) OR ([連絡可能時間] = @Original_連絡可能時間)) AND ((@IsNull_" +
+                "他連絡先 = 1 AND [他連絡先] IS NULL) OR ([他連絡先] = @Original_他連絡先)) AND ((@IsNull_緊急連絡先 =" +
+                " 1 AND [緊急連絡先] IS NULL) OR ([緊急連絡先] = @Original_緊急連絡先)) AND ((@IsNull_メールアドレス1 =" +
+                " 1 AND [メールアドレス1] IS NULL) OR ([メールアドレス1] = @Original_メールアドレス1)) AND ((@IsNull_メ" +
+                "ールアドレス2 = 1 AND [メールアドレス2] IS NULL) OR ([メールアドレス2] = @Original_メールアドレス2)) AND ((" +
+                "@IsNull_個人HP = 1 AND [個人HP] IS NULL) OR ([個人HP] = @Original_個人HP)) AND ((@IsNull" +
+                "_最寄駅1 = 1 AND [最寄駅1] IS NULL) OR ([最寄駅1] = @Original_最寄駅1)) AND ((@IsNull_最寄駅2 =" +
+                " 1 AND [最寄駅2] IS NULL) OR ([最寄駅2] = @Original_最寄駅2)) AND ((@IsNull_最寄駅3 = 1 AND " +
+                "[最寄駅3] IS NULL) OR ([最寄駅3] = @Original_最寄駅3)) AND ((@IsNull_就業可能条件 = 1 AND [就業可能" +
+                "条件] IS NULL) OR ([就業可能条件] = @Original_就業可能条件)) AND ((@IsNull_宿泊可否 = 1 AND [宿泊可否]" +
+                " IS NULL) OR ([宿泊可否] = @Original_宿泊可否)) AND ((@IsNull_ガイド就業意思 = 1 AND [ガイド就業意思] " +
+                "IS NULL) OR ([ガイド就業意思] = @Original_ガイド就業意思)) AND ((@IsNull_ガイド就業意思名 = 1 AND [ガイド" +
+                "就業意思名] IS NULL) OR ([ガイド就業意思名] = @Original_ガイド就業意思名)) AND ((@IsNull_ガイド経験年数 = 1 " +
+                "AND [ガイド経験年数] IS NULL) OR ([ガイド経験年数] = @Original_ガイド経験年数)) AND ((@IsNull_ガイド経験地域" +
+                "1 = 1 AND [ガイド経験地域1] IS NULL) OR ([ガイド経験地域1] = @Original_ガイド経験地域1)) AND ((@IsNul" +
+                "l_ガイド経験地域2 = 1 AND [ガイド経験地域2] IS NULL) OR ([ガイド経験地域2] = @Original_ガイド経験地域2)) AND" +
+                " ((@IsNull_ガイド経験地域3 = 1 AND [ガイド経験地域3] IS NULL) OR ([ガイド経験地域3] = @Original_ガイド経験" +
+                "地域3)) AND ((@IsNull_ガイド経験地域4 = 1 AND [ガイド経験地域4] IS NULL) OR ([ガイド経験地域4] = @Origi" +
+                "nal_ガイド経験地域4)) AND ((@IsNull_ガイド経験分野1 = 1 AND [ガイド経験分野1] IS NULL) OR ([ガイド経験分野1]" +
+                " = @Original_ガイド経験分野1)) AND ((@IsNull_ガイド経験分野2 = 1 AND [ガイド経験分野2] IS NULL) OR ([" +
+                "ガイド経験分野2] = @Original_ガイド経験分野2)) AND ((@IsNull_ガイド経験分野3 = 1 AND [ガイド経験分野3] IS NU" +
+                "LL) OR ([ガイド経験分野3] = @Original_ガイド経験分野3)) AND ((@IsNull_ガイド経験分野4 = 1 AND [ガイド経験分" +
+                "野4] IS NULL) OR ([ガイド経験分野4] = @Original_ガイド経験分野4)) AND ((@IsNull_新人研修 = 1 AND [新" +
+                "人研修] IS NULL) OR ([新人研修] = @Original_新人研修)) AND ((@IsNull_JFG関東45 = 1 AND [JFG関東" +
+                "45] IS NULL) OR ([JFG関東45] = @Original_JFG関東45)) AND ((@IsNull_JFG関東23 = 1 AND [" +
+                "JFG関東23] IS NULL) OR ([JFG関東23] = @Original_JFG関東23)) AND ((@IsNull_JFG関西45 = 1 " +
+                "AND [JFG関西45] IS NULL) OR ([JFG関西45] = @Original_JFG関西45)) AND ((@IsNull_JFG関西23" +
+                " = 1 AND [JFG関西23] IS NULL) OR ([JFG関西23] = @Original_JFG関西23)) AND ((@IsNull_JG" +
+                "A関東 = 1 AND [JGA関東] IS NULL) OR ([JGA関東] = @Original_JGA関東)) AND ((@IsNull_JGA関西" +
+                " = 1 AND [JGA関西] IS NULL) OR ([JGA関西] = @Original_JGA関西)) AND ((@IsNull_ハロー研修 = " +
+                "1 AND [ハロー研修] IS NULL) OR ([ハロー研修] = @Original_ハロー研修)) AND ((@IsNull_JICA区分 = 1 " +
+                "AND [JICA区分] IS NULL) OR ([JICA区分] = @Original_JICA区分)) AND ((@IsNull_JICA研修 = 1" +
+                " AND [JICA研修] IS NULL) OR ([JICA研修] = @Original_JICA研修)) AND ((@IsNull_IHCSA区分 =" +
+                " 1 AND [IHCSA区分] IS NULL) OR ([IHCSA区分] = @Original_IHCSA区分)) AND ((@IsNull_IHCS" +
+                "A研修 = 1 AND [IHCSA研修] IS NULL) OR ([IHCSA研修] = @Original_IHCSA研修)) AND ((@IsNull" +
+                "_通訳就業意思 = 1 AND [通訳就業意思] IS NULL) OR ([通訳就業意思] = @Original_通訳就業意思)) AND ((@IsNul" +
+                "l_通訳就業意思名 = 1 AND [通訳就業意思名] IS NULL) OR ([通訳就業意思名] = @Original_通訳就業意思名)) AND ((@" +
+                "IsNull_通訳経験年数 = 1 AND [通訳経験年数] IS NULL) OR ([通訳経験年数] = @Original_通訳経験年数)) AND ((" +
+                "@IsNull_通訳経験分野1 = 1 AND [通訳経験分野1] IS NULL) OR ([通訳経験分野1] = @Original_通訳経験分野1)) A" +
+                "ND ((@IsNull_通訳経験分野2 = 1 AND [通訳経験分野2] IS NULL) OR ([通訳経験分野2] = @Original_通訳経験分野" +
+                "2)) AND ((@IsNull_通訳経験分野3 = 1 AND [通訳経験分野3] IS NULL) OR ([通訳経験分野3] = @Original_通" +
+                "訳経験分野3)) AND ((@IsNull_通訳経験分野4 = 1 AND [通訳経験分野4] IS NULL) OR ([通訳経験分野4] = @Origi" +
+                "nal_通訳経験分野4)) AND ((@IsNull_英語以外語学検定 = 1 AND [英語以外語学検定] IS NULL) OR ([英語以外語学検定] " +
+                "= @Original_英語以外語学検定)) AND ((@IsNull_英語通訳検定 = 1 AND [英語通訳検定] IS NULL) OR ([英語通訳検" +
+                "定] = @Original_英語通訳検定)) AND ((@IsNull_英検 = 1 AND [英検] IS NULL) OR ([英検] = @Origi" +
+                "nal_英検)) AND ((@IsNull_国連英検 = 1 AND [国連英検] IS NULL) OR ([国連英検] = @Original_国連英検)" +
+                ") AND ((@IsNull_TOEIC = 1 AND [TOEIC] IS NULL) OR ([TOEIC] = @Original_TOEIC)) A" +
+                "ND ((@IsNull_TOEFL = 1 AND [TOEFL] IS NULL) OR ([TOEFL] = @Original_TOEFL)) AND " +
+                "((@IsNull_同時通訳可否区分 = 1 AND [同時通訳可否区分] IS NULL) OR ([同時通訳可否区分] = @Original_同時通訳可否" +
+                "区分)) AND ((@IsNull_同時通訳可否 = 1 AND [同時通訳可否] IS NULL) OR ([同時通訳可否] = @Original_同時通" +
+                "訳可否)) AND ((@IsNull_通訳訓練機関名 = 1 AND [通訳訓練機関名] IS NULL) OR ([通訳訓練機関名] = @Original" +
+                "_通訳訓練機関名)) AND ((@IsNull_翻訳就業意思 = 1 AND [翻訳就業意思] IS NULL) OR ([翻訳就業意思] = @Origin" +
+                "al_翻訳就業意思)) AND ((@IsNull_翻訳就業意思名 = 1 AND [翻訳就業意思名] IS NULL) OR ([翻訳就業意思名] = @Or" +
+                "iginal_翻訳就業意思名)) AND ((@IsNull_翻訳経験年数 = 1 AND [翻訳経験年数] IS NULL) OR ([翻訳経験年数] = @" +
+                "Original_翻訳経験年数)) AND ((@IsNull_翻訳分野1 = 1 AND [翻訳分野1] IS NULL) OR ([翻訳分野1] = @Or" +
+                "iginal_翻訳分野1)) AND ((@IsNull_翻訳分野2 = 1 AND [翻訳分野2] IS NULL) OR ([翻訳分野2] = @Origi" +
+                "nal_翻訳分野2)) AND ((@IsNull_翻訳分野3 = 1 AND [翻訳分野3] IS NULL) OR ([翻訳分野3] = @Original" +
+                "_翻訳分野3)) AND ((@IsNull_翻訳分野4 = 1 AND [翻訳分野4] IS NULL) OR ([翻訳分野4] = @Original_翻訳" +
+                "分野4)) AND ((@IsNull_翻訳訓練機関 = 1 AND [翻訳訓練機関] IS NULL) OR ([翻訳訓練機関] = @Original_翻訳" +
+                "訓練機関)) AND ((@IsNull_ネイティブ可区分 = 1 AND [ネイティブ可区分] IS NULL) OR ([ネイティブ可区分] = @Orig" +
+                "inal_ネイティブ可区分)) AND ((@IsNull_ネイティブ可 = 1 AND [ネイティブ可] IS NULL) OR ([ネイティブ可] = @O" +
+                "riginal_ネイティブ可)) AND ((@IsNull_パソコン機種 = 1 AND [パソコン機種] IS NULL) OR ([パソコン機種] = @" +
+                "Original_パソコン機種)) AND ((@IsNull_ソフト種類 = 1 AND [ソフト種類] IS NULL) OR ([ソフト種類] = @Or" +
+                "iginal_ソフト種類)) AND ((@IsNull_パソコンOS = 1 AND [パソコンOS] IS NULL) OR ([パソコンOS] = @Or" +
+                "iginal_パソコンOS)) AND ((@IsNull_海外添乗就業意思 = 1 AND [海外添乗就業意思] IS NULL) OR ([海外添乗就業意思" +
+                "] = @Original_海外添乗就業意思)) AND ((@IsNull_海外添乗就業意思名 = 1 AND [海外添乗就業意思名] IS NULL) OR" +
+                " ([海外添乗就業意思名] = @Original_海外添乗就業意思名)) AND ((@IsNull_海外添乗経験年数 = 1 AND [海外添乗経験年数] " +
+                "IS NULL) OR ([海外添乗経験年数] = @Original_海外添乗経験年数)) AND ((@IsNull_海外添乗地域1 = 1 AND [海外" +
+                "添乗地域1] IS NULL) OR ([海外添乗地域1] = @Original_海外添乗地域1)) AND ((@IsNull_海外添乗地域2 = 1 AN" +
+                "D [海外添乗地域2] IS NULL) OR ([海外添乗地域2] = @Original_海外添乗地域2)) AND ((@IsNull_海外添乗地域3 =" +
+                " 1 AND [海外添乗地域3] IS NULL) OR ([海外添乗地域3] = @Original_海外添乗地域3)) AND ((@IsNull_海外添乗" +
+                "地域4 = 1 AND [海外添乗地域4] IS NULL) OR ([海外添乗地域4] = @Original_海外添乗地域4)) AND ((@IsNull" +
+                "_旅行主任取扱資格 = 1 AND [旅行主任取扱資格] IS NULL) OR ([旅行主任取扱資格] = @Original_旅行主任取扱資格)) AND " +
+                "((@IsNull_旅程管理資格 = 1 AND [旅程管理資格] IS NULL) OR ([旅程管理資格] = @Original_旅程管理資格)) AND" +
+                " ((@IsNull_他資格 = 1 AND [他資格] IS NULL) OR ([他資格] = @Original_他資格)) AND ((@IsNull_" +
+                "職歴 = 1 AND [職歴] IS NULL) OR ([職歴] = @Original_職歴)) AND ((@IsNull_学歴 = 1 AND [学歴]" +
+                " IS NULL) OR ([学歴] = @Original_学歴)) AND ((@IsNull_趣味特技 = 1 AND [趣味特技] IS NULL) O" +
+                "R ([趣味特技] = @Original_趣味特技)) AND ((@IsNull_自己PR = 1 AND [自己PR] IS NULL) OR ([自己P" +
+                "R] = @Original_自己PR)) AND ((@IsNull_業務研修案内関東 = 1 AND [業務研修案内関東] IS NULL) OR ([業務" +
+                "研修案内関東] = @Original_業務研修案内関東)) AND ((@IsNull_業務研修案内関西 = 1 AND [業務研修案内関西] IS NULL" +
+                ") OR ([業務研修案内関西] = @Original_業務研修案内関西)) AND ((@IsNull_所属委員会1 = 1 AND [所属委員会1] IS" +
+                " NULL) OR ([所属委員会1] = @Original_所属委員会1)) AND ((@IsNull_所属委員会名1 = 1 AND [所属委員会名1]" +
+                " IS NULL) OR ([所属委員会名1] = @Original_所属委員会名1)) AND ((@IsNull_所属委員会2 = 1 AND [所属委員" +
+                "会2] IS NULL) OR ([所属委員会2] = @Original_所属委員会2)) AND ((@IsNull_所属委員会名2 = 1 AND [所属" +
+                "委員会名2] IS NULL) OR ([所属委員会名2] = @Original_所属委員会名2)) AND ((@IsNull_所属委員会3 = 1 AND" +
+                " [所属委員会3] IS NULL) OR ([所属委員会3] = @Original_所属委員会3)) AND ((@IsNull_所属委員会名3 = 1 A" +
+                "ND [所属委員会名3] IS NULL) OR ([所属委員会名3] = @Original_所属委員会名3)) AND ((@IsNull_賦課金支払200" +
+                "1 = 1 AND [賦課金支払2001] IS NULL) OR ([賦課金支払2001] = @Original_賦課金支払2001)) AND ((@Is" +
+                "Null_賦課金支払2002 = 1 AND [賦課金支払2002] IS NULL) OR ([賦課金支払2002] = @Original_賦課金支払200" +
+                "2)) AND ((@IsNull_賦課金支払2003 = 1 AND [賦課金支払2003] IS NULL) OR ([賦課金支払2003] = @Orig" +
+                "inal_賦課金支払2003)) AND ((@IsNull_賦課金支払2004 = 1 AND [賦課金支払2004] IS NULL) OR ([賦課金支払" +
+                "2004] = @Original_賦課金支払2004)) AND ((@IsNull_賦課金支払2005 = 1 AND [賦課金支払2005] IS NUL" +
+                "L) OR ([賦課金支払2005] = @Original_賦課金支払2005)) AND ((@IsNull_総会出欠状況2001 = 1 AND [総会出" +
+                "欠状況2001] IS NULL) OR ([総会出欠状況2001] = @Original_総会出欠状況2001)) AND ((@IsNull_総会出欠状況" +
+                "2002 = 1 AND [総会出欠状況2002] IS NULL) OR ([総会出欠状況2002] = @Original_総会出欠状況2002)) AND" +
+                " ((@IsNull_総会出欠状況2003 = 1 AND [総会出欠状況2003] IS NULL) OR ([総会出欠状況2003] = @Original" +
+                "_総会出欠状況2003)) AND ((@IsNull_総会出欠状況2004 = 1 AND [総会出欠状況2004] IS NULL) OR ([総会出欠状況" +
+                "2004] = @Original_総会出欠状況2004)) AND ((@IsNull_総会出欠状況2005 = 1 AND [総会出欠状況2005] IS " +
+                "NULL) OR ([総会出欠状況2005] = @Original_総会出欠状況2005)) AND ((@IsNull_手数料合計2001 = 1 AND " +
+                "[手数料合計2001] IS NULL) OR ([手数料合計2001] = @Original_手数料合計2001)) AND ((@IsNull_手数料合計" +
+                "2002 = 1 AND [手数料合計2002] IS NULL) OR ([手数料合計2002] = @Original_手数料合計2002)) AND ((" +
+                "@IsNull_手数料合計2003 = 1 AND [手数料合計2003] IS NULL) OR ([手数料合計2003] = @Original_手数料合計" +
+                "2003)) AND ((@IsNull_手数料合計2004 = 1 AND [手数料合計2004] IS NULL) OR ([手数料合計2004] = @O" +
+                "riginal_手数料合計2004)) AND ((@IsNull_手数料合計2005 = 1 AND [手数料合計2005] IS NULL) OR ([手数" +
+                "料合計2005] = @Original_手数料合計2005)) AND ((@IsNull_JFG加入年 = 1 AND [JFG加入年] IS NULL) " +
+                "OR ([JFG加入年] = @Original_JFG加入年)) AND ((@IsNull_JFG加入月 = 1 AND [JFG加入月] IS NULL)" +
+                " OR ([JFG加入月] = @Original_JFG加入月)) AND ((@IsNull_NP初回 = 1 AND [NP初回] IS NULL) OR" +
+                " ([NP初回] = @Original_NP初回)) AND ((@IsNull_NP最終 = 1 AND [NP最終] IS NULL) OR ([NP最終" +
+                "] = @Original_NP最終)) AND ((@IsNull_JFG会員歴 = 1 AND [JFG会員歴] IS NULL) OR ([JFG会員歴]" +
+                " = @Original_JFG会員歴)) AND ((@IsNull_JGA会員歴 = 1 AND [JGA会員歴] IS NULL) OR ([JGA会員歴" +
+                "] = @Original_JGA会員歴)) AND ((@IsNull_JFG休会年 = 1 AND [JFG休会年] IS NULL) OR ([JFG休会" +
+                "年] = @Original_JFG休会年)) AND ((@IsNull_JFG休会月 = 1 AND [JFG休会月] IS NULL) OR ([JFG休" +
+                "会月] = @Original_JFG休会月)) AND ((@IsNull_JFG退会年 = 1 AND [JFG退会年] IS NULL) OR ([JFG" +
+                "退会年] = @Original_JFG退会年)) AND ((@IsNull_JFG退会月 = 1 AND [JFG退会月] IS NULL) OR ([JF" +
+                "G退会月] = @Original_JFG退会月)) AND ((@IsNull_出資証券番号 = 1 AND [出資証券番号] IS NULL) OR ([出" +
+                "資証券番号] = @Original_出資証券番号)) AND ((@IsNull_旧姓 = 1 AND [旧姓] IS NULL) OR ([旧姓] = @O" +
+                "riginal_旧姓)) AND ((@IsNull_HP顔写真 = 1 AND [HP顔写真] IS NULL) OR ([HP顔写真] = @Origina" +
+                "l_HP顔写真)) AND ((@IsNull_HP氏名 = 1 AND [HP氏名] IS NULL) OR ([HP氏名] = @Original_HP氏名" +
+                ")) AND ((@IsNull_HP言語 = 1 AND [HP言語] IS NULL) OR ([HP言語] = @Original_HP言語)) AND " +
+                "((@IsNull_HP合格 = 1 AND [HP合格] IS NULL) OR ([HP合格] = @Original_HP合格)) AND ((@IsNu" +
+                "ll_HP居住地 = 1 AND [HP居住地] IS NULL) OR ([HP居住地] = @Original_HP居住地)) AND ((@IsNull_" +
+                "HPJFG = 1 AND [HPJFG] IS NULL) OR ([HPJFG] = @Original_HPJFG)) AND ((@IsNull_母国語" +
+                "1 = 1 AND [母国語1] IS NULL) OR ([母国語1] = @Original_母国語1)) AND ((@IsNull_母国語名1 = 1 " +
+                "AND [母国語名1] IS NULL) OR ([母国語名1] = @Original_母国語名1)) AND ((@IsNull_母国語2 = 1 AND " +
+                "[母国語2] IS NULL) OR ([母国語2] = @Original_母国語2)) AND ((@IsNull_母国語名2 = 1 AND [母国語名2" +
+                "] IS NULL) OR ([母国語名2] = @Original_母国語名2)) AND ((@IsNull_母国語3 = 1 AND [母国語3] IS " +
+                "NULL) OR ([母国語3] = @Original_母国語3)) AND ((@IsNull_母国語名3 = 1 AND [母国語名3] IS NULL)" +
+                " OR ([母国語名3] = @Original_母国語名3)) AND ((@IsNull_メーリングリスト = 1 AND [メーリングリスト] IS NU" +
+                "LL) OR ([メーリングリスト] = @Original_メーリングリスト)) AND ((@IsNull_HP掲載可否 = 1 AND [HP掲載可否] " +
+                "IS NULL) OR ([HP掲載可否] = @Original_HP掲載可否)) AND ((@IsNull_国籍 = 1 AND [国籍] IS NULL" +
+                ") OR ([国籍] = @Original_国籍)) AND ((@IsNull_昨年稼働日数 = 1 AND [昨年稼働日数] IS NULL) OR ([" +
+                "昨年稼働日数] = @Original_昨年稼働日数)) AND ((@IsNull_GICSS研修 = 1 AND [GICSS研修] IS NULL) OR" +
+                " ([GICSS研修] = @Original_GICSS研修)) AND ((@IsNull_GICSS会員歴 = 1 AND [GICSS会員歴] IS N" +
+                "ULL) OR ([GICSS会員歴] = @Original_GICSS会員歴)) AND ((@IsNull_KIGA会員歴 = 1 AND [KIGA会員" +
+                "歴] IS NULL) OR ([KIGA会員歴] = @Original_KIGA会員歴)) AND ((@IsNull_COG会員歴 = 1 AND [CO" +
+                "G会員歴] IS NULL) OR ([COG会員歴] = @Original_COG会員歴)) AND ((@IsNull_JFG2日間机上 = 1 AND " +
+                "[JFG2日間机上] IS NULL) OR ([JFG2日間机上] = @Original_JFG2日間机上)) AND ((@IsNull_IJCEE会員歴" +
+                " = 1 AND [IJCEE会員歴] IS NULL) OR ([IJCEE会員歴] = @Original_IJCEE会員歴)) AND ((@IsNull" +
+                "_都道府県 = 1 AND [都道府県] IS NULL) OR ([都道府県] = @Original_都道府県)) AND ((@IsNull_登録年月日 " +
+                "= 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)) AND ((@IsNull_変更年月日 = 1" +
+                " AND [変更年月日] IS NULL) OR ([変更年月日] = @Original_変更年月日)) AND ([FIT] = @Original_FIT" +
+                ") AND ([FIT日数] = @Original_FIT日数) AND ([団体] = @Original_団体) AND ([団体日数] = @Origi" +
+                "nal_団体日数) AND ([インセンティブ] = @Original_インセンティブ) AND ([インセンティブ日数] = @Original_インセンテ" +
+                "ィブ日数) AND ([最寄駅4] = @Original_最寄駅4) AND ([最寄駅5] = @Original_最寄駅5) AND ([法定研修] = " +
+                "@Original_法定研修) AND ([定期研修受講機関] = @Original_定期研修受講機関) AND ([定期研修受講時期] = @Origina" +
+                "l_定期研修受講時期));\r\nSELECT カード番号, 本人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令, 性別, 言語1, 言語名1, " +
+                "言語2, 言語名2, 言語3, 言語名3, 言語4, 言語名4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合格年4, 合格年5, 免取県1, " +
+                "免取県2, 免取県3, 免取県4, 免取県5, 免許番号1, 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号, 住所1, 住所2, 住所3, " +
+                "地域コード, 地域名, 東西, 自宅電話番号, 自宅FAX番号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メールアドレス1, メールアドレス2" +
+                ", 個人HP, 最寄駅1, 最寄駅2, 最寄駅3, 就業可能条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経験年数, ガイド経験地域1, ガイ" +
+                "ド経験地域2, ガイド経験地域3, ガイド経験地域4, ガイド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験分野4, 新人研修, JFG関東4" +
+                "5, JFG関東23, JFG関西45, JFG関西23, JGA関東, JGA関西, ハロー研修, JICA区分, JICA研修, IHCSA区分, IHCS" +
+                "A研修, 通訳就業意思, 通訳就業意思名, 通訳経験年数, 通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野4, 英語以外語学検定, 英語通訳" +
+                "検定, 英検, 国連英検, TOEIC, TOEFL, 同時通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, 翻訳就業意思名, 翻訳経験年数, " +
+                "翻訳分野1, 翻訳分野2, 翻訳分野3, 翻訳分野4, 翻訳訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソフト種類, パソコンOS, 海外添" +
+                "乗就業意思, 海外添乗就業意思名, 海外添乗経験年数, 海外添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4, 旅行主任取扱資格, 旅程管理資格" +
+                ", 他資格, 職歴, 学歴, 趣味特技, 自己PR, 業務研修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1, 所属委員会2, 所属委員会名2," +
+                " 所属委員会3, 所属委員会名3, 賦課金支払2001, 賦課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦課金支払2005, 総会出欠状況2" +
+                "001, 総会出欠状況2002, 総会出欠状況2003, 総会出欠状況2004, 総会出欠状況2005, 手数料合計2001, 手数料合計2002, 手数料合計" +
+                "2003, 手数料合計2004, 手数料合計2005, JFG加入年, JFG加入月, NP初回, NP最終, JFG会員歴, JGA会員歴, JFG休会年, " +
+                "JFG休会月, JFG退会年, JFG退会月, 出資証券番号, 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP居住地, HPJFG, 母国語1," +
+                " 母国語名1, 母国語2, 母国語名2, 母国語3, 母国語名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数, GICSS研修, GICSS会員" +
+                "歴, KIGA会員歴, COG会員歴, JFG2日間机上, IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変更年月日, FIT, FIT日数," +
+                " 団体, 団体日数, インセンティブ, インセンティブ日数, 最寄駅4, 最寄駅5, 法定研修, 定期研修受講機関, 定期研修受講時期 FROM 会員情報 WH" +
+                "ERE (カード番号 = @カード番号)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@カード番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "カード番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@本人最終記入日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "本人最終記入日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21591,6 +21139,17 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@都道府県", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "都道府県", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIT日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT日数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@団体", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@団体日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体日数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@インセンティブ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@インセンティブ日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ日数", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@最寄駅4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@最寄駅5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@法定研修", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "法定研修", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@定期研修受講機関", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講機関", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@定期研修受講時期", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講時期", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_カード番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "カード番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_本人最終記入日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "本人最終記入日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_本人最終記入日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "本人最終記入日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -21950,13 +21509,24 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_変更年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_変更年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "変更年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FIT日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIT日数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_団体", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_団体日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "団体日数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_インセンティブ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_インセンティブ日数", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "インセンティブ日数", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_最寄駅4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_最寄駅5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "最寄駅5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_法定研修", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "法定研修", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_定期研修受講機関", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講機関", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_定期研修受講時期", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "定期研修受講時期", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21965,7 +21535,25 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT カード番号, 本人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令, 性別, 言語1, 言語名1, 言語2, 言語名2, 言語3, 言語名3, 言語4, 言語名4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合格年4, 合格年5, 免取県1, 免取県2, 免取県3, 免取県4, 免取県5, 免許番号1, 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号, 住所1, 住所2, 住所3, 地域コード, 地域名, 東西, 自宅電話番号, 自宅FAX番号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メールアドレス1, メールアドレス2, 個人HP, 最寄駅1, 最寄駅2, 最寄駅3, 就業可能条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経験年数, ガイド経験地域1, ガイド経験地域2, ガイド経験地域3, ガイド経験地域4, ガイド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験分野4, 新人研修, JFG関東45, JFG関東23, JFG関西45, JFG関西23, JGA関東, JGA関西, ハロー研修, JICA区分, JICA研修, IHCSA区分, IHCSA研修, 通訳就業意思, 通訳就業意思名, 通訳経験年数, 通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野4, 英語以外語学検定, 英語通訳検定, 英検, 国連英検, TOEIC, TOEFL, 同時通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, 翻訳就業意思名, 翻訳経験年数, 翻訳分野1, 翻訳分野2, 翻訳分野3, 翻訳分野4, 翻訳訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソフト種類, パソコンOS, 海外添乗就業意思, 海外添乗就業意思名, 海外添乗経験年数, 海外添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4, 旅行主任取扱資格, 旅程管理資格, 他資格, 職歴, 学歴, 趣味特技, 自己PR, 業務研修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1, 所属委員会2, 所属委員会名2, 所属委員会3, 所属委員会名3, 賦課金支払2001, 賦課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦課金支払2005, 総会出欠状況2001, 総会出欠状況2002, 総会出欠状況2003, 総会出欠状況2004, 総会出欠状況2005, 手数料合計2001, 手数料合計2002, 手数料合計2003, 手数料合計2004, 手数料合計2005, JFG加入年, JFG加入月, NP初回, NP最終, JFG会員歴, JGA会員歴, JFG休会年, JFG休会月, JFG退会年, JFG退会月, 出資証券番号, 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP居住地, HPJFG, 母国語1, 母国語名1, 母国語2, 母国語名2, 母国語3, 母国語名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数, GICSS研修, GICSS会員歴, KIGA会員歴, COG会員歴, JFG2日間机上, IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変更年月日 FROM dbo.会員情報";
+            this._commandCollection[0].CommandText = "SELECT カード番号, 本人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令, 性別, 言語1, 言語名1, 言語2, 言語名2, 言語3, " +
+                "言語名3, 言語4, 言語名4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合格年4, 合格年5, 免取県1, 免取県2, 免取県3, 免取県4" +
+                ", 免取県5, 免許番号1, 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号, 住所1, 住所2, 住所3, 地域コード, 地域名, 東西, " +
+                "自宅電話番号, 自宅FAX番号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メールアドレス1, メールアドレス2, 個人HP, 最寄駅1, 最寄" +
+                "駅2, 最寄駅3, 就業可能条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経験年数, ガイド経験地域1, ガイド経験地域2, ガイド経験地域3" +
+                ", ガイド経験地域4, ガイド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験分野4, 新人研修, JFG関東45, JFG関東23, JFG関" +
+                "西45, JFG関西23, JGA関東, JGA関西, ハロー研修, JICA区分, JICA研修, IHCSA区分, IHCSA研修, 通訳就業意思, 通訳就" +
+                "業意思名, 通訳経験年数, 通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野4, 英語以外語学検定, 英語通訳検定, 英検, 国連英検, TO" +
+                "EIC, TOEFL, 同時通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, 翻訳就業意思名, 翻訳経験年数, 翻訳分野1, 翻訳分野2, 翻訳" +
+                "分野3, 翻訳分野4, 翻訳訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソフト種類, パソコンOS, 海外添乗就業意思, 海外添乗就業意思名" +
+                ", 海外添乗経験年数, 海外添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4, 旅行主任取扱資格, 旅程管理資格, 他資格, 職歴, 学歴, 趣" +
+                "味特技, 自己PR, 業務研修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1, 所属委員会2, 所属委員会名2, 所属委員会3, 所属委員会名3" +
+                ", 賦課金支払2001, 賦課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦課金支払2005, 総会出欠状況2001, 総会出欠状況2002," +
+                " 総会出欠状況2003, 総会出欠状況2004, 総会出欠状況2005, 手数料合計2001, 手数料合計2002, 手数料合計2003, 手数料合計2004," +
+                " 手数料合計2005, JFG加入年, JFG加入月, NP初回, NP最終, JFG会員歴, JGA会員歴, JFG休会年, JFG休会月, JFG退会年, " +
+                "JFG退会月, 出資証券番号, 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP居住地, HPJFG, 母国語1, 母国語名1, 母国語2, 母国" +
+                "語名2, 母国語3, 母国語名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数, GICSS研修, GICSS会員歴, KIGA会員歴, COG会" +
+                "員歴, JFG2日間机上, IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変更年月日, FIT, FIT日数, 団体, 団体日数, インセンテ" +
+                "ィブ, インセンティブ日数, 最寄駅4, 最寄駅5, 法定研修, 定期研修受講機関, 定期研修受講時期 FROM dbo.会員情報";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -21973,7 +21561,7 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.会員情報DataTable dataTable) {
+        public virtual int Fill(mailDataSet.会員情報DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21986,9 +21574,9 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.会員情報DataTable GetData() {
+        public virtual mailDataSet.会員情報DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.会員情報DataTable dataTable = new guideDataSet.会員情報DataTable();
+            mailDataSet.会員情報DataTable dataTable = new mailDataSet.会員情報DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21996,14 +21584,14 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.会員情報DataTable dataTable) {
+        public virtual int Update(mailDataSet.会員情報DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
+        public virtual int Update(mailDataSet dataSet) {
             return this.Adapter.Update(dataSet, "会員情報");
         }
         
@@ -22206,7 +21794,18 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     global::System.Nullable<int> Original_IJCEE会員歴, 
                     string Original_都道府県, 
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
-                    global::System.Nullable<global::System.DateTime> Original_変更年月日) {
+                    global::System.Nullable<global::System.DateTime> Original_変更年月日, 
+                    int Original_FIT, 
+                    int Original_FIT日数, 
+                    int Original_団体, 
+                    int Original_団体日数, 
+                    int Original_インセンティブ, 
+                    int Original_インセンティブ日数, 
+                    string Original_最寄駅4, 
+                    string Original_最寄駅5, 
+                    string Original_法定研修, 
+                    string Original_定期研修受講機関, 
+                    string Original_定期研修受講時期) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((double)(Original_カード番号));
             if ((Original_本人最終記入日.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -23640,6 +23239,42 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                 this.Adapter.DeleteCommand.Parameters[357].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[358].Value = global::System.DBNull.Value;
             }
+            this.Adapter.DeleteCommand.Parameters[359].Value = ((int)(Original_FIT));
+            this.Adapter.DeleteCommand.Parameters[360].Value = ((int)(Original_FIT日数));
+            this.Adapter.DeleteCommand.Parameters[361].Value = ((int)(Original_団体));
+            this.Adapter.DeleteCommand.Parameters[362].Value = ((int)(Original_団体日数));
+            this.Adapter.DeleteCommand.Parameters[363].Value = ((int)(Original_インセンティブ));
+            this.Adapter.DeleteCommand.Parameters[364].Value = ((int)(Original_インセンティブ日数));
+            if ((Original_最寄駅4 == null)) {
+                throw new global::System.ArgumentNullException("Original_最寄駅4");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[365].Value = ((string)(Original_最寄駅4));
+            }
+            if ((Original_最寄駅5 == null)) {
+                throw new global::System.ArgumentNullException("Original_最寄駅5");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[366].Value = ((string)(Original_最寄駅5));
+            }
+            if ((Original_法定研修 == null)) {
+                throw new global::System.ArgumentNullException("Original_法定研修");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[367].Value = ((string)(Original_法定研修));
+            }
+            if ((Original_定期研修受講機関 == null)) {
+                throw new global::System.ArgumentNullException("Original_定期研修受講機関");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[368].Value = ((string)(Original_定期研修受講機関));
+            }
+            if ((Original_定期研修受講時期 == null)) {
+                throw new global::System.ArgumentNullException("Original_定期研修受講時期");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[369].Value = ((string)(Original_定期研修受講時期));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -23841,7 +23476,18 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     string ガイド関係団体, 
                     string 都道府県, 
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
-                    global::System.Nullable<global::System.DateTime> 変更年月日) {
+                    global::System.Nullable<global::System.DateTime> 変更年月日, 
+                    int FIT, 
+                    int FIT日数, 
+                    int 団体, 
+                    int 団体日数, 
+                    int インセンティブ, 
+                    int インセンティブ日数, 
+                    string 最寄駅4, 
+                    string 最寄駅5, 
+                    string 法定研修, 
+                    string 定期研修受講機関, 
+                    string 定期研修受講時期) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((double)(カード番号));
             if ((本人最終記入日.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(本人最終記入日.Value));
@@ -24923,6 +24569,42 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             else {
                 this.Adapter.InsertCommand.Parameters[180].Value = global::System.DBNull.Value;
             }
+            this.Adapter.InsertCommand.Parameters[181].Value = ((int)(FIT));
+            this.Adapter.InsertCommand.Parameters[182].Value = ((int)(FIT日数));
+            this.Adapter.InsertCommand.Parameters[183].Value = ((int)(団体));
+            this.Adapter.InsertCommand.Parameters[184].Value = ((int)(団体日数));
+            this.Adapter.InsertCommand.Parameters[185].Value = ((int)(インセンティブ));
+            this.Adapter.InsertCommand.Parameters[186].Value = ((int)(インセンティブ日数));
+            if ((最寄駅4 == null)) {
+                throw new global::System.ArgumentNullException("最寄駅4");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[187].Value = ((string)(最寄駅4));
+            }
+            if ((最寄駅5 == null)) {
+                throw new global::System.ArgumentNullException("最寄駅5");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[188].Value = ((string)(最寄駅5));
+            }
+            if ((法定研修 == null)) {
+                throw new global::System.ArgumentNullException("法定研修");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[189].Value = ((string)(法定研修));
+            }
+            if ((定期研修受講機関 == null)) {
+                throw new global::System.ArgumentNullException("定期研修受講機関");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[190].Value = ((string)(定期研修受講機関));
+            }
+            if ((定期研修受講時期 == null)) {
+                throw new global::System.ArgumentNullException("定期研修受講時期");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[191].Value = ((string)(定期研修受講時期));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -25125,6 +24807,17 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     string 都道府県, 
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
                     global::System.Nullable<global::System.DateTime> 変更年月日, 
+                    int FIT, 
+                    int FIT日数, 
+                    int 団体, 
+                    int 団体日数, 
+                    int インセンティブ, 
+                    int インセンティブ日数, 
+                    string 最寄駅4, 
+                    string 最寄駅5, 
+                    string 法定研修, 
+                    string 定期研修受講機関, 
+                    string 定期研修受講時期, 
                     double Original_カード番号, 
                     global::System.Nullable<global::System.DateTime> Original_本人最終記入日, 
                     global::System.Nullable<global::System.DateTime> Original_更新年月日, 
@@ -25304,7 +24997,18 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     global::System.Nullable<int> Original_IJCEE会員歴, 
                     string Original_都道府県, 
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
-                    global::System.Nullable<global::System.DateTime> Original_変更年月日) {
+                    global::System.Nullable<global::System.DateTime> Original_変更年月日, 
+                    int Original_FIT, 
+                    int Original_FIT日数, 
+                    int Original_団体, 
+                    int Original_団体日数, 
+                    int Original_インセンティブ, 
+                    int Original_インセンティブ日数, 
+                    string Original_最寄駅4, 
+                    string Original_最寄駅5, 
+                    string Original_法定研修, 
+                    string Original_定期研修受講機関, 
+                    string Original_定期研修受講時期) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(カード番号));
             if ((本人最終記入日.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(本人最終記入日.Value));
@@ -26386,1438 +26090,1510 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             else {
                 this.Adapter.UpdateCommand.Parameters[180].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[181].Value = ((double)(Original_カード番号));
-            if ((Original_本人最終記入日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[182].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[183].Value = ((System.DateTime)(Original_本人最終記入日.Value));
+            this.Adapter.UpdateCommand.Parameters[181].Value = ((int)(FIT));
+            this.Adapter.UpdateCommand.Parameters[182].Value = ((int)(FIT日数));
+            this.Adapter.UpdateCommand.Parameters[183].Value = ((int)(団体));
+            this.Adapter.UpdateCommand.Parameters[184].Value = ((int)(団体日数));
+            this.Adapter.UpdateCommand.Parameters[185].Value = ((int)(インセンティブ));
+            this.Adapter.UpdateCommand.Parameters[186].Value = ((int)(インセンティブ日数));
+            if ((最寄駅4 == null)) {
+                throw new global::System.ArgumentNullException("最寄駅4");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[182].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[183].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[187].Value = ((string)(最寄駅4));
+            }
+            if ((最寄駅5 == null)) {
+                throw new global::System.ArgumentNullException("最寄駅5");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[188].Value = ((string)(最寄駅5));
+            }
+            if ((法定研修 == null)) {
+                throw new global::System.ArgumentNullException("法定研修");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[189].Value = ((string)(法定研修));
+            }
+            if ((定期研修受講機関 == null)) {
+                throw new global::System.ArgumentNullException("定期研修受講機関");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[190].Value = ((string)(定期研修受講機関));
+            }
+            if ((定期研修受講時期 == null)) {
+                throw new global::System.ArgumentNullException("定期研修受講時期");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[191].Value = ((string)(定期研修受講時期));
+            }
+            this.Adapter.UpdateCommand.Parameters[192].Value = ((double)(Original_カード番号));
+            if ((Original_本人最終記入日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[193].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[194].Value = ((System.DateTime)(Original_本人最終記入日.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[193].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[194].Value = global::System.DBNull.Value;
             }
             if ((Original_更新年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[184].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[185].Value = ((System.DateTime)(Original_更新年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[195].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[196].Value = ((System.DateTime)(Original_更新年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[184].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[185].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[195].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[196].Value = global::System.DBNull.Value;
             }
             if ((Original_氏名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[186].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[187].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[197].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[198].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[186].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[187].Value = ((string)(Original_氏名));
+                this.Adapter.UpdateCommand.Parameters[197].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[198].Value = ((string)(Original_氏名));
             }
             if ((Original_フリガナ == null)) {
-                this.Adapter.UpdateCommand.Parameters[188].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[189].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[199].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[200].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[188].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[189].Value = ((string)(Original_フリガナ));
+                this.Adapter.UpdateCommand.Parameters[199].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[200].Value = ((string)(Original_フリガナ));
             }
             if ((Original_生年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[190].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[191].Value = ((System.DateTime)(Original_生年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[201].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[202].Value = ((System.DateTime)(Original_生年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[190].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[191].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[201].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[202].Value = global::System.DBNull.Value;
             }
             if ((Original_年令.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[192].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[193].Value = ((short)(Original_年令.Value));
+                this.Adapter.UpdateCommand.Parameters[203].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[204].Value = ((short)(Original_年令.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[192].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[193].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[203].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[204].Value = global::System.DBNull.Value;
             }
             if ((Original_性別.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[194].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[195].Value = ((short)(Original_性別.Value));
+                this.Adapter.UpdateCommand.Parameters[205].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[206].Value = ((short)(Original_性別.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[194].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[195].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[205].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[206].Value = global::System.DBNull.Value;
             }
             if ((Original_言語1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[196].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[197].Value = ((short)(Original_言語1.Value));
+                this.Adapter.UpdateCommand.Parameters[207].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[208].Value = ((short)(Original_言語1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[196].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[197].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[207].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[208].Value = global::System.DBNull.Value;
             }
             if ((Original_言語名1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[198].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[199].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[209].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[210].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[198].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[199].Value = ((string)(Original_言語名1));
+                this.Adapter.UpdateCommand.Parameters[209].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[210].Value = ((string)(Original_言語名1));
             }
             if ((Original_言語2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[200].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[201].Value = ((short)(Original_言語2.Value));
+                this.Adapter.UpdateCommand.Parameters[211].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[212].Value = ((short)(Original_言語2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[200].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[201].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[211].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[212].Value = global::System.DBNull.Value;
             }
             if ((Original_言語名2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[202].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[203].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[213].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[214].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[202].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[203].Value = ((string)(Original_言語名2));
+                this.Adapter.UpdateCommand.Parameters[213].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[214].Value = ((string)(Original_言語名2));
             }
             if ((Original_言語3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[204].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[205].Value = ((short)(Original_言語3.Value));
+                this.Adapter.UpdateCommand.Parameters[215].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[216].Value = ((short)(Original_言語3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[204].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[205].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[215].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[216].Value = global::System.DBNull.Value;
             }
             if ((Original_言語名3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[206].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[207].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[217].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[218].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[206].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[207].Value = ((string)(Original_言語名3));
+                this.Adapter.UpdateCommand.Parameters[217].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[218].Value = ((string)(Original_言語名3));
             }
             if ((Original_言語4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[208].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[209].Value = ((short)(Original_言語4.Value));
+                this.Adapter.UpdateCommand.Parameters[219].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[220].Value = ((short)(Original_言語4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[208].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[209].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[219].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[220].Value = global::System.DBNull.Value;
             }
             if ((Original_言語名4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[210].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[211].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[221].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[222].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[210].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[211].Value = ((string)(Original_言語名4));
+                this.Adapter.UpdateCommand.Parameters[221].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[222].Value = ((string)(Original_言語名4));
             }
             if ((Original_言語5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[212].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[213].Value = ((short)(Original_言語5.Value));
+                this.Adapter.UpdateCommand.Parameters[223].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[224].Value = ((short)(Original_言語5.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[212].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[213].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[223].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[224].Value = global::System.DBNull.Value;
             }
             if ((Original_言語名5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[214].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[215].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[225].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[226].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[214].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[215].Value = ((string)(Original_言語名5));
+                this.Adapter.UpdateCommand.Parameters[225].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[226].Value = ((string)(Original_言語名5));
             }
             if ((Original_合格年1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[216].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[217].Value = ((int)(Original_合格年1.Value));
+                this.Adapter.UpdateCommand.Parameters[227].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[228].Value = ((int)(Original_合格年1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[216].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[217].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[227].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[228].Value = global::System.DBNull.Value;
             }
             if ((Original_合格年2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[218].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[219].Value = ((int)(Original_合格年2.Value));
+                this.Adapter.UpdateCommand.Parameters[229].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[230].Value = ((int)(Original_合格年2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[218].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[219].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[229].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[230].Value = global::System.DBNull.Value;
             }
             if ((Original_合格年3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[220].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[221].Value = ((int)(Original_合格年3.Value));
+                this.Adapter.UpdateCommand.Parameters[231].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[232].Value = ((int)(Original_合格年3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[220].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[221].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[231].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[232].Value = global::System.DBNull.Value;
             }
             if ((Original_合格年4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[222].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[223].Value = ((int)(Original_合格年4.Value));
+                this.Adapter.UpdateCommand.Parameters[233].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[234].Value = ((int)(Original_合格年4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[222].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[223].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[233].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[234].Value = global::System.DBNull.Value;
             }
             if ((Original_合格年5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[224].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[225].Value = ((int)(Original_合格年5.Value));
+                this.Adapter.UpdateCommand.Parameters[235].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[236].Value = ((int)(Original_合格年5.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[224].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[225].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[235].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[236].Value = global::System.DBNull.Value;
             }
             if ((Original_免取県1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[226].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[227].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[237].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[238].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[226].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[227].Value = ((string)(Original_免取県1));
+                this.Adapter.UpdateCommand.Parameters[237].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[238].Value = ((string)(Original_免取県1));
             }
             if ((Original_免取県2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[228].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[229].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[239].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[240].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[228].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[229].Value = ((string)(Original_免取県2));
+                this.Adapter.UpdateCommand.Parameters[239].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[240].Value = ((string)(Original_免取県2));
             }
             if ((Original_免取県3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[230].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[231].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[241].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[242].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[230].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[231].Value = ((string)(Original_免取県3));
+                this.Adapter.UpdateCommand.Parameters[241].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[242].Value = ((string)(Original_免取県3));
             }
             if ((Original_免取県4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[232].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[233].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[243].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[244].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[232].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[233].Value = ((string)(Original_免取県4));
+                this.Adapter.UpdateCommand.Parameters[243].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[244].Value = ((string)(Original_免取県4));
             }
             if ((Original_免取県5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[234].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[235].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[245].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[246].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[234].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[235].Value = ((string)(Original_免取県5));
+                this.Adapter.UpdateCommand.Parameters[245].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[246].Value = ((string)(Original_免取県5));
             }
             if ((Original_免許番号1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[236].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[237].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[247].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[248].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[236].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[237].Value = ((string)(Original_免許番号1));
+                this.Adapter.UpdateCommand.Parameters[247].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[248].Value = ((string)(Original_免許番号1));
             }
             if ((Original_免許番号2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[238].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[239].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[249].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[250].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[238].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[239].Value = ((string)(Original_免許番号2));
+                this.Adapter.UpdateCommand.Parameters[249].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[250].Value = ((string)(Original_免許番号2));
             }
             if ((Original_免許番号3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[240].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[241].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[251].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[252].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[240].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[241].Value = ((string)(Original_免許番号3));
+                this.Adapter.UpdateCommand.Parameters[251].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[252].Value = ((string)(Original_免許番号3));
             }
             if ((Original_免許番号4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[242].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[243].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[253].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[254].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[242].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[243].Value = ((string)(Original_免許番号4));
+                this.Adapter.UpdateCommand.Parameters[253].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[254].Value = ((string)(Original_免許番号4));
             }
             if ((Original_免許番号5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[244].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[245].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[255].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[256].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[244].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[245].Value = ((string)(Original_免許番号5));
+                this.Adapter.UpdateCommand.Parameters[255].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[256].Value = ((string)(Original_免許番号5));
             }
             if ((Original_郵便番号 == null)) {
-                this.Adapter.UpdateCommand.Parameters[246].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[247].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[257].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[258].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[246].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[247].Value = ((string)(Original_郵便番号));
+                this.Adapter.UpdateCommand.Parameters[257].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[258].Value = ((string)(Original_郵便番号));
             }
             if ((Original_住所1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[248].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[249].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[259].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[260].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[248].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[249].Value = ((string)(Original_住所1));
+                this.Adapter.UpdateCommand.Parameters[259].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[260].Value = ((string)(Original_住所1));
             }
             if ((Original_住所2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[250].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[251].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[261].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[262].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[250].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[251].Value = ((string)(Original_住所2));
+                this.Adapter.UpdateCommand.Parameters[261].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[262].Value = ((string)(Original_住所2));
             }
             if ((Original_住所3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[252].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[253].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[263].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[264].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[252].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[253].Value = ((string)(Original_住所3));
+                this.Adapter.UpdateCommand.Parameters[263].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[264].Value = ((string)(Original_住所3));
             }
             if ((Original_地域コード.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[254].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[255].Value = ((short)(Original_地域コード.Value));
+                this.Adapter.UpdateCommand.Parameters[265].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[266].Value = ((short)(Original_地域コード.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[254].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[255].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[265].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[266].Value = global::System.DBNull.Value;
             }
             if ((Original_地域名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[256].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[257].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[267].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[268].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[256].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[257].Value = ((string)(Original_地域名));
+                this.Adapter.UpdateCommand.Parameters[267].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[268].Value = ((string)(Original_地域名));
             }
             if ((Original_東西.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[258].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[259].Value = ((short)(Original_東西.Value));
+                this.Adapter.UpdateCommand.Parameters[269].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[270].Value = ((short)(Original_東西.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[258].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[259].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[269].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[270].Value = global::System.DBNull.Value;
             }
             if ((Original_自宅電話番号 == null)) {
-                this.Adapter.UpdateCommand.Parameters[260].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[261].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[271].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[272].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[260].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[261].Value = ((string)(Original_自宅電話番号));
+                this.Adapter.UpdateCommand.Parameters[271].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[272].Value = ((string)(Original_自宅電話番号));
             }
             if ((Original_自宅FAX番号 == null)) {
-                this.Adapter.UpdateCommand.Parameters[262].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[263].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[273].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[274].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[262].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[263].Value = ((string)(Original_自宅FAX番号));
+                this.Adapter.UpdateCommand.Parameters[273].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[274].Value = ((string)(Original_自宅FAX番号));
             }
             if ((Original_携帯電話番号 == null)) {
-                this.Adapter.UpdateCommand.Parameters[264].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[265].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[275].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[276].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[264].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[265].Value = ((string)(Original_携帯電話番号));
+                this.Adapter.UpdateCommand.Parameters[275].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[276].Value = ((string)(Original_携帯電話番号));
             }
             if ((Original_連絡可能時間 == null)) {
-                this.Adapter.UpdateCommand.Parameters[266].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[267].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[277].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[278].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[266].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[267].Value = ((string)(Original_連絡可能時間));
+                this.Adapter.UpdateCommand.Parameters[277].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[278].Value = ((string)(Original_連絡可能時間));
             }
             if ((Original_他連絡先 == null)) {
-                this.Adapter.UpdateCommand.Parameters[268].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[269].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[279].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[280].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[268].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[269].Value = ((string)(Original_他連絡先));
+                this.Adapter.UpdateCommand.Parameters[279].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[280].Value = ((string)(Original_他連絡先));
             }
             if ((Original_緊急連絡先 == null)) {
-                this.Adapter.UpdateCommand.Parameters[270].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[271].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[281].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[282].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[270].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[271].Value = ((string)(Original_緊急連絡先));
+                this.Adapter.UpdateCommand.Parameters[281].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[282].Value = ((string)(Original_緊急連絡先));
             }
             if ((Original_メールアドレス1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[272].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[273].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[283].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[284].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[272].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[273].Value = ((string)(Original_メールアドレス1));
+                this.Adapter.UpdateCommand.Parameters[283].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[284].Value = ((string)(Original_メールアドレス1));
             }
             if ((Original_メールアドレス2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[274].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[275].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[285].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[286].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[274].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[275].Value = ((string)(Original_メールアドレス2));
+                this.Adapter.UpdateCommand.Parameters[285].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[286].Value = ((string)(Original_メールアドレス2));
             }
             if ((Original_個人HP == null)) {
-                this.Adapter.UpdateCommand.Parameters[276].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[277].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[287].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[288].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[276].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[277].Value = ((string)(Original_個人HP));
+                this.Adapter.UpdateCommand.Parameters[287].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[288].Value = ((string)(Original_個人HP));
             }
             if ((Original_最寄駅1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[278].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[279].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[289].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[290].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[278].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[279].Value = ((string)(Original_最寄駅1));
+                this.Adapter.UpdateCommand.Parameters[289].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[290].Value = ((string)(Original_最寄駅1));
             }
             if ((Original_最寄駅2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[280].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[281].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[291].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[292].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[280].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[281].Value = ((string)(Original_最寄駅2));
+                this.Adapter.UpdateCommand.Parameters[291].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[292].Value = ((string)(Original_最寄駅2));
             }
             if ((Original_最寄駅3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[282].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[283].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[293].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[294].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[282].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[283].Value = ((string)(Original_最寄駅3));
+                this.Adapter.UpdateCommand.Parameters[293].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[294].Value = ((string)(Original_最寄駅3));
             }
             if ((Original_就業可能条件 == null)) {
-                this.Adapter.UpdateCommand.Parameters[284].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[285].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[295].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[296].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[284].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[285].Value = ((string)(Original_就業可能条件));
+                this.Adapter.UpdateCommand.Parameters[295].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[296].Value = ((string)(Original_就業可能条件));
             }
             if ((Original_宿泊可否 == null)) {
-                this.Adapter.UpdateCommand.Parameters[286].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[287].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[297].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[298].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[286].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[287].Value = ((string)(Original_宿泊可否));
+                this.Adapter.UpdateCommand.Parameters[297].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[298].Value = ((string)(Original_宿泊可否));
             }
             if ((Original_ガイド就業意思.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[288].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[289].Value = ((short)(Original_ガイド就業意思.Value));
+                this.Adapter.UpdateCommand.Parameters[299].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[300].Value = ((short)(Original_ガイド就業意思.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[288].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[289].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[299].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[300].Value = global::System.DBNull.Value;
             }
             if ((Original_ガイド就業意思名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[290].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[291].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[301].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[302].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[290].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[291].Value = ((string)(Original_ガイド就業意思名));
+                this.Adapter.UpdateCommand.Parameters[301].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[302].Value = ((string)(Original_ガイド就業意思名));
             }
             if ((Original_ガイド経験年数 == null)) {
-                this.Adapter.UpdateCommand.Parameters[292].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[293].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[303].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[304].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[292].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[293].Value = ((string)(Original_ガイド経験年数));
+                this.Adapter.UpdateCommand.Parameters[303].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[304].Value = ((string)(Original_ガイド経験年数));
             }
             if ((Original_ガイド経験地域1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[294].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[295].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[305].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[306].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[294].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[295].Value = ((string)(Original_ガイド経験地域1));
+                this.Adapter.UpdateCommand.Parameters[305].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[306].Value = ((string)(Original_ガイド経験地域1));
             }
             if ((Original_ガイド経験地域2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[296].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[297].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[307].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[308].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[296].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[297].Value = ((string)(Original_ガイド経験地域2));
+                this.Adapter.UpdateCommand.Parameters[307].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[308].Value = ((string)(Original_ガイド経験地域2));
             }
             if ((Original_ガイド経験地域3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[298].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[299].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[309].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[310].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[298].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[299].Value = ((string)(Original_ガイド経験地域3));
+                this.Adapter.UpdateCommand.Parameters[309].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[310].Value = ((string)(Original_ガイド経験地域3));
             }
             if ((Original_ガイド経験地域4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[300].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[301].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[311].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[312].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[300].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[301].Value = ((string)(Original_ガイド経験地域4));
+                this.Adapter.UpdateCommand.Parameters[311].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[312].Value = ((string)(Original_ガイド経験地域4));
             }
             if ((Original_ガイド経験分野1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[302].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[303].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[313].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[314].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[302].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[303].Value = ((string)(Original_ガイド経験分野1));
+                this.Adapter.UpdateCommand.Parameters[313].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[314].Value = ((string)(Original_ガイド経験分野1));
             }
             if ((Original_ガイド経験分野2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[304].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[305].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[315].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[316].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[304].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[305].Value = ((string)(Original_ガイド経験分野2));
+                this.Adapter.UpdateCommand.Parameters[315].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[316].Value = ((string)(Original_ガイド経験分野2));
             }
             if ((Original_ガイド経験分野3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[306].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[307].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[317].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[318].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[306].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[307].Value = ((string)(Original_ガイド経験分野3));
+                this.Adapter.UpdateCommand.Parameters[317].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[318].Value = ((string)(Original_ガイド経験分野3));
             }
             if ((Original_ガイド経験分野4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[308].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[309].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[319].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[320].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[308].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[309].Value = ((string)(Original_ガイド経験分野4));
+                this.Adapter.UpdateCommand.Parameters[319].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[320].Value = ((string)(Original_ガイド経験分野4));
             }
             if ((Original_新人研修 == null)) {
-                this.Adapter.UpdateCommand.Parameters[310].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[311].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[321].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[322].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[310].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[311].Value = ((string)(Original_新人研修));
+                this.Adapter.UpdateCommand.Parameters[321].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[322].Value = ((string)(Original_新人研修));
             }
             if ((Original_JFG関東45 == null)) {
-                this.Adapter.UpdateCommand.Parameters[312].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[313].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[323].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[324].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[312].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[313].Value = ((string)(Original_JFG関東45));
+                this.Adapter.UpdateCommand.Parameters[323].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[324].Value = ((string)(Original_JFG関東45));
             }
             if ((Original_JFG関東23 == null)) {
-                this.Adapter.UpdateCommand.Parameters[314].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[315].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[325].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[326].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[314].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[315].Value = ((string)(Original_JFG関東23));
+                this.Adapter.UpdateCommand.Parameters[325].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[326].Value = ((string)(Original_JFG関東23));
             }
             if ((Original_JFG関西45 == null)) {
-                this.Adapter.UpdateCommand.Parameters[316].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[317].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[327].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[328].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[316].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[317].Value = ((string)(Original_JFG関西45));
+                this.Adapter.UpdateCommand.Parameters[327].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[328].Value = ((string)(Original_JFG関西45));
             }
             if ((Original_JFG関西23 == null)) {
-                this.Adapter.UpdateCommand.Parameters[318].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[319].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[329].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[330].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[318].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[319].Value = ((string)(Original_JFG関西23));
+                this.Adapter.UpdateCommand.Parameters[329].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[330].Value = ((string)(Original_JFG関西23));
             }
             if ((Original_JGA関東 == null)) {
-                this.Adapter.UpdateCommand.Parameters[320].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[321].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[331].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[332].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[320].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[321].Value = ((string)(Original_JGA関東));
+                this.Adapter.UpdateCommand.Parameters[331].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[332].Value = ((string)(Original_JGA関東));
             }
             if ((Original_JGA関西 == null)) {
-                this.Adapter.UpdateCommand.Parameters[322].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[323].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[333].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[334].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[322].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[323].Value = ((string)(Original_JGA関西));
+                this.Adapter.UpdateCommand.Parameters[333].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[334].Value = ((string)(Original_JGA関西));
             }
             if ((Original_ハロー研修 == null)) {
-                this.Adapter.UpdateCommand.Parameters[324].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[325].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[335].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[336].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[324].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[325].Value = ((string)(Original_ハロー研修));
+                this.Adapter.UpdateCommand.Parameters[335].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[336].Value = ((string)(Original_ハロー研修));
             }
             if ((Original_JICA区分.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[326].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[327].Value = ((short)(Original_JICA区分.Value));
+                this.Adapter.UpdateCommand.Parameters[337].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[338].Value = ((short)(Original_JICA区分.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[326].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[327].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[337].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[338].Value = global::System.DBNull.Value;
             }
             if ((Original_JICA研修 == null)) {
-                this.Adapter.UpdateCommand.Parameters[328].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[329].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[339].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[340].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[328].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[329].Value = ((string)(Original_JICA研修));
+                this.Adapter.UpdateCommand.Parameters[339].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[340].Value = ((string)(Original_JICA研修));
             }
             if ((Original_IHCSA区分.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[330].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[331].Value = ((short)(Original_IHCSA区分.Value));
+                this.Adapter.UpdateCommand.Parameters[341].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[342].Value = ((short)(Original_IHCSA区分.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[330].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[331].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[341].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[342].Value = global::System.DBNull.Value;
             }
             if ((Original_IHCSA研修 == null)) {
-                this.Adapter.UpdateCommand.Parameters[332].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[333].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[343].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[344].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[332].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[333].Value = ((string)(Original_IHCSA研修));
+                this.Adapter.UpdateCommand.Parameters[343].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[344].Value = ((string)(Original_IHCSA研修));
             }
             if ((Original_通訳就業意思.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[334].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[335].Value = ((short)(Original_通訳就業意思.Value));
+                this.Adapter.UpdateCommand.Parameters[345].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[346].Value = ((short)(Original_通訳就業意思.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[334].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[335].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[345].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[346].Value = global::System.DBNull.Value;
             }
             if ((Original_通訳就業意思名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[336].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[337].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[347].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[348].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[336].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[337].Value = ((string)(Original_通訳就業意思名));
+                this.Adapter.UpdateCommand.Parameters[347].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[348].Value = ((string)(Original_通訳就業意思名));
             }
             if ((Original_通訳経験年数 == null)) {
-                this.Adapter.UpdateCommand.Parameters[338].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[339].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[349].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[350].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[338].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[339].Value = ((string)(Original_通訳経験年数));
+                this.Adapter.UpdateCommand.Parameters[349].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[350].Value = ((string)(Original_通訳経験年数));
             }
             if ((Original_通訳経験分野1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[340].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[341].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[351].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[352].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[340].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[341].Value = ((string)(Original_通訳経験分野1));
+                this.Adapter.UpdateCommand.Parameters[351].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[352].Value = ((string)(Original_通訳経験分野1));
             }
             if ((Original_通訳経験分野2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[342].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[343].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[353].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[354].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[342].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[343].Value = ((string)(Original_通訳経験分野2));
+                this.Adapter.UpdateCommand.Parameters[353].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[354].Value = ((string)(Original_通訳経験分野2));
             }
             if ((Original_通訳経験分野3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[344].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[345].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[355].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[356].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[344].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[345].Value = ((string)(Original_通訳経験分野3));
+                this.Adapter.UpdateCommand.Parameters[355].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[356].Value = ((string)(Original_通訳経験分野3));
             }
             if ((Original_通訳経験分野4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[346].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[347].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[357].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[358].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[346].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[347].Value = ((string)(Original_通訳経験分野4));
+                this.Adapter.UpdateCommand.Parameters[357].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[358].Value = ((string)(Original_通訳経験分野4));
             }
             if ((Original_英語以外語学検定 == null)) {
-                this.Adapter.UpdateCommand.Parameters[348].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[349].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[359].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[360].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[348].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[349].Value = ((string)(Original_英語以外語学検定));
+                this.Adapter.UpdateCommand.Parameters[359].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[360].Value = ((string)(Original_英語以外語学検定));
             }
             if ((Original_英語通訳検定 == null)) {
-                this.Adapter.UpdateCommand.Parameters[350].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[351].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[361].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[362].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[350].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[351].Value = ((string)(Original_英語通訳検定));
+                this.Adapter.UpdateCommand.Parameters[361].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[362].Value = ((string)(Original_英語通訳検定));
             }
             if ((Original_英検 == null)) {
-                this.Adapter.UpdateCommand.Parameters[352].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[353].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[363].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[364].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[352].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[353].Value = ((string)(Original_英検));
+                this.Adapter.UpdateCommand.Parameters[363].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[364].Value = ((string)(Original_英検));
             }
             if ((Original_国連英検 == null)) {
-                this.Adapter.UpdateCommand.Parameters[354].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[355].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[365].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[366].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[354].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[355].Value = ((string)(Original_国連英検));
+                this.Adapter.UpdateCommand.Parameters[365].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[366].Value = ((string)(Original_国連英検));
             }
             if ((Original_TOEIC.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[356].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[357].Value = ((int)(Original_TOEIC.Value));
+                this.Adapter.UpdateCommand.Parameters[367].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[368].Value = ((int)(Original_TOEIC.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[356].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[357].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[367].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[368].Value = global::System.DBNull.Value;
             }
             if ((Original_TOEFL == null)) {
-                this.Adapter.UpdateCommand.Parameters[358].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[359].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[369].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[370].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[358].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[359].Value = ((string)(Original_TOEFL));
+                this.Adapter.UpdateCommand.Parameters[369].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[370].Value = ((string)(Original_TOEFL));
             }
             if ((Original_同時通訳可否区分.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[360].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[361].Value = ((short)(Original_同時通訳可否区分.Value));
+                this.Adapter.UpdateCommand.Parameters[371].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[372].Value = ((short)(Original_同時通訳可否区分.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[360].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[361].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[371].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[372].Value = global::System.DBNull.Value;
             }
             if ((Original_同時通訳可否 == null)) {
-                this.Adapter.UpdateCommand.Parameters[362].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[363].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[373].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[374].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[362].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[363].Value = ((string)(Original_同時通訳可否));
+                this.Adapter.UpdateCommand.Parameters[373].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[374].Value = ((string)(Original_同時通訳可否));
             }
             if ((Original_通訳訓練機関名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[364].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[365].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[375].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[376].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[364].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[365].Value = ((string)(Original_通訳訓練機関名));
+                this.Adapter.UpdateCommand.Parameters[375].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[376].Value = ((string)(Original_通訳訓練機関名));
             }
             if ((Original_翻訳就業意思.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[366].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[367].Value = ((short)(Original_翻訳就業意思.Value));
+                this.Adapter.UpdateCommand.Parameters[377].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[378].Value = ((short)(Original_翻訳就業意思.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[366].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[367].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[377].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[378].Value = global::System.DBNull.Value;
             }
             if ((Original_翻訳就業意思名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[368].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[369].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[379].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[380].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[368].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[369].Value = ((string)(Original_翻訳就業意思名));
+                this.Adapter.UpdateCommand.Parameters[379].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[380].Value = ((string)(Original_翻訳就業意思名));
             }
             if ((Original_翻訳経験年数 == null)) {
-                this.Adapter.UpdateCommand.Parameters[370].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[371].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[381].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[382].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[370].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[371].Value = ((string)(Original_翻訳経験年数));
+                this.Adapter.UpdateCommand.Parameters[381].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[382].Value = ((string)(Original_翻訳経験年数));
             }
             if ((Original_翻訳分野1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[372].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[373].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[383].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[384].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[372].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[373].Value = ((string)(Original_翻訳分野1));
+                this.Adapter.UpdateCommand.Parameters[383].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[384].Value = ((string)(Original_翻訳分野1));
             }
             if ((Original_翻訳分野2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[374].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[375].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[385].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[386].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[374].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[375].Value = ((string)(Original_翻訳分野2));
+                this.Adapter.UpdateCommand.Parameters[385].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[386].Value = ((string)(Original_翻訳分野2));
             }
             if ((Original_翻訳分野3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[376].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[377].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[387].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[388].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[376].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[377].Value = ((string)(Original_翻訳分野3));
+                this.Adapter.UpdateCommand.Parameters[387].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[388].Value = ((string)(Original_翻訳分野3));
             }
             if ((Original_翻訳分野4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[378].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[379].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[389].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[390].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[378].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[379].Value = ((string)(Original_翻訳分野4));
+                this.Adapter.UpdateCommand.Parameters[389].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[390].Value = ((string)(Original_翻訳分野4));
             }
             if ((Original_翻訳訓練機関 == null)) {
-                this.Adapter.UpdateCommand.Parameters[380].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[381].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[391].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[392].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[380].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[381].Value = ((string)(Original_翻訳訓練機関));
+                this.Adapter.UpdateCommand.Parameters[391].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[392].Value = ((string)(Original_翻訳訓練機関));
             }
             if ((Original_ネイティブ可区分.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[382].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[383].Value = ((short)(Original_ネイティブ可区分.Value));
+                this.Adapter.UpdateCommand.Parameters[393].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[394].Value = ((short)(Original_ネイティブ可区分.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[382].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[383].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[393].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[394].Value = global::System.DBNull.Value;
             }
             if ((Original_ネイティブ可 == null)) {
-                this.Adapter.UpdateCommand.Parameters[384].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[385].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[395].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[396].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[384].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[385].Value = ((string)(Original_ネイティブ可));
+                this.Adapter.UpdateCommand.Parameters[395].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[396].Value = ((string)(Original_ネイティブ可));
             }
             if ((Original_パソコン機種 == null)) {
-                this.Adapter.UpdateCommand.Parameters[386].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[387].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[397].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[398].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[386].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[387].Value = ((string)(Original_パソコン機種));
+                this.Adapter.UpdateCommand.Parameters[397].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[398].Value = ((string)(Original_パソコン機種));
             }
             if ((Original_ソフト種類 == null)) {
-                this.Adapter.UpdateCommand.Parameters[388].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[389].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[399].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[400].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[388].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[389].Value = ((string)(Original_ソフト種類));
+                this.Adapter.UpdateCommand.Parameters[399].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[400].Value = ((string)(Original_ソフト種類));
             }
             if ((Original_パソコンOS == null)) {
-                this.Adapter.UpdateCommand.Parameters[390].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[391].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[401].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[402].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[390].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[391].Value = ((string)(Original_パソコンOS));
+                this.Adapter.UpdateCommand.Parameters[401].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[402].Value = ((string)(Original_パソコンOS));
             }
             if ((Original_海外添乗就業意思.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[392].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[393].Value = ((short)(Original_海外添乗就業意思.Value));
+                this.Adapter.UpdateCommand.Parameters[403].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[404].Value = ((short)(Original_海外添乗就業意思.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[392].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[393].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[403].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[404].Value = global::System.DBNull.Value;
             }
             if ((Original_海外添乗就業意思名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[394].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[395].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[405].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[406].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[394].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[395].Value = ((string)(Original_海外添乗就業意思名));
+                this.Adapter.UpdateCommand.Parameters[405].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[406].Value = ((string)(Original_海外添乗就業意思名));
             }
             if ((Original_海外添乗経験年数.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[396].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[397].Value = ((short)(Original_海外添乗経験年数.Value));
+                this.Adapter.UpdateCommand.Parameters[407].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[408].Value = ((short)(Original_海外添乗経験年数.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[396].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[397].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[407].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[408].Value = global::System.DBNull.Value;
             }
             if ((Original_海外添乗地域1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[398].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[399].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[409].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[410].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[398].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[399].Value = ((string)(Original_海外添乗地域1));
+                this.Adapter.UpdateCommand.Parameters[409].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[410].Value = ((string)(Original_海外添乗地域1));
             }
             if ((Original_海外添乗地域2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[400].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[401].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[411].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[412].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[400].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[401].Value = ((string)(Original_海外添乗地域2));
+                this.Adapter.UpdateCommand.Parameters[411].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[412].Value = ((string)(Original_海外添乗地域2));
             }
             if ((Original_海外添乗地域3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[402].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[403].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[413].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[414].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[402].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[403].Value = ((string)(Original_海外添乗地域3));
+                this.Adapter.UpdateCommand.Parameters[413].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[414].Value = ((string)(Original_海外添乗地域3));
             }
             if ((Original_海外添乗地域4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[404].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[405].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[415].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[416].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[404].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[405].Value = ((string)(Original_海外添乗地域4));
+                this.Adapter.UpdateCommand.Parameters[415].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[416].Value = ((string)(Original_海外添乗地域4));
             }
             if ((Original_旅行主任取扱資格 == null)) {
-                this.Adapter.UpdateCommand.Parameters[406].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[407].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[417].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[418].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[406].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[407].Value = ((string)(Original_旅行主任取扱資格));
+                this.Adapter.UpdateCommand.Parameters[417].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[418].Value = ((string)(Original_旅行主任取扱資格));
             }
             if ((Original_旅程管理資格 == null)) {
-                this.Adapter.UpdateCommand.Parameters[408].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[409].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[419].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[420].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[408].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[409].Value = ((string)(Original_旅程管理資格));
+                this.Adapter.UpdateCommand.Parameters[419].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[420].Value = ((string)(Original_旅程管理資格));
             }
             if ((Original_他資格 == null)) {
-                this.Adapter.UpdateCommand.Parameters[410].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[411].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[421].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[422].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[410].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[411].Value = ((string)(Original_他資格));
+                this.Adapter.UpdateCommand.Parameters[421].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[422].Value = ((string)(Original_他資格));
             }
             if ((Original_職歴 == null)) {
-                this.Adapter.UpdateCommand.Parameters[412].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[413].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[423].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[424].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[412].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[413].Value = ((string)(Original_職歴));
+                this.Adapter.UpdateCommand.Parameters[423].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[424].Value = ((string)(Original_職歴));
             }
             if ((Original_学歴 == null)) {
-                this.Adapter.UpdateCommand.Parameters[414].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[415].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[425].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[426].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[414].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[415].Value = ((string)(Original_学歴));
+                this.Adapter.UpdateCommand.Parameters[425].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[426].Value = ((string)(Original_学歴));
             }
             if ((Original_趣味特技 == null)) {
-                this.Adapter.UpdateCommand.Parameters[416].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[417].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[427].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[428].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[416].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[417].Value = ((string)(Original_趣味特技));
+                this.Adapter.UpdateCommand.Parameters[427].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[428].Value = ((string)(Original_趣味特技));
             }
             if ((Original_自己PR == null)) {
-                this.Adapter.UpdateCommand.Parameters[418].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[419].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[429].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[430].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[418].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[419].Value = ((string)(Original_自己PR));
+                this.Adapter.UpdateCommand.Parameters[429].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[430].Value = ((string)(Original_自己PR));
             }
             if ((Original_業務研修案内関東.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[420].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[421].Value = ((short)(Original_業務研修案内関東.Value));
+                this.Adapter.UpdateCommand.Parameters[431].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[432].Value = ((short)(Original_業務研修案内関東.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[420].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[421].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[431].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[432].Value = global::System.DBNull.Value;
             }
             if ((Original_業務研修案内関西.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[422].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[423].Value = ((short)(Original_業務研修案内関西.Value));
+                this.Adapter.UpdateCommand.Parameters[433].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[434].Value = ((short)(Original_業務研修案内関西.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[422].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[423].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[433].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[434].Value = global::System.DBNull.Value;
             }
             if ((Original_所属委員会1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[424].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[425].Value = ((short)(Original_所属委員会1.Value));
+                this.Adapter.UpdateCommand.Parameters[435].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[436].Value = ((short)(Original_所属委員会1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[424].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[425].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[435].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[436].Value = global::System.DBNull.Value;
             }
             if ((Original_所属委員会名1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[426].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[427].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[437].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[438].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[426].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[427].Value = ((string)(Original_所属委員会名1));
+                this.Adapter.UpdateCommand.Parameters[437].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[438].Value = ((string)(Original_所属委員会名1));
             }
             if ((Original_所属委員会2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[428].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[429].Value = ((short)(Original_所属委員会2.Value));
+                this.Adapter.UpdateCommand.Parameters[439].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[440].Value = ((short)(Original_所属委員会2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[428].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[429].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[439].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[440].Value = global::System.DBNull.Value;
             }
             if ((Original_所属委員会名2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[430].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[431].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[441].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[442].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[430].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[431].Value = ((string)(Original_所属委員会名2));
+                this.Adapter.UpdateCommand.Parameters[441].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[442].Value = ((string)(Original_所属委員会名2));
             }
             if ((Original_所属委員会3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[432].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[433].Value = ((short)(Original_所属委員会3.Value));
+                this.Adapter.UpdateCommand.Parameters[443].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[444].Value = ((short)(Original_所属委員会3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[432].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[433].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[443].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[444].Value = global::System.DBNull.Value;
             }
             if ((Original_所属委員会名3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[434].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[435].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[445].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[446].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[434].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[435].Value = ((string)(Original_所属委員会名3));
+                this.Adapter.UpdateCommand.Parameters[445].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[446].Value = ((string)(Original_所属委員会名3));
             }
             if ((Original_賦課金支払2001.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[436].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[437].Value = ((System.DateTime)(Original_賦課金支払2001.Value));
+                this.Adapter.UpdateCommand.Parameters[447].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[448].Value = ((System.DateTime)(Original_賦課金支払2001.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[436].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[437].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[447].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[448].Value = global::System.DBNull.Value;
             }
             if ((Original_賦課金支払2002.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[438].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[439].Value = ((System.DateTime)(Original_賦課金支払2002.Value));
+                this.Adapter.UpdateCommand.Parameters[449].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[450].Value = ((System.DateTime)(Original_賦課金支払2002.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[438].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[439].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[449].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[450].Value = global::System.DBNull.Value;
             }
             if ((Original_賦課金支払2003.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[440].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[441].Value = ((System.DateTime)(Original_賦課金支払2003.Value));
+                this.Adapter.UpdateCommand.Parameters[451].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[452].Value = ((System.DateTime)(Original_賦課金支払2003.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[440].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[441].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[451].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[452].Value = global::System.DBNull.Value;
             }
             if ((Original_賦課金支払2004.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[442].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[443].Value = ((System.DateTime)(Original_賦課金支払2004.Value));
+                this.Adapter.UpdateCommand.Parameters[453].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[454].Value = ((System.DateTime)(Original_賦課金支払2004.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[442].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[443].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[453].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[454].Value = global::System.DBNull.Value;
             }
             if ((Original_賦課金支払2005.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[444].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[445].Value = ((System.DateTime)(Original_賦課金支払2005.Value));
+                this.Adapter.UpdateCommand.Parameters[455].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[456].Value = ((System.DateTime)(Original_賦課金支払2005.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[444].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[445].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[455].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[456].Value = global::System.DBNull.Value;
             }
             if ((Original_総会出欠状況2001.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[446].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[447].Value = ((System.DateTime)(Original_総会出欠状況2001.Value));
+                this.Adapter.UpdateCommand.Parameters[457].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[458].Value = ((System.DateTime)(Original_総会出欠状況2001.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[446].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[447].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[457].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[458].Value = global::System.DBNull.Value;
             }
             if ((Original_総会出欠状況2002.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[448].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[449].Value = ((System.DateTime)(Original_総会出欠状況2002.Value));
+                this.Adapter.UpdateCommand.Parameters[459].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[460].Value = ((System.DateTime)(Original_総会出欠状況2002.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[448].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[449].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[459].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[460].Value = global::System.DBNull.Value;
             }
             if ((Original_総会出欠状況2003.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[450].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[451].Value = ((System.DateTime)(Original_総会出欠状況2003.Value));
+                this.Adapter.UpdateCommand.Parameters[461].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[462].Value = ((System.DateTime)(Original_総会出欠状況2003.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[450].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[451].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[461].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[462].Value = global::System.DBNull.Value;
             }
             if ((Original_総会出欠状況2004.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[452].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[453].Value = ((System.DateTime)(Original_総会出欠状況2004.Value));
+                this.Adapter.UpdateCommand.Parameters[463].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[464].Value = ((System.DateTime)(Original_総会出欠状況2004.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[452].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[453].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[463].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[464].Value = global::System.DBNull.Value;
             }
             if ((Original_総会出欠状況2005.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[454].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[455].Value = ((System.DateTime)(Original_総会出欠状況2005.Value));
+                this.Adapter.UpdateCommand.Parameters[465].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[466].Value = ((System.DateTime)(Original_総会出欠状況2005.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[454].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[455].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[465].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[466].Value = global::System.DBNull.Value;
             }
             if ((Original_手数料合計2001.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[456].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[457].Value = ((decimal)(Original_手数料合計2001.Value));
+                this.Adapter.UpdateCommand.Parameters[467].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[468].Value = ((decimal)(Original_手数料合計2001.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[456].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[457].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[467].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[468].Value = global::System.DBNull.Value;
             }
             if ((Original_手数料合計2002.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[458].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[459].Value = ((decimal)(Original_手数料合計2002.Value));
+                this.Adapter.UpdateCommand.Parameters[469].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[470].Value = ((decimal)(Original_手数料合計2002.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[458].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[459].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[469].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[470].Value = global::System.DBNull.Value;
             }
             if ((Original_手数料合計2003.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[460].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[461].Value = ((decimal)(Original_手数料合計2003.Value));
+                this.Adapter.UpdateCommand.Parameters[471].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[472].Value = ((decimal)(Original_手数料合計2003.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[460].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[461].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[471].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[472].Value = global::System.DBNull.Value;
             }
             if ((Original_手数料合計2004.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[462].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[463].Value = ((decimal)(Original_手数料合計2004.Value));
+                this.Adapter.UpdateCommand.Parameters[473].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[474].Value = ((decimal)(Original_手数料合計2004.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[462].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[463].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[473].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[474].Value = global::System.DBNull.Value;
             }
             if ((Original_手数料合計2005.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[464].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[465].Value = ((decimal)(Original_手数料合計2005.Value));
+                this.Adapter.UpdateCommand.Parameters[475].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[476].Value = ((decimal)(Original_手数料合計2005.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[464].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[465].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[475].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[476].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG加入年.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[466].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[467].Value = ((short)(Original_JFG加入年.Value));
+                this.Adapter.UpdateCommand.Parameters[477].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[478].Value = ((short)(Original_JFG加入年.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[466].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[467].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[477].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[478].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG加入月.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[468].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[469].Value = ((short)(Original_JFG加入月.Value));
+                this.Adapter.UpdateCommand.Parameters[479].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[480].Value = ((short)(Original_JFG加入月.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[468].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[469].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[479].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[480].Value = global::System.DBNull.Value;
             }
             if ((Original_NP初回.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[470].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[471].Value = ((System.DateTime)(Original_NP初回.Value));
+                this.Adapter.UpdateCommand.Parameters[481].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[482].Value = ((System.DateTime)(Original_NP初回.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[470].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[471].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[481].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[482].Value = global::System.DBNull.Value;
             }
             if ((Original_NP最終.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[472].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[473].Value = ((System.DateTime)(Original_NP最終.Value));
+                this.Adapter.UpdateCommand.Parameters[483].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[484].Value = ((System.DateTime)(Original_NP最終.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[472].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[473].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[483].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[484].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG会員歴.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[474].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[475].Value = ((short)(Original_JFG会員歴.Value));
+                this.Adapter.UpdateCommand.Parameters[485].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[486].Value = ((short)(Original_JFG会員歴.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[474].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[475].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[485].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[486].Value = global::System.DBNull.Value;
             }
             if ((Original_JGA会員歴.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[476].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[477].Value = ((short)(Original_JGA会員歴.Value));
+                this.Adapter.UpdateCommand.Parameters[487].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[488].Value = ((short)(Original_JGA会員歴.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[476].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[477].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[487].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[488].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG休会年.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[478].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[479].Value = ((short)(Original_JFG休会年.Value));
+                this.Adapter.UpdateCommand.Parameters[489].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[490].Value = ((short)(Original_JFG休会年.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[478].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[479].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[489].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[490].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG休会月.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[480].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[481].Value = ((short)(Original_JFG休会月.Value));
+                this.Adapter.UpdateCommand.Parameters[491].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[492].Value = ((short)(Original_JFG休会月.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[480].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[481].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[491].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[492].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG退会年.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[482].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[483].Value = ((short)(Original_JFG退会年.Value));
+                this.Adapter.UpdateCommand.Parameters[493].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[494].Value = ((short)(Original_JFG退会年.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[482].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[483].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[493].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[494].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG退会月.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[484].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[485].Value = ((short)(Original_JFG退会月.Value));
+                this.Adapter.UpdateCommand.Parameters[495].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[496].Value = ((short)(Original_JFG退会月.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[484].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[485].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[495].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[496].Value = global::System.DBNull.Value;
             }
             if ((Original_出資証券番号.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[486].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[487].Value = ((int)(Original_出資証券番号.Value));
+                this.Adapter.UpdateCommand.Parameters[497].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[498].Value = ((int)(Original_出資証券番号.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[486].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[487].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[497].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[498].Value = global::System.DBNull.Value;
             }
             if ((Original_旧姓 == null)) {
-                this.Adapter.UpdateCommand.Parameters[488].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[489].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[499].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[500].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[488].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[489].Value = ((string)(Original_旧姓));
+                this.Adapter.UpdateCommand.Parameters[499].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[500].Value = ((string)(Original_旧姓));
             }
             if ((Original_HP顔写真 == null)) {
-                this.Adapter.UpdateCommand.Parameters[490].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[491].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[501].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[502].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[490].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[491].Value = ((string)(Original_HP顔写真));
+                this.Adapter.UpdateCommand.Parameters[501].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[502].Value = ((string)(Original_HP顔写真));
             }
             if ((Original_HP氏名 == null)) {
-                this.Adapter.UpdateCommand.Parameters[492].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[493].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[503].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[504].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[492].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[493].Value = ((string)(Original_HP氏名));
+                this.Adapter.UpdateCommand.Parameters[503].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[504].Value = ((string)(Original_HP氏名));
             }
             if ((Original_HP言語 == null)) {
-                this.Adapter.UpdateCommand.Parameters[494].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[495].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[505].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[506].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[494].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[495].Value = ((string)(Original_HP言語));
+                this.Adapter.UpdateCommand.Parameters[505].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[506].Value = ((string)(Original_HP言語));
             }
             if ((Original_HP合格 == null)) {
-                this.Adapter.UpdateCommand.Parameters[496].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[497].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[507].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[508].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[496].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[497].Value = ((string)(Original_HP合格));
+                this.Adapter.UpdateCommand.Parameters[507].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[508].Value = ((string)(Original_HP合格));
             }
             if ((Original_HP居住地 == null)) {
-                this.Adapter.UpdateCommand.Parameters[498].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[499].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[509].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[510].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[498].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[499].Value = ((string)(Original_HP居住地));
+                this.Adapter.UpdateCommand.Parameters[509].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[510].Value = ((string)(Original_HP居住地));
             }
             if ((Original_HPJFG == null)) {
-                this.Adapter.UpdateCommand.Parameters[500].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[501].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[511].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[512].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[500].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[501].Value = ((string)(Original_HPJFG));
+                this.Adapter.UpdateCommand.Parameters[511].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[512].Value = ((string)(Original_HPJFG));
             }
             if ((Original_母国語1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[502].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[503].Value = ((short)(Original_母国語1.Value));
+                this.Adapter.UpdateCommand.Parameters[513].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[514].Value = ((short)(Original_母国語1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[502].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[503].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[513].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[514].Value = global::System.DBNull.Value;
             }
             if ((Original_母国語名1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[504].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[505].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[515].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[516].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[504].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[505].Value = ((string)(Original_母国語名1));
+                this.Adapter.UpdateCommand.Parameters[515].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[516].Value = ((string)(Original_母国語名1));
             }
             if ((Original_母国語2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[506].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[507].Value = ((short)(Original_母国語2.Value));
+                this.Adapter.UpdateCommand.Parameters[517].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[518].Value = ((short)(Original_母国語2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[506].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[507].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[517].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[518].Value = global::System.DBNull.Value;
             }
             if ((Original_母国語名2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[508].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[509].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[519].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[520].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[508].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[509].Value = ((string)(Original_母国語名2));
+                this.Adapter.UpdateCommand.Parameters[519].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[520].Value = ((string)(Original_母国語名2));
             }
             if ((Original_母国語3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[510].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[511].Value = ((short)(Original_母国語3.Value));
+                this.Adapter.UpdateCommand.Parameters[521].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[522].Value = ((short)(Original_母国語3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[510].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[511].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[521].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[522].Value = global::System.DBNull.Value;
             }
             if ((Original_母国語名3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[512].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[513].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[523].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[524].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[512].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[513].Value = ((string)(Original_母国語名3));
+                this.Adapter.UpdateCommand.Parameters[523].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[524].Value = ((string)(Original_母国語名3));
             }
             if ((Original_メーリングリスト.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[514].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[515].Value = ((short)(Original_メーリングリスト.Value));
+                this.Adapter.UpdateCommand.Parameters[525].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[526].Value = ((short)(Original_メーリングリスト.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[514].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[515].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[525].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[526].Value = global::System.DBNull.Value;
             }
             if ((Original_HP掲載可否.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[516].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[517].Value = ((short)(Original_HP掲載可否.Value));
+                this.Adapter.UpdateCommand.Parameters[527].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[528].Value = ((short)(Original_HP掲載可否.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[516].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[517].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[527].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[528].Value = global::System.DBNull.Value;
             }
             if ((Original_国籍 == null)) {
-                this.Adapter.UpdateCommand.Parameters[518].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[519].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[529].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[530].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[518].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[519].Value = ((string)(Original_国籍));
+                this.Adapter.UpdateCommand.Parameters[529].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[530].Value = ((string)(Original_国籍));
             }
             if ((Original_昨年稼働日数 == null)) {
-                this.Adapter.UpdateCommand.Parameters[520].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[521].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[531].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[532].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[520].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[521].Value = ((string)(Original_昨年稼働日数));
+                this.Adapter.UpdateCommand.Parameters[531].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[532].Value = ((string)(Original_昨年稼働日数));
             }
             if ((Original_GICSS研修 == null)) {
-                this.Adapter.UpdateCommand.Parameters[522].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[523].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[533].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[534].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[522].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[523].Value = ((string)(Original_GICSS研修));
+                this.Adapter.UpdateCommand.Parameters[533].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[534].Value = ((string)(Original_GICSS研修));
             }
             if ((Original_GICSS会員歴.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[524].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[525].Value = ((short)(Original_GICSS会員歴.Value));
+                this.Adapter.UpdateCommand.Parameters[535].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[536].Value = ((short)(Original_GICSS会員歴.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[524].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[525].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[535].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[536].Value = global::System.DBNull.Value;
             }
             if ((Original_KIGA会員歴.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[526].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[527].Value = ((short)(Original_KIGA会員歴.Value));
+                this.Adapter.UpdateCommand.Parameters[537].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[538].Value = ((short)(Original_KIGA会員歴.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[526].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[527].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[537].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[538].Value = global::System.DBNull.Value;
             }
             if ((Original_COG会員歴.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[528].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[529].Value = ((short)(Original_COG会員歴.Value));
+                this.Adapter.UpdateCommand.Parameters[539].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[540].Value = ((short)(Original_COG会員歴.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[528].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[529].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[539].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[540].Value = global::System.DBNull.Value;
             }
             if ((Original_JFG2日間机上 == null)) {
-                this.Adapter.UpdateCommand.Parameters[530].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[531].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[541].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[542].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[530].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[531].Value = ((string)(Original_JFG2日間机上));
+                this.Adapter.UpdateCommand.Parameters[541].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[542].Value = ((string)(Original_JFG2日間机上));
             }
             if ((Original_IJCEE会員歴.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[532].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[533].Value = ((int)(Original_IJCEE会員歴.Value));
+                this.Adapter.UpdateCommand.Parameters[543].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[544].Value = ((int)(Original_IJCEE会員歴.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[532].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[533].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[543].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[544].Value = global::System.DBNull.Value;
             }
             if ((Original_都道府県 == null)) {
-                this.Adapter.UpdateCommand.Parameters[534].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[535].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[545].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[546].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[534].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[535].Value = ((string)(Original_都道府県));
+                this.Adapter.UpdateCommand.Parameters[545].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[546].Value = ((string)(Original_都道府県));
             }
             if ((Original_登録年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[536].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[537].Value = ((System.DateTime)(Original_登録年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[547].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[548].Value = ((System.DateTime)(Original_登録年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[536].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[537].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[547].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[548].Value = global::System.DBNull.Value;
             }
             if ((Original_変更年月日.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[538].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[539].Value = ((System.DateTime)(Original_変更年月日.Value));
+                this.Adapter.UpdateCommand.Parameters[549].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[550].Value = ((System.DateTime)(Original_変更年月日.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[538].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[539].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[549].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[550].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[551].Value = ((int)(Original_FIT));
+            this.Adapter.UpdateCommand.Parameters[552].Value = ((int)(Original_FIT日数));
+            this.Adapter.UpdateCommand.Parameters[553].Value = ((int)(Original_団体));
+            this.Adapter.UpdateCommand.Parameters[554].Value = ((int)(Original_団体日数));
+            this.Adapter.UpdateCommand.Parameters[555].Value = ((int)(Original_インセンティブ));
+            this.Adapter.UpdateCommand.Parameters[556].Value = ((int)(Original_インセンティブ日数));
+            if ((Original_最寄駅4 == null)) {
+                throw new global::System.ArgumentNullException("Original_最寄駅4");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[557].Value = ((string)(Original_最寄駅4));
+            }
+            if ((Original_最寄駅5 == null)) {
+                throw new global::System.ArgumentNullException("Original_最寄駅5");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[558].Value = ((string)(Original_最寄駅5));
+            }
+            if ((Original_法定研修 == null)) {
+                throw new global::System.ArgumentNullException("Original_法定研修");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[559].Value = ((string)(Original_法定研修));
+            }
+            if ((Original_定期研修受講機関 == null)) {
+                throw new global::System.ArgumentNullException("Original_定期研修受講機関");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[560].Value = ((string)(Original_定期研修受講機関));
+            }
+            if ((Original_定期研修受講時期 == null)) {
+                throw new global::System.ArgumentNullException("Original_定期研修受講時期");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[561].Value = ((string)(Original_定期研修受講時期));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -28020,6 +27796,17 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     string 都道府県, 
                     global::System.Nullable<global::System.DateTime> 登録年月日, 
                     global::System.Nullable<global::System.DateTime> 変更年月日, 
+                    int FIT, 
+                    int FIT日数, 
+                    int 団体, 
+                    int 団体日数, 
+                    int インセンティブ, 
+                    int インセンティブ日数, 
+                    string 最寄駅4, 
+                    string 最寄駅5, 
+                    string 法定研修, 
+                    string 定期研修受講機関, 
+                    string 定期研修受講時期, 
                     double Original_カード番号, 
                     global::System.Nullable<global::System.DateTime> Original_本人最終記入日, 
                     global::System.Nullable<global::System.DateTime> Original_更新年月日, 
@@ -28199,8 +27986,19 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     global::System.Nullable<int> Original_IJCEE会員歴, 
                     string Original_都道府県, 
                     global::System.Nullable<global::System.DateTime> Original_登録年月日, 
-                    global::System.Nullable<global::System.DateTime> Original_変更年月日) {
-            return this.Update(Original_カード番号, 本人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令, 性別, 言語1, 言語名1, 言語2, 言語名2, 言語3, 言語名3, 言語4, 言語名4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合格年4, 合格年5, 免取県1, 免取県2, 免取県3, 免取県4, 免取県5, 免許番号1, 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号, 住所1, 住所2, 住所3, 地域コード, 地域名, 東西, 自宅電話番号, 自宅FAX番号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メールアドレス1, メールアドレス2, 個人HP, 最寄駅1, 最寄駅2, 最寄駅3, 就業可能条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経験年数, ガイド経験地域1, ガイド経験地域2, ガイド経験地域3, ガイド経験地域4, ガイド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験分野4, 新人研修, JFG関東45, JFG関東23, JFG関西45, JFG関西23, JGA関東, JGA関西, ハロー研修, JICA区分, JICA研修, IHCSA区分, IHCSA研修, 通訳就業意思, 通訳就業意思名, 通訳経験年数, 通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野4, 英語以外語学検定, 英語通訳検定, 英検, 国連英検, TOEIC, TOEFL, 同時通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, 翻訳就業意思名, 翻訳経験年数, 翻訳分野1, 翻訳分野2, 翻訳分野3, 翻訳分野4, 翻訳訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソフト種類, パソコンOS, 海外添乗就業意思, 海外添乗就業意思名, 海外添乗経験年数, 海外添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4, 旅行主任取扱資格, 旅程管理資格, 他資格, 職歴, 学歴, 趣味特技, 自己PR, 業務研修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1, 所属委員会2, 所属委員会名2, 所属委員会3, 所属委員会名3, 賦課金支払2001, 賦課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦課金支払2005, 総会出欠状況2001, 総会出欠状況2002, 総会出欠状況2003, 総会出欠状況2004, 総会出欠状況2005, 手数料合計2001, 手数料合計2002, 手数料合計2003, 手数料合計2004, 手数料合計2005, JFG加入年, JFG加入月, NP初回, NP最終, JFG会員歴, JGA会員歴, JFG休会年, JFG休会月, JFG退会年, JFG退会月, 出資証券番号, 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP居住地, HPJFG, 母国語1, 母国語名1, 母国語2, 母国語名2, 母国語3, 母国語名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数, GICSS研修, GICSS会員歴, KIGA会員歴, COG会員歴, JFG2日間机上, IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変更年月日, Original_カード番号, Original_本人最終記入日, Original_更新年月日, Original_氏名, Original_フリガナ, Original_生年月日, Original_年令, Original_性別, Original_言語1, Original_言語名1, Original_言語2, Original_言語名2, Original_言語3, Original_言語名3, Original_言語4, Original_言語名4, Original_言語5, Original_言語名5, Original_合格年1, Original_合格年2, Original_合格年3, Original_合格年4, Original_合格年5, Original_免取県1, Original_免取県2, Original_免取県3, Original_免取県4, Original_免取県5, Original_免許番号1, Original_免許番号2, Original_免許番号3, Original_免許番号4, Original_免許番号5, Original_郵便番号, Original_住所1, Original_住所2, Original_住所3, Original_地域コード, Original_地域名, Original_東西, Original_自宅電話番号, Original_自宅FAX番号, Original_携帯電話番号, Original_連絡可能時間, Original_他連絡先, Original_緊急連絡先, Original_メールアドレス1, Original_メールアドレス2, Original_個人HP, Original_最寄駅1, Original_最寄駅2, Original_最寄駅3, Original_就業可能条件, Original_宿泊可否, Original_ガイド就業意思, Original_ガイド就業意思名, Original_ガイド経験年数, Original_ガイド経験地域1, Original_ガイド経験地域2, Original_ガイド経験地域3, Original_ガイド経験地域4, Original_ガイド経験分野1, Original_ガイド経験分野2, Original_ガイド経験分野3, Original_ガイド経験分野4, Original_新人研修, Original_JFG関東45, Original_JFG関東23, Original_JFG関西45, Original_JFG関西23, Original_JGA関東, Original_JGA関西, Original_ハロー研修, Original_JICA区分, Original_JICA研修, Original_IHCSA区分, Original_IHCSA研修, Original_通訳就業意思, Original_通訳就業意思名, Original_通訳経験年数, Original_通訳経験分野1, Original_通訳経験分野2, Original_通訳経験分野3, Original_通訳経験分野4, Original_英語以外語学検定, Original_英語通訳検定, Original_英検, Original_国連英検, Original_TOEIC, Original_TOEFL, Original_同時通訳可否区分, Original_同時通訳可否, Original_通訳訓練機関名, Original_翻訳就業意思, Original_翻訳就業意思名, Original_翻訳経験年数, Original_翻訳分野1, Original_翻訳分野2, Original_翻訳分野3, Original_翻訳分野4, Original_翻訳訓練機関, Original_ネイティブ可区分, Original_ネイティブ可, Original_パソコン機種, Original_ソフト種類, Original_パソコンOS, Original_海外添乗就業意思, Original_海外添乗就業意思名, Original_海外添乗経験年数, Original_海外添乗地域1, Original_海外添乗地域2, Original_海外添乗地域3, Original_海外添乗地域4, Original_旅行主任取扱資格, Original_旅程管理資格, Original_他資格, Original_職歴, Original_学歴, Original_趣味特技, Original_自己PR, Original_業務研修案内関東, Original_業務研修案内関西, Original_所属委員会1, Original_所属委員会名1, Original_所属委員会2, Original_所属委員会名2, Original_所属委員会3, Original_所属委員会名3, Original_賦課金支払2001, Original_賦課金支払2002, Original_賦課金支払2003, Original_賦課金支払2004, Original_賦課金支払2005, Original_総会出欠状況2001, Original_総会出欠状況2002, Original_総会出欠状況2003, Original_総会出欠状況2004, Original_総会出欠状況2005, Original_手数料合計2001, Original_手数料合計2002, Original_手数料合計2003, Original_手数料合計2004, Original_手数料合計2005, Original_JFG加入年, Original_JFG加入月, Original_NP初回, Original_NP最終, Original_JFG会員歴, Original_JGA会員歴, Original_JFG休会年, Original_JFG休会月, Original_JFG退会年, Original_JFG退会月, Original_出資証券番号, Original_旧姓, Original_HP顔写真, Original_HP氏名, Original_HP言語, Original_HP合格, Original_HP居住地, Original_HPJFG, Original_母国語1, Original_母国語名1, Original_母国語2, Original_母国語名2, Original_母国語3, Original_母国語名3, Original_メーリングリスト, Original_HP掲載可否, Original_国籍, Original_昨年稼働日数, Original_GICSS研修, Original_GICSS会員歴, Original_KIGA会員歴, Original_COG会員歴, Original_JFG2日間机上, Original_IJCEE会員歴, Original_都道府県, Original_登録年月日, Original_変更年月日);
+                    global::System.Nullable<global::System.DateTime> Original_変更年月日, 
+                    int Original_FIT, 
+                    int Original_FIT日数, 
+                    int Original_団体, 
+                    int Original_団体日数, 
+                    int Original_インセンティブ, 
+                    int Original_インセンティブ日数, 
+                    string Original_最寄駅4, 
+                    string Original_最寄駅5, 
+                    string Original_法定研修, 
+                    string Original_定期研修受講機関, 
+                    string Original_定期研修受講時期) {
+            return this.Update(Original_カード番号, 本人最終記入日, 更新年月日, 氏名, フリガナ, 生年月日, 年令, 性別, 言語1, 言語名1, 言語2, 言語名2, 言語3, 言語名3, 言語4, 言語名4, 言語5, 言語名5, 合格年1, 合格年2, 合格年3, 合格年4, 合格年5, 免取県1, 免取県2, 免取県3, 免取県4, 免取県5, 免許番号1, 免許番号2, 免許番号3, 免許番号4, 免許番号5, 郵便番号, 住所1, 住所2, 住所3, 地域コード, 地域名, 東西, 自宅電話番号, 自宅FAX番号, 携帯電話番号, 連絡可能時間, 他連絡先, 緊急連絡先, メールアドレス1, メールアドレス2, 個人HP, 最寄駅1, 最寄駅2, 最寄駅3, 就業可能条件, 宿泊可否, ガイド就業意思, ガイド就業意思名, ガイド経験年数, ガイド経験地域1, ガイド経験地域2, ガイド経験地域3, ガイド経験地域4, ガイド経験分野1, ガイド経験分野2, ガイド経験分野3, ガイド経験分野4, 新人研修, JFG関東45, JFG関東23, JFG関西45, JFG関西23, JGA関東, JGA関西, ハロー研修, JICA区分, JICA研修, IHCSA区分, IHCSA研修, 通訳就業意思, 通訳就業意思名, 通訳経験年数, 通訳経験分野1, 通訳経験分野2, 通訳経験分野3, 通訳経験分野4, 英語以外語学検定, 英語通訳検定, 英検, 国連英検, TOEIC, TOEFL, 同時通訳可否区分, 同時通訳可否, 通訳訓練機関名, 翻訳就業意思, 翻訳就業意思名, 翻訳経験年数, 翻訳分野1, 翻訳分野2, 翻訳分野3, 翻訳分野4, 翻訳訓練機関, ネイティブ可区分, ネイティブ可, パソコン機種, ソフト種類, パソコンOS, 海外添乗就業意思, 海外添乗就業意思名, 海外添乗経験年数, 海外添乗地域1, 海外添乗地域2, 海外添乗地域3, 海外添乗地域4, 旅行主任取扱資格, 旅程管理資格, 他資格, 職歴, 学歴, 趣味特技, 自己PR, 業務研修案内関東, 業務研修案内関西, 所属委員会1, 所属委員会名1, 所属委員会2, 所属委員会名2, 所属委員会3, 所属委員会名3, 賦課金支払2001, 賦課金支払2002, 賦課金支払2003, 賦課金支払2004, 賦課金支払2005, 総会出欠状況2001, 総会出欠状況2002, 総会出欠状況2003, 総会出欠状況2004, 総会出欠状況2005, 手数料合計2001, 手数料合計2002, 手数料合計2003, 手数料合計2004, 手数料合計2005, JFG加入年, JFG加入月, NP初回, NP最終, JFG会員歴, JGA会員歴, JFG休会年, JFG休会月, JFG退会年, JFG退会月, 出資証券番号, 旧姓, HP顔写真, HP氏名, HP言語, HP合格, HP居住地, HPJFG, 母国語1, 母国語名1, 母国語2, 母国語名2, 母国語3, 母国語名3, メーリングリスト, HP掲載可否, 国籍, 昨年稼働日数, GICSS研修, GICSS会員歴, KIGA会員歴, COG会員歴, JFG2日間机上, IJCEE会員歴, ガイド関係団体, 都道府県, 登録年月日, 変更年月日, FIT, FIT日数, 団体, 団体日数, インセンティブ, インセンティブ日数, 最寄駅4, 最寄駅5, 法定研修, 定期研修受講機関, 定期研修受講時期, Original_カード番号, Original_本人最終記入日, Original_更新年月日, Original_氏名, Original_フリガナ, Original_生年月日, Original_年令, Original_性別, Original_言語1, Original_言語名1, Original_言語2, Original_言語名2, Original_言語3, Original_言語名3, Original_言語4, Original_言語名4, Original_言語5, Original_言語名5, Original_合格年1, Original_合格年2, Original_合格年3, Original_合格年4, Original_合格年5, Original_免取県1, Original_免取県2, Original_免取県3, Original_免取県4, Original_免取県5, Original_免許番号1, Original_免許番号2, Original_免許番号3, Original_免許番号4, Original_免許番号5, Original_郵便番号, Original_住所1, Original_住所2, Original_住所3, Original_地域コード, Original_地域名, Original_東西, Original_自宅電話番号, Original_自宅FAX番号, Original_携帯電話番号, Original_連絡可能時間, Original_他連絡先, Original_緊急連絡先, Original_メールアドレス1, Original_メールアドレス2, Original_個人HP, Original_最寄駅1, Original_最寄駅2, Original_最寄駅3, Original_就業可能条件, Original_宿泊可否, Original_ガイド就業意思, Original_ガイド就業意思名, Original_ガイド経験年数, Original_ガイド経験地域1, Original_ガイド経験地域2, Original_ガイド経験地域3, Original_ガイド経験地域4, Original_ガイド経験分野1, Original_ガイド経験分野2, Original_ガイド経験分野3, Original_ガイド経験分野4, Original_新人研修, Original_JFG関東45, Original_JFG関東23, Original_JFG関西45, Original_JFG関西23, Original_JGA関東, Original_JGA関西, Original_ハロー研修, Original_JICA区分, Original_JICA研修, Original_IHCSA区分, Original_IHCSA研修, Original_通訳就業意思, Original_通訳就業意思名, Original_通訳経験年数, Original_通訳経験分野1, Original_通訳経験分野2, Original_通訳経験分野3, Original_通訳経験分野4, Original_英語以外語学検定, Original_英語通訳検定, Original_英検, Original_国連英検, Original_TOEIC, Original_TOEFL, Original_同時通訳可否区分, Original_同時通訳可否, Original_通訳訓練機関名, Original_翻訳就業意思, Original_翻訳就業意思名, Original_翻訳経験年数, Original_翻訳分野1, Original_翻訳分野2, Original_翻訳分野3, Original_翻訳分野4, Original_翻訳訓練機関, Original_ネイティブ可区分, Original_ネイティブ可, Original_パソコン機種, Original_ソフト種類, Original_パソコンOS, Original_海外添乗就業意思, Original_海外添乗就業意思名, Original_海外添乗経験年数, Original_海外添乗地域1, Original_海外添乗地域2, Original_海外添乗地域3, Original_海外添乗地域4, Original_旅行主任取扱資格, Original_旅程管理資格, Original_他資格, Original_職歴, Original_学歴, Original_趣味特技, Original_自己PR, Original_業務研修案内関東, Original_業務研修案内関西, Original_所属委員会1, Original_所属委員会名1, Original_所属委員会2, Original_所属委員会名2, Original_所属委員会3, Original_所属委員会名3, Original_賦課金支払2001, Original_賦課金支払2002, Original_賦課金支払2003, Original_賦課金支払2004, Original_賦課金支払2005, Original_総会出欠状況2001, Original_総会出欠状況2002, Original_総会出欠状況2003, Original_総会出欠状況2004, Original_総会出欠状況2005, Original_手数料合計2001, Original_手数料合計2002, Original_手数料合計2003, Original_手数料合計2004, Original_手数料合計2005, Original_JFG加入年, Original_JFG加入月, Original_NP初回, Original_NP最終, Original_JFG会員歴, Original_JGA会員歴, Original_JFG休会年, Original_JFG休会月, Original_JFG退会年, Original_JFG退会月, Original_出資証券番号, Original_旧姓, Original_HP顔写真, Original_HP氏名, Original_HP言語, Original_HP合格, Original_HP居住地, Original_HPJFG, Original_母国語1, Original_母国語名1, Original_母国語2, Original_母国語名2, Original_母国語3, Original_母国語名3, Original_メーリングリスト, Original_HP掲載可否, Original_国籍, Original_昨年稼働日数, Original_GICSS研修, Original_GICSS会員歴, Original_KIGA会員歴, Original_COG会員歴, Original_JFG2日間机上, Original_IJCEE会員歴, Original_都道府県, Original_登録年月日, Original_変更年月日, Original_FIT, Original_FIT日数, Original_団体, Original_団体日数, Original_インセンティブ, Original_インセンティブ日数, Original_最寄駅4, Original_最寄駅5, Original_法定研修, Original_定期研修受講機関, Original_定期研修受講時期);
         }
     }
     
@@ -29318,7 +29116,7 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString;
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29335,7 +29133,7 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(guideDataSet.アサインDataTable dataTable) {
+        public virtual int Fill(mailDataSet.アサインDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -29348,9 +29146,9 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual guideDataSet.アサインDataTable GetData() {
+        public virtual mailDataSet.アサインDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            guideDataSet.アサインDataTable dataTable = new guideDataSet.アサインDataTable();
+            mailDataSet.アサインDataTable dataTable = new mailDataSet.アサインDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -29358,14 +29156,14 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet.アサインDataTable dataTable) {
+        public virtual int Update(mailDataSet.アサインDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(guideDataSet dataSet) {
+        public virtual int Update(mailDataSet dataSet) {
             return this.Adapter.Update(dataSet, "アサイン");
         }
         
@@ -32934,6 +32732,848 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ガイド依頼対象者TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ガイド依頼対象者TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ガイド依頼対象者";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("会員番号", "会員番号");
+            tableMapping.ColumnMappings.Add("メールアドレス", "メールアドレス");
+            tableMapping.ColumnMappings.Add("依頼番号", "依頼番号");
+            tableMapping.ColumnMappings.Add("依頼メール送信日時", "依頼メール送信日時");
+            tableMapping.ColumnMappings.Add("返信受信日時", "返信受信日時");
+            tableMapping.ColumnMappings.Add("結果", "結果");
+            tableMapping.ColumnMappings.Add("結果送信日時", "結果送信日時");
+            tableMapping.ColumnMappings.Add("登録年月日", "登録年月日");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ガイド依頼対象者] WHERE (([ID] = @Original_ID) AND ([会員番号] = @Original_会員番号) AND ([依頼番号] = @Original_依頼番号) AND ((@IsNull_依頼メール送信日時 = 1 AND [依頼メール送信日時] IS NULL) OR ([依頼メール送信日時] = @Original_依頼メール送信日時)) AND ((@IsNull_返信受信日時 = 1 AND [返信受信日時] IS NULL) OR ([返信受信日時] = @Original_返信受信日時)) AND ([結果] = @Original_結果) AND ((@IsNull_結果送信日時 = 1 AND [結果送信日時] IS NULL) OR ([結果送信日時] = @Original_結果送信日時)) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_依頼メール送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_返信受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_結果送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_登録年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ガイド依頼対象者] ([会員番号], [メールアドレス], [依頼番号], [依頼メール送信日時], [返信受信日時], [結果], [結果送信日時], [登録年月日]) VALUES (@会員番号, @メールアドレス, @依頼番号, @依頼メール送信日時, @返信受信日時, @結果, @結果送信日時, @登録年月日);
+SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日 FROM ガイド依頼対象者 WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@メールアドレス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "メールアドレス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ガイド依頼対象者] SET [会員番号] = @会員番号, [メールアドレス] = @メールアドレス, [依頼番号] = @依頼番号, [依頼メール送信日時] = @依頼メール送信日時, [返信受信日時] = @返信受信日時, [結果] = @結果, [結果送信日時] = @結果送信日時, [登録年月日] = @登録年月日 WHERE (([ID] = @Original_ID) AND ([会員番号] = @Original_会員番号) AND ([依頼番号] = @Original_依頼番号) AND ((@IsNull_依頼メール送信日時 = 1 AND [依頼メール送信日時] IS NULL) OR ([依頼メール送信日時] = @Original_依頼メール送信日時)) AND ((@IsNull_返信受信日時 = 1 AND [返信受信日時] IS NULL) OR ([返信受信日時] = @Original_返信受信日時)) AND ([結果] = @Original_結果) AND ((@IsNull_結果送信日時 = 1 AND [結果送信日時] IS NULL) OR ([結果送信日時] = @Original_結果送信日時)) AND ((@IsNull_登録年月日 = 1 AND [登録年月日] IS NULL) OR ([登録年月日] = @Original_登録年月日)));
+SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日 FROM ガイド依頼対象者 WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@メールアドレス", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "メールアドレス", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_会員番号", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "会員番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼番号", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼番号", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_依頼メール送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_依頼メール送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "依頼メール送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_返信受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_返信受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "返信受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_結果送信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_結果送信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "結果送信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_登録年月日", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_登録年月日", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "登録年月日", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日 FROM dbo.ガイド" +
+                "依頼対象者";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(mailDataSet.ガイド依頼対象者DataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual mailDataSet.ガイド依頼対象者DataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            mailDataSet.ガイド依頼対象者DataTable dataTable = new mailDataSet.ガイド依頼対象者DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(mailDataSet.ガイド依頼対象者DataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(mailDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ガイド依頼対象者");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, double Original_会員番号, long Original_依頼番号, global::System.Nullable<global::System.DateTime> Original_依頼メール送信日時, global::System.Nullable<global::System.DateTime> Original_返信受信日時, int Original_結果, global::System.Nullable<global::System.DateTime> Original_結果送信日時, global::System.Nullable<global::System.DateTime> Original_登録年月日) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((double)(Original_会員番号));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((long)(Original_依頼番号));
+            if ((Original_依頼メール送信日時.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_依頼メール送信日時.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_返信受信日時.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_返信受信日時.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_結果));
+            if ((Original_結果送信日時.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_結果送信日時.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_登録年月日.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_登録年月日.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(double 会員番号, string メールアドレス, long 依頼番号, global::System.Nullable<global::System.DateTime> 依頼メール送信日時, global::System.Nullable<global::System.DateTime> 返信受信日時, int 結果, global::System.Nullable<global::System.DateTime> 結果送信日時, global::System.Nullable<global::System.DateTime> 登録年月日) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((double)(会員番号));
+            if ((メールアドレス == null)) {
+                throw new global::System.ArgumentNullException("メールアドレス");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(メールアドレス));
+            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((long)(依頼番号));
+            if ((依頼メール送信日時.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(依頼メール送信日時.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((返信受信日時.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(返信受信日時.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(結果));
+            if ((結果送信日時.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(結果送信日時.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((登録年月日.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(登録年月日.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    double 会員番号, 
+                    string メールアドレス, 
+                    long 依頼番号, 
+                    global::System.Nullable<global::System.DateTime> 依頼メール送信日時, 
+                    global::System.Nullable<global::System.DateTime> 返信受信日時, 
+                    int 結果, 
+                    global::System.Nullable<global::System.DateTime> 結果送信日時, 
+                    global::System.Nullable<global::System.DateTime> 登録年月日, 
+                    int Original_ID, 
+                    double Original_会員番号, 
+                    long Original_依頼番号, 
+                    global::System.Nullable<global::System.DateTime> Original_依頼メール送信日時, 
+                    global::System.Nullable<global::System.DateTime> Original_返信受信日時, 
+                    int Original_結果, 
+                    global::System.Nullable<global::System.DateTime> Original_結果送信日時, 
+                    global::System.Nullable<global::System.DateTime> Original_登録年月日, 
+                    int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(会員番号));
+            if ((メールアドレス == null)) {
+                throw new global::System.ArgumentNullException("メールアドレス");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(メールアドレス));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(依頼番号));
+            if ((依頼メール送信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(依頼メール送信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((返信受信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(返信受信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(結果));
+            if ((結果送信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(結果送信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((登録年月日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(登録年月日.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Original_会員番号));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Original_依頼番号));
+            if ((Original_依頼メール送信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_依頼メール送信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_返信受信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_返信受信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_結果));
+            if ((Original_結果送信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_結果送信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_登録年月日.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_登録年月日.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    double 会員番号, 
+                    string メールアドレス, 
+                    long 依頼番号, 
+                    global::System.Nullable<global::System.DateTime> 依頼メール送信日時, 
+                    global::System.Nullable<global::System.DateTime> 返信受信日時, 
+                    int 結果, 
+                    global::System.Nullable<global::System.DateTime> 結果送信日時, 
+                    global::System.Nullable<global::System.DateTime> 登録年月日, 
+                    int Original_ID, 
+                    double Original_会員番号, 
+                    long Original_依頼番号, 
+                    global::System.Nullable<global::System.DateTime> Original_依頼メール送信日時, 
+                    global::System.Nullable<global::System.DateTime> Original_返信受信日時, 
+                    int Original_結果, 
+                    global::System.Nullable<global::System.DateTime> Original_結果送信日時, 
+                    global::System.Nullable<global::System.DateTime> Original_登録年月日) {
+            return this.Update(会員番号, メールアドレス, 依頼番号, 依頼メール送信日時, 返信受信日時, 結果, 結果送信日時, 登録年月日, Original_ID, Original_会員番号, Original_依頼番号, Original_依頼メール送信日時, Original_返信受信日時, Original_結果, Original_結果送信日時, Original_登録年月日, Original_ID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class messageIDTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public messageIDTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "messageID";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("受信日時", "受信日時");
+            tableMapping.ColumnMappings.Add("message", "message");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[messageID] WHERE (([ID] = @Original_ID) AND ((@IsNull_受信日時 = 1" +
+                " AND [受信日時] IS NULL) OR ([受信日時] = @Original_受信日時)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[messageID] ([受信日時], [message]) VALUES (@受信日時, @message);\r\nSELE" +
+                "CT ID, 受信日時, message FROM messageID WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[messageID] SET [受信日時] = @受信日時, [message] = @message WHERE (([ID] = " +
+                "@Original_ID) AND ((@IsNull_受信日時 = 1 AND [受信日時] IS NULL) OR ([受信日時] = @Original_" +
+                "受信日時)));\r\nSELECT ID, 受信日時, message FROM messageID WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@message", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_受信日時", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_受信日時", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "受信日時", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::mailReceive.Properties.Settings.Default.JFG_MSTConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID, 受信日時, message FROM dbo.messageID";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(mailDataSet.messageIDDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual mailDataSet.messageIDDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            mailDataSet.messageIDDataTable dataTable = new mailDataSet.messageIDDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(mailDataSet.messageIDDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(mailDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "messageID");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, global::System.Nullable<global::System.DateTime> Original_受信日時) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            if ((Original_受信日時.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_受信日時.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> 受信日時, string message) {
+            if ((受信日時.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(受信日時.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((message == null)) {
+                throw new global::System.ArgumentNullException("message");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(message));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<global::System.DateTime> 受信日時, string message, int Original_ID, global::System.Nullable<global::System.DateTime> Original_受信日時, int ID) {
+            if ((受信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(受信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((message == null)) {
+                throw new global::System.ArgumentNullException("message");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(message));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID));
+            if ((Original_受信日時.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_受信日時.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<global::System.DateTime> 受信日時, string message, int Original_ID, global::System.Nullable<global::System.DateTime> Original_受信日時) {
+            return this.Update(受信日時, message, Original_ID, Original_受信日時, Original_ID);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32953,13 +33593,13 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         
         private ガイド依頼名TableAdapter _ガイド依頼名TableAdapter;
         
-        private ガイド依頼対象者TableAdapter _ガイド依頼対象者TableAdapter;
-        
-        private messageIDTableAdapter _messageIDTableAdapter;
-        
         private 会員情報TableAdapter _会員情報TableAdapter;
         
         private アサインTableAdapter _アサインTableAdapter;
+        
+        private ガイド依頼対象者TableAdapter _ガイド依頼対象者TableAdapter;
+        
+        private messageIDTableAdapter _messageIDTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -33037,34 +33677,6 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ガイド依頼対象者TableAdapter ガイド依頼対象者TableAdapter {
-            get {
-                return this._ガイド依頼対象者TableAdapter;
-            }
-            set {
-                this._ガイド依頼対象者TableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public messageIDTableAdapter messageIDTableAdapter {
-            get {
-                return this._messageIDTableAdapter;
-            }
-            set {
-                this._messageIDTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public 会員情報TableAdapter 会員情報TableAdapter {
             get {
                 return this._会員情報TableAdapter;
@@ -33085,6 +33697,34 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
             }
             set {
                 this._アサインTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ガイド依頼対象者TableAdapter ガイド依頼対象者TableAdapter {
+            get {
+                return this._ガイド依頼対象者TableAdapter;
+            }
+            set {
+                this._ガイド依頼対象者TableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public messageIDTableAdapter messageIDTableAdapter {
+            get {
+                return this._messageIDTableAdapter;
+            }
+            set {
+                this._messageIDTableAdapter = value;
             }
         }
         
@@ -33123,14 +33763,6 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                             && (this._ガイド依頼名TableAdapter.Connection != null))) {
                     return this._ガイド依頼名TableAdapter.Connection;
                 }
-                if (((this._ガイド依頼対象者TableAdapter != null) 
-                            && (this._ガイド依頼対象者TableAdapter.Connection != null))) {
-                    return this._ガイド依頼対象者TableAdapter.Connection;
-                }
-                if (((this._messageIDTableAdapter != null) 
-                            && (this._messageIDTableAdapter.Connection != null))) {
-                    return this._messageIDTableAdapter.Connection;
-                }
                 if (((this._会員情報TableAdapter != null) 
                             && (this._会員情報TableAdapter.Connection != null))) {
                     return this._会員情報TableAdapter.Connection;
@@ -33138,6 +33770,14 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                 if (((this._アサインTableAdapter != null) 
                             && (this._アサインTableAdapter.Connection != null))) {
                     return this._アサインTableAdapter.Connection;
+                }
+                if (((this._ガイド依頼対象者TableAdapter != null) 
+                            && (this._ガイド依頼対象者TableAdapter.Connection != null))) {
+                    return this._ガイド依頼対象者TableAdapter.Connection;
+                }
+                if (((this._messageIDTableAdapter != null) 
+                            && (this._messageIDTableAdapter.Connection != null))) {
+                    return this._messageIDTableAdapter.Connection;
                 }
                 return null;
             }
@@ -33164,16 +33804,16 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                 if ((this._ガイド依頼名TableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._ガイド依頼対象者TableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._messageIDTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._会員情報TableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._アサインTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._ガイド依頼対象者TableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._messageIDTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -33185,7 +33825,7 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(guideDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(mailDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._アサインTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.アサイン.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -33267,7 +33907,7 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(guideDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(mailDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._アサインTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.アサイン.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -33341,7 +33981,7 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(guideDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(mailDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._messageIDTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.messageID.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -33439,7 +34079,7 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(guideDataSet dataSet) {
+        public virtual int UpdateAll(mailDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -33462,20 +34102,20 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                         && (this.MatchTableAdapterConnection(this._ガイド依頼名TableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
             }
-            if (((this._ガイド依頼対象者TableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._ガイド依頼対象者TableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
-            }
-            if (((this._messageIDTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._messageIDTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
-            }
             if (((this._会員情報TableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._会員情報TableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
             }
             if (((this._アサインTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._アサインTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
+            }
+            if (((this._ガイド依頼対象者TableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._ガイド依頼対象者TableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
+            }
+            if (((this._messageIDTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._messageIDTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager で管理されるすべての TableAdapter は同一の接続文字列を使用する必要があります。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -33545,24 +34185,6 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                         adaptersWithAcceptChangesDuringUpdate.Add(this._ガイド依頼名TableAdapter.Adapter);
                     }
                 }
-                if ((this._ガイド依頼対象者TableAdapter != null)) {
-                    revertConnections.Add(this._ガイド依頼対象者TableAdapter, this._ガイド依頼対象者TableAdapter.Connection);
-                    this._ガイド依頼対象者TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._ガイド依頼対象者TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._ガイド依頼対象者TableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._ガイド依頼対象者TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._ガイド依頼対象者TableAdapter.Adapter);
-                    }
-                }
-                if ((this._messageIDTableAdapter != null)) {
-                    revertConnections.Add(this._messageIDTableAdapter, this._messageIDTableAdapter.Connection);
-                    this._messageIDTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._messageIDTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._messageIDTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._messageIDTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._messageIDTableAdapter.Adapter);
-                    }
-                }
                 if ((this._会員情報TableAdapter != null)) {
                     revertConnections.Add(this._会員情報TableAdapter, this._会員情報TableAdapter.Connection);
                     this._会員情報TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -33579,6 +34201,24 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     if (this._アサインTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._アサインTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._アサインTableAdapter.Adapter);
+                    }
+                }
+                if ((this._ガイド依頼対象者TableAdapter != null)) {
+                    revertConnections.Add(this._ガイド依頼対象者TableAdapter, this._ガイド依頼対象者TableAdapter.Connection);
+                    this._ガイド依頼対象者TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._ガイド依頼対象者TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._ガイド依頼対象者TableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._ガイド依頼対象者TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._ガイド依頼対象者TableAdapter.Adapter);
+                    }
+                }
+                if ((this._messageIDTableAdapter != null)) {
+                    revertConnections.Add(this._messageIDTableAdapter, this._messageIDTableAdapter.Connection);
+                    this._messageIDTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._messageIDTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._messageIDTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._messageIDTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._messageIDTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -33655,14 +34295,6 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                     this._ガイド依頼名TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ガイド依頼名TableAdapter]));
                     this._ガイド依頼名TableAdapter.Transaction = null;
                 }
-                if ((this._ガイド依頼対象者TableAdapter != null)) {
-                    this._ガイド依頼対象者TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ガイド依頼対象者TableAdapter]));
-                    this._ガイド依頼対象者TableAdapter.Transaction = null;
-                }
-                if ((this._messageIDTableAdapter != null)) {
-                    this._messageIDTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._messageIDTableAdapter]));
-                    this._messageIDTableAdapter.Transaction = null;
-                }
                 if ((this._会員情報TableAdapter != null)) {
                     this._会員情報TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._会員情報TableAdapter]));
                     this._会員情報TableAdapter.Transaction = null;
@@ -33670,6 +34302,14 @@ SELECT ID, 会員番号, メールアドレス, 依頼番号, 依頼メール送
                 if ((this._アサインTableAdapter != null)) {
                     this._アサインTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._アサインTableAdapter]));
                     this._アサインTableAdapter.Transaction = null;
+                }
+                if ((this._ガイド依頼対象者TableAdapter != null)) {
+                    this._ガイド依頼対象者TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ガイド依頼対象者TableAdapter]));
+                    this._ガイド依頼対象者TableAdapter.Transaction = null;
+                }
+                if ((this._messageIDTableAdapter != null)) {
+                    this._messageIDTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._messageIDTableAdapter]));
+                    this._messageIDTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
