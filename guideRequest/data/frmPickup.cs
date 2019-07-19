@@ -620,157 +620,157 @@ namespace guideRequest.data
                 guideDataSet.会員稼働予定Row s = dts.会員稼働予定.Single(a => a.カード番号 == sNum && a.年 == sDt.Year && a.月 == sDt.Month);
 
                 // 依頼日と稼働予定を参照する
-                if (sDt.Day == 1 && (s.d1 == "〇" || s.d1 == "◯" || s.d1 == "○" || s.d1 == string.Empty))
+                if (sDt.Day == 1 && (s.d1.Trim() == "〇" || s.d1.Trim() == "◯" || s.d1.Trim() == "○" || s.d1.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 2 && (s.d2 == "〇" || s.d2 == "◯" || s.d2 == "○" || s.d2 == string.Empty))
+                if (sDt.Day == 2 && (s.d2.Trim() == "〇" || s.d2.Trim() == "◯" || s.d2.Trim() == "○" || s.d2.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 3 && (s.d3 == "〇" || s.d3 == "◯" || s.d3 == "○" || s.d3 == string.Empty))
+                if (sDt.Day == 3 && (s.d3.Trim() == "〇" || s.d3.Trim() == "◯" || s.d3.Trim() == "○" || s.d3.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 4 && (s.d4 == "〇" || s.d4 == "◯" || s.d4 == "○" || s.d4 == string.Empty))
+                if (sDt.Day == 4 && (s.d4.Trim() == "〇" || s.d4.Trim() == "◯" || s.d4.Trim() == "○" || s.d4.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 5 && (s.d5 == "〇" || s.d5 == "◯" || s.d5 == "○" || s.d5 == string.Empty))
+                if (sDt.Day == 5 && (s.d5.Trim() == "〇" || s.d5.Trim() == "◯" || s.d5.Trim() == "○" || s.d5.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 6 && (s.d6 == "〇" || s.d6 == "◯" || s.d6 == "○" || s.d6 == string.Empty))
+                if (sDt.Day == 6 && (s.d6.Trim() == "〇" || s.d6.Trim() == "◯" || s.d6.Trim() == "○" || s.d6.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 7 && (s.d7 == "〇" || s.d7 == "◯" || s.d7 == "○" || s.d7 == string.Empty))
+                if (sDt.Day == 7 && (s.d7.Trim() == "〇" || s.d7.Trim() == "◯" || s.d7.Trim() == "○" || s.d7.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 8 && (s.d8 == "〇" || s.d8 == "◯" || s.d8 == "○" || s.d8 == string.Empty))
+                if (sDt.Day == 8 && (s.d8.Trim() == "〇" || s.d8.Trim() == "◯" || s.d8.Trim() == "○" || s.d8.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 9 && (s.d9 == "〇" || s.d9 == "◯" || s.d9 == "○" || s.d9 == string.Empty))
+                if (sDt.Day == 9 && (s.d9.Trim() == "〇" || s.d9.Trim() == "◯" || s.d9.Trim() == "○" || s.d9.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 10 && (s.d10 == "〇" || s.d10 == "◯" || s.d10 == "○" || s.d10 == string.Empty))
+                if (sDt.Day == 10 && (s.d10.Trim() == "〇" || s.d10.Trim() == "◯" || s.d10.Trim() == "○" || s.d10.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 11 && (s.d11 == "〇" || s.d11 == "◯" || s.d11 == "○" || s.d11 == string.Empty))
+                if (sDt.Day == 11 && (s.d11.Trim() == "〇" || s.d11.Trim() == "◯" || s.d11.Trim() == "○" || s.d11.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 12 && (s.d12 == "〇" || s.d12 == "◯" || s.d12 == "○" || s.d12 == string.Empty))
+                if (sDt.Day == 12 && (s.d12.Trim() == "〇" || s.d12.Trim() == "◯" || s.d12.Trim() == "○" || s.d12.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 13 && (s.d13 == "〇" || s.d13 == "◯" || s.d13 == "○" || s.d13 == string.Empty))
+                if (sDt.Day == 13 && (s.d13.Trim() == "〇" || s.d13.Trim() == "◯" || s.d13.Trim() == "○" || s.d13.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 14 && (s.d14 == "〇" || s.d14 == "◯" || s.d14 == "○" || s.d14 == string.Empty))
+                if (sDt.Day == 14 && (s.d14.Trim() == "〇" || s.d14.Trim() == "◯" || s.d14.Trim() == "○" || s.d14.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 15 && (s.d15 == "〇" || s.d15 == "◯" || s.d15 == "○" || s.d15 == string.Empty))
+                if (sDt.Day == 15 && (s.d15.Trim() == "〇" || s.d15.Trim() == "◯" || s.d15.Trim() == "○" || s.d15.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 16 && (s.d16 == "〇" || s.d16 == "◯" || s.d16 == "○" || s.d16 == string.Empty))
+                if (sDt.Day == 16 && (s.d16.Trim() == "〇" || s.d16.Trim() == "◯" || s.d16.Trim() == "○" || s.d16.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 17 && (s.d17 == "〇" || s.d17 == "◯" || s.d17 == "○" || s.d17 == string.Empty))
+                if (sDt.Day == 17 && (s.d17.Trim() == "〇" || s.d17.Trim() == "◯" || s.d17.Trim() == "○" || s.d17.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 18 && (s.d18 == "〇" || s.d18 == "◯" || s.d18 == "○" || s.d18 == string.Empty))
+                if (sDt.Day == 18 && (s.d18.Trim() == "〇" || s.d18.Trim() == "◯" || s.d18.Trim() == "○" || s.d18.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 19 && (s.d19 == "〇" || s.d19 == "◯" || s.d19 == "○" || s.d19 == string.Empty))
+                if (sDt.Day == 19 && (s.d19.Trim() == "〇" || s.d19.Trim() == "◯" || s.d19.Trim() == "○" || s.d19.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 20 && (s.d20 == "〇" || s.d20 == "◯" || s.d20 == "○" || s.d20 == string.Empty))
+                if (sDt.Day == 20 && (s.d20.Trim() == "〇" || s.d20.Trim() == "◯" || s.d20.Trim() == "○" || s.d20.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 21 && (s.d21 == "〇" || s.d21 == "◯" || s.d21 == "○" || s.d21 == string.Empty))
+                if (sDt.Day == 21 && (s.d21.Trim() == "〇" || s.d21.Trim() == "◯" || s.d21.Trim() == "○" || s.d21.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 22 && (s.d22 == "〇" || s.d22 == "◯" || s.d22 == "○" || s.d22 == string.Empty))
+                if (sDt.Day == 22 && (s.d22.Trim() == "〇" || s.d22.Trim() == "◯" || s.d22.Trim() == "○" || s.d22.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 23 && (s.d23 == "〇" || s.d23 == "◯" || s.d23 == "○" || s.d23 == string.Empty))
+                if (sDt.Day == 23 && (s.d23.Trim() == "〇" || s.d23.Trim() == "◯" || s.d23.Trim() == "○" || s.d23.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 24 && (s.d24 == "〇" || s.d24 == "◯" || s.d24 == "○" || s.d24 == string.Empty))
+                if (sDt.Day == 24 && (s.d24.Trim() == "〇" || s.d24.Trim() == "◯" || s.d24.Trim() == "○" || s.d24.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 25 && (s.d25 == "〇" || s.d25 == "◯" || s.d25 == "○" || s.d25 == string.Empty))
+                if (sDt.Day == 25 && (s.d25.Trim() == "〇" || s.d25.Trim() == "◯" || s.d25.Trim() == "○" || s.d25.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 26 && (s.d26 == "〇" || s.d26 == "◯" || s.d26 == "○" || s.d26 == string.Empty))
+                if (sDt.Day == 26 && (s.d26.Trim() == "〇" || s.d26.Trim() == "◯" || s.d26.Trim() == "○" || s.d26.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 27 && (s.d27 == "〇" || s.d27 == "◯" || s.d27 == "○" || s.d27 == string.Empty))
+                if (sDt.Day == 27 && (s.d27.Trim() == "〇" || s.d27.Trim() == "◯" || s.d27.Trim() == "○" || s.d27.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 28 && (s.d28 == "〇" || s.d28 == "◯" || s.d28 == "○" || s.d28 == string.Empty))
+                if (sDt.Day == 28 && (s.d28.Trim() == "〇" || s.d28.Trim() == "◯" || s.d28.Trim() == "○" || s.d28.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 29 && (s.d29 == "〇" || s.d29 == "◯" || s.d29 == "○" || s.d29 == string.Empty))
+                if (sDt.Day == 29 && (s.d29.Trim() == "〇" || s.d29.Trim() == "◯" || s.d29.Trim() == "○" || s.d29.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 30 && (s.d30 == "〇" || s.d30 == "◯" || s.d30 == "○" || s.d30 == string.Empty))
+                if (sDt.Day == 30 && (s.d30.Trim() == "〇" || s.d30.Trim() == "◯" || s.d30.Trim() == "○" || s.d30.Trim() == string.Empty))
                 {
                     return true;
                 }
 
-                if (sDt.Day == 31 && (s.d31 == "〇" || s.d31 == "◯" || s.d31 == "○" || s.d31 == string.Empty))
+                if (sDt.Day == 31 && (s.d31.Trim() == "〇" || s.d31.Trim() == "◯" || s.d31.Trim() == "○" || s.d31.Trim() == string.Empty))
                 {
                     return true;
                 }
